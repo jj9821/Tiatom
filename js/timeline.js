@@ -122,6 +122,7 @@ class MediaGalleryEngine {
     // Organic rotations and washi tape patterns
     const rotations = [-2.0, 1.8, -1.2, 2.4, -2.8, 1.4, -1.9, 2.2];
     const tapeTypes = ['rose', 'gold', 'sage', 'peach', 'gingham'];
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
 
     this.gridContainer.innerHTML = items.map((item, index) => {
       let aspectClass = 'aspect-[3/4]';
@@ -130,12 +131,13 @@ class MediaGalleryEngine {
       if (item.aspectRatio === 'square') aspectClass = 'aspect-square';
 
       const isVideo = item.type === 'video';
-      const rot = rotations[index % rotations.length];
+      const baseRot = rotations[index % rotations.length];
+      const rot = isMobile ? (baseRot * 0.45).toFixed(1) : baseRot;
       const tapeClass = tapeTypes[index % tapeTypes.length];
 
       return `
         <div 
-          class="media-card polaroid-card break-inside-avoid w-full mb-8 group cursor-pointer"
+          class="media-card polaroid-card break-inside-avoid w-full max-w-[96%] mx-auto sm:max-w-none mb-6 sm:mb-8 group cursor-pointer"
           data-id="${item.id}"
           data-index="${index}"
           style="transform: rotate(${rot}deg);"

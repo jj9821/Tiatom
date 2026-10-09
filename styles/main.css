@@ -238,6 +238,15 @@ div[tabindex="0"]:focus-visible {
   pointer-events: none;
 }
 
+@media (max-width: 640px) {
+  .ruled-paper-margin {
+    padding-left: 1.35rem !important;
+  }
+  .ruled-paper-margin::before {
+    left: 0.75rem;
+  }
+}
+
 /* Grid Drafting Paper */
 .grid-paper {
   background-color: var(--bg-paper);
@@ -297,10 +306,16 @@ div[tabindex="0"]:focus-visible {
   width: 100%;
 }
 
-.polaroid-card:hover {
-  transform: translateY(-8px) scale(1.025) !important;
-  z-index: 30;
-  box-shadow: var(--shadow-polaroid-hover);
+@media (hover: hover) and (pointer: fine) {
+  .polaroid-card:hover {
+    transform: translateY(-8px) scale(1.025) !important;
+    z-index: 30;
+    box-shadow: var(--shadow-polaroid-hover);
+  }
+}
+
+.polaroid-card:active {
+  transform: scale(0.985);
 }
 
 /* Washi Tape Ribbon Strips */
@@ -357,6 +372,14 @@ div[tabindex="0"]:focus-visible {
 .tilt-p-pos2 { transform: rotate(2.1deg); }
 .tilt-p-neg3 { transform: rotate(-3.1deg); }
 
+@media (max-width: 640px) {
+  .tilt-p-neg1 { transform: rotate(-0.7deg); }
+  .tilt-p-pos1 { transform: rotate(0.8deg); }
+  .tilt-p-neg2 { transform: rotate(-1.0deg); }
+  .tilt-p-pos2 { transform: rotate(0.9deg); }
+  .tilt-p-neg3 { transform: rotate(-1.1deg); }
+}
+
 /* --------------------------------------------------------------------------
    📔 Handcrafted Private Journal Lock Screen Cover
    -------------------------------------------------------------------------- */
@@ -407,11 +430,13 @@ div[tabindex="0"]:focus-visible {
   overflow: hidden;
 }
 
-.journal-key:hover {
-  background: #FFFDFC;
-  border-color: var(--terracotta);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(43, 34, 37, 0.25);
+@media (hover: hover) and (pointer: fine) {
+  .journal-key:hover {
+    background: #FFFDFC;
+    border-color: var(--terracotta);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(43, 34, 37, 0.25);
+  }
 }
 
 .journal-key:active {
@@ -422,8 +447,15 @@ div[tabindex="0"]:focus-visible {
 
 @media (max-width: 480px) {
   .journal-key {
-    width: 62px;
-    height: 62px;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 380px), (max-height: 700px) {
+  .journal-key {
+    width: 52px;
+    height: 52px;
   }
 }
 
@@ -435,6 +467,13 @@ div[tabindex="0"]:focus-visible {
   border: 2px solid #ECC880;
   background: transparent;
   transition: all 0.2s var(--ease-smooth);
+}
+
+@media (max-width: 380px), (max-height: 700px) {
+  .pin-dot {
+    width: 11px;
+    height: 11px;
+  }
 }
 
 .pin-dot.filled {
@@ -507,6 +546,12 @@ div[tabindex="0"]:focus-visible {
   perspective: 1200px;
   min-height: 260px;
   cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .bento-flip-card {
+    min-height: 290px;
+  }
 }
 
 .bento-flip-inner {
@@ -789,16 +834,18 @@ div[tabindex="0"]:focus-visible {
   overflow: hidden;
 }
 
-.btn-celestial:hover,
-.btn-scrapbook:hover {
-  transform: translateY(-2px) scale(1.02);
-  background: linear-gradient(135deg, #C26766 0%, #DF7F75 100%);
-  box-shadow: 0 8px 24px -3px rgba(183, 96, 95, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+@media (hover: hover) and (pointer: fine) {
+  .btn-celestial:hover,
+  .btn-scrapbook:hover {
+    transform: translateY(-2px) scale(1.02);
+    background: linear-gradient(135deg, #C26766 0%, #DF7F75 100%);
+    box-shadow: 0 8px 24px -3px rgba(183, 96, 95, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
 }
 
 .btn-celestial:active,
 .btn-scrapbook:active {
-  transform: translateY(1px) scale(0.98);
+  transform: translateY(1px) scale(0.97);
 }
 
 /* Soft Paper Action Buttons */
@@ -808,12 +855,19 @@ div[tabindex="0"]:focus-visible {
   color: var(--charcoal);
   box-shadow: 0 2px 6px rgba(43, 34, 37, 0.08);
   transition: all 0.25s ease;
+  touch-action: manipulation;
 }
-.btn-paper:hover {
+@media (hover: hover) and (pointer: fine) {
+  .btn-paper:hover {
+    background: var(--bg-journal);
+    border-color: var(--terracotta);
+    color: var(--terracotta);
+    transform: translateY(-1px);
+  }
+}
+.btn-paper:active {
   background: var(--bg-journal);
-  border-color: var(--terracotta);
-  color: var(--terracotta);
-  transform: translateY(-1px);
+  transform: scale(0.97);
 }
 
 /* --------------------------------------------------------------------------
@@ -844,20 +898,29 @@ div[tabindex="0"]:focus-visible {
   border: 1px solid rgba(217, 197, 178, 0.8);
   color: var(--charcoal);
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.25s ease;
   box-shadow: 0 2px 6px rgba(43, 34, 37, 0.1);
+  touch-action: manipulation;
 }
 
-.cinema-ctrl-btn:hover {
+@media (hover: hover) and (pointer: fine) {
+  .cinema-ctrl-btn:hover {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+    color: #FFFFFF;
+    transform: scale(1.08);
+  }
+}
+
+.cinema-ctrl-btn:active {
   background: var(--terracotta);
-  border-color: var(--terracotta);
   color: #FFFFFF;
-  transform: scale(1.08);
+  transform: scale(0.94);
 }
 
 /* --------------------------------------------------------------------------
@@ -912,12 +975,80 @@ div[tabindex="0"]:focus-visible {
 }
 
 body {
-  padding-top: var(--sat);
-  padding-bottom: var(--sab);
   padding-left: var(--sal);
   padding-right: var(--sar);
   -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+  touch-action: pan-y;
+}
+
+/* Mobile Horizontally Scrollable Gallery Filter Chips */
+@media (max-width: 640px) {
+  #gallery-filter-chips {
+    display: flex;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 0.5rem 0.5rem 0.75rem !important;
+    gap: 0.6rem !important;
+    justify-content: flex-start !important;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  #gallery-filter-chips::-webkit-scrollbar {
+    display: none;
+  }
+  #gallery-filter-chips .filter-chip {
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    white-space: nowrap;
+  }
+}
+
+/* Mobile Responsive Modal Scrolling & Dimensions */
+@media (max-width: 640px) {
+  .modal-content {
+    max-height: 92vh !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 1.25rem !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+  .lightbox-modal {
+    padding: 0.75rem !important;
+  }
+}
+
+/* Mobile & Short Height Adaptations for Lock Screen */
+#ipad-wallpaper-view,
+#ipad-passcode-view {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-top: calc(1rem + var(--sat));
+  padding-bottom: calc(1rem + var(--sab));
+}
+
+@media (max-height: 720px) {
+  #ipad-wallpaper-view,
+  #ipad-passcode-view {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  .cover-photo-window {
+    width: 8rem !important;
+    height: 8rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  #ipad-lock-icon {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+  #ipad-passcode-label {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.25rem !important;
+  }
 }
 
 @media (max-width: 640px) {
@@ -933,7 +1064,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   🛡️ Content Protection Modal
+   🛡️ Content Protection Modal & iOS Touch Callout
    -------------------------------------------------------------------------- */
 *,
 *::before,
@@ -943,6 +1074,7 @@ body {
   -ms-user-select: none !important;
   user-select: none !important;
   -webkit-user-drag: none !important;
+  -webkit-touch-callout: none !important;
 }
 
 input,
@@ -951,12 +1083,14 @@ textarea {
   -moz-user-select: text !important;
   -ms-user-select: text !important;
   user-select: text !important;
+  -webkit-touch-callout: default !important;
 }
 
 img,
 video {
   -webkit-user-drag: none !important;
   user-drag: none !important;
+  -webkit-touch-callout: none !important;
 }
 
 .protection-alert-modal {

@@ -108,8 +108,8 @@
       </div>
 
       <!-- Center Journal Vignette: Vellum Window Frame -->
-      <div class="relative flex flex-col items-center text-center z-20 my-auto max-w-sm sm:max-w-md w-full">
-        <div class="relative w-48 h-48 sm:w-56 sm:h-56 p-3 rounded-full bg-[#FCF8F2]/10 border-2 border-dashed border-[#ECC880] shadow-2xl flex items-center justify-center mb-6">
+      <div class="relative flex flex-col items-center text-center z-20 my-auto max-w-sm sm:max-w-md w-full px-2">
+        <div class="cover-photo-window relative w-36 h-36 xs:w-44 xs:h-44 sm:w-56 sm:h-56 p-2.5 sm:p-3 rounded-full bg-[#FCF8F2]/10 border-2 border-dashed border-[#ECC880] shadow-2xl flex items-center justify-center mb-3 sm:mb-6">
           <div class="w-full h-full rounded-full overflow-hidden border-2 border-[#ECC880]/60 shadow-inner relative">
             <img 
               src="assets/photos/tia/tia_13.jpeg" 
@@ -120,23 +120,23 @@
             <div class="absolute inset-0 bg-gradient-to-t from-[#4A2026]/60 via-transparent to-transparent"></div>
           </div>
           <!-- Antique Brass Padlock Icon Badge -->
-          <div class="brass-lock-badge absolute -bottom-2 w-11 h-11 rounded-full flex items-center justify-center shadow-lg">
-            <i data-lucide="lock" class="w-5 h-5 text-[#3D2205]"></i>
+          <div class="brass-lock-badge absolute -bottom-2 w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center shadow-lg">
+            <i data-lucide="lock" class="w-4 h-4 sm:w-5 sm:h-5 text-[#3D2205]"></i>
           </div>
         </div>
 
-        <div class="font-handwritten text-4xl sm:text-5xl text-[#FCF8F2] font-bold drop-shadow-md mb-1">
+        <div class="font-handwritten text-3xl sm:text-5xl text-[#FCF8F2] font-bold drop-shadow-md mb-1 leading-tight">
           Kunju's Scrapbook Journal 📖
         </div>
-        <div class="font-note text-sm sm:text-base text-[#ECC880] tracking-wide">
+        <div class="font-note text-xs sm:text-base text-[#ECC880] tracking-wide">
           Handcrafted with all my love by Kevin
         </div>
 
         <!-- Clock & Date Stamped -->
-        <div class="mt-4 px-4 py-1.5 rounded-full bg-black/30 border border-[#ECC880]/30 flex items-center gap-3">
-          <span id="ipad-cover-time" class="font-mono text-lg text-[#FCF8F2] font-bold">12:34</span>
+        <div class="mt-3 sm:mt-4 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-black/30 border border-[#ECC880]/30 flex items-center gap-2 sm:gap-3 text-xs sm:text-sm">
+          <span id="ipad-cover-time" class="font-mono text-base sm:text-lg text-[#FCF8F2] font-bold">12:34</span>
           <span class="w-1 h-1 rounded-full bg-[#ECC880]"></span>
-          <span id="ipad-cover-date" class="font-handwritten text-base text-[#ECC880]">Special Birthday Edition</span>
+          <span id="ipad-cover-date" class="font-handwritten text-sm sm:text-base text-[#ECC880]">Special Birthday Edition</span>
         </div>
       </div>
 
@@ -189,7 +189,7 @@
         </div>
 
         <!-- Vintage Stamp Buttons Keypad -->
-        <div class="grid grid-cols-3 gap-x-6 sm:gap-x-8 gap-y-2.5 sm:gap-y-3.5 max-w-[260px] sm:max-w-[300px] mx-auto mt-1" role="group" aria-label="Passcode Keypad">
+        <div class="grid grid-cols-3 gap-x-4 sm:gap-x-8 gap-y-2 sm:gap-y-3.5 max-w-[230px] xs:max-w-[260px] sm:max-w-[300px] mx-auto mt-0.5 sm:mt-1" role="group" aria-label="Passcode Keypad">
           <button type="button" class="journal-key ipad-key" data-key="1" aria-label="1">
             <span class="font-serif text-2xl sm:text-3xl font-bold">1</span>
           </button>
@@ -491,19 +491,19 @@
   <!-- =========================================================================
        NAVIGATION BAR (Paper Ribbon with Stitched Borders)
        ========================================================================= -->
-  <header class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-3">
-    <div class="max-w-7xl mx-auto flex items-center justify-between journal-pill px-5 sm:px-7 py-2.5 rounded-full border border-[#D9C5B2] shadow-md">
+  <header class="fixed top-0 left-0 right-0 z-50 px-2.5 sm:px-8 py-2 sm:py-3" style="padding-top: calc(0.5rem + var(--sat, 0px));">
+    <div class="max-w-7xl mx-auto flex items-center justify-between journal-pill px-3.5 sm:px-7 py-2 sm:py-2.5 rounded-full border border-[#D9C5B2] shadow-md">
       
       <!-- Scrapbook Logo & Name -->
-      <a href="#hero" class="flex items-center gap-2.5 group">
-        <div class="w-8 h-8 rounded-full bg-[#B7605F]/15 border border-[#B7605F]/40 flex items-center justify-center text-[#B7605F] group-hover:rotate-12 transition-transform">
+      <a href="#hero" class="flex items-center gap-2 group flex-shrink min-w-0">
+        <div class="w-8 h-8 rounded-full bg-[#B7605F]/15 border border-[#B7605F]/40 flex items-center justify-center text-[#B7605F] group-hover:rotate-12 transition-transform flex-shrink-0">
           <i data-lucide="book-open" class="w-4 h-4"></i>
         </div>
-        <div class="flex flex-col text-left">
-          <span class="font-handwritten text-2xl font-bold tracking-wide text-[#684045] leading-none group-hover:text-[#B7605F] transition-colors">
+        <div class="flex flex-col text-left truncate">
+          <span class="font-handwritten text-xl sm:text-2xl font-bold tracking-wide text-[#684045] leading-none group-hover:text-[#B7605F] transition-colors truncate">
             <span id="nav-recipient-name">Kunju</span>’s Journal 🌸
           </span>
-          <span class="text-[10px] text-[#899481] uppercase tracking-widest font-mono">Kevin & Kunju • Pala Days</span>
+          <span class="hidden xs:inline text-[9px] sm:text-[10px] text-[#899481] uppercase tracking-widest font-mono">Kevin & Kunju • Pala Days</span>
         </div>
       </a>
 
@@ -518,131 +518,133 @@
       </nav>
 
       <!-- Right Controls: Audio Player Widget & Secret Keepsake Chamber -->
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
         <!-- Secret Chamber Trigger -->
         <button 
           id="vault-trigger-btn"
           title="Secret Keepsake Chamber (Key: kunju)"
-          class="w-9 h-9 rounded-full bg-white hover:bg-[#B7605F] hover:text-white border border-[#D9C5B2] flex items-center justify-center text-[#B7605F] transition-all hover:scale-105 shadow-sm touch-target-44">
-          <i data-lucide="key" class="w-4 h-4"></i>
+          class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white hover:bg-[#B7605F] hover:text-white border border-[#D9C5B2] flex items-center justify-center text-[#B7605F] transition-all hover:scale-105 shadow-sm touch-target-44"
+          aria-label="Secret Keepsake Chamber">
+          <i data-lucide="key" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
         </button>
 
         <!-- Cozy Mini Cassette Player Widget -->
-        <div id="audio-player-widget" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#D9C5B2] shadow-sm">
+        <div id="audio-player-widget" class="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white border border-[#D9C5B2] shadow-sm">
           <button 
             id="audio-toggle-btn" 
             title="Toggle Romantic Ambient Music"
-            class="w-7 h-7 rounded-full bg-[#B7605F] hover:bg-[#9A4C4B] text-white flex items-center justify-center transition-transform hover:scale-110">
-            <i data-lucide="music" class="w-3.5 h-3.5"></i>
+            aria-label="Toggle Romantic Ambient Music"
+            class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#B7605F] hover:bg-[#9A4C4B] text-white flex items-center justify-center transition-transform hover:scale-110">
+            <i data-lucide="music" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
           </button>
           
-          <div class="hidden sm:flex flex-col text-left">
+          <div class="hidden md:flex flex-col text-left">
             <span id="audio-track-title" class="text-[11px] text-[#684045] font-note font-semibold truncate max-w-[110px]">
               Our Song (kunju.mp3)
             </span>
           </div>
 
           <!-- Equalizer Bars -->
-          <div class="flex items-end gap-0.5 h-4 px-1" title="Real-time Equalizer">
+          <div class="flex items-end gap-0.5 h-3.5 sm:h-4 px-0.5 sm:px-1" title="Real-time Equalizer">
             <div class="eq-bar"></div>
             <div class="eq-bar"></div>
             <div class="eq-bar"></div>
             <div class="eq-bar"></div>
-            <div class="eq-bar"></div>
-            <div class="eq-bar"></div>
+            <div class="eq-bar hidden xs:block"></div>
+            <div class="eq-bar hidden xs:block"></div>
           </div>
         </div>
 
         <!-- Mobile Menu Toggle -->
-        <button id="mobile-nav-toggle" class="lg:hidden w-8 h-8 flex items-center justify-center text-[#684045] touch-target-44" aria-label="Toggle navigation menu">
+        <button id="mobile-nav-toggle" class="lg:hidden w-8 h-8 flex items-center justify-center text-[#684045] touch-target-44" aria-label="Toggle navigation menu" aria-expanded="false">
           <i data-lucide="menu" class="w-5 h-5"></i>
         </button>
       </div>
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div id="mobile-nav-menu" class="hidden lg:hidden max-w-7xl mx-auto mt-2 journal-panel rounded-2xl p-4 flex flex-col gap-2.5 text-base font-handwritten text-lg text-center shadow-lg">
-      <a href="#hero" class="py-1.5 hover:text-[#B7605F]">Journal Cover</a>
-      <a href="#story-beginning" class="py-1.5 hover:text-[#B7605F]">Chapter I • 8th Standard Spark</a>
-      <a href="#story-whole-world" class="py-1.5 hover:text-[#B7605F]">Chapter II • Best Buds & Everyday Magic</a>
-      <a href="#gallery" class="py-1.5 hover:text-[#B7605F]">All 47 Memories 📸</a>
-      <a href="#reasons" class="py-1.5 hover:text-[#B7605F]">Why I Adore You ♡</a>
-      <a href="#letter" class="py-1.5 hover:text-[#B7605F]">Birthday Love Letter 💌</a>
+    <div id="mobile-nav-menu" class="hidden lg:hidden max-w-7xl mx-auto mt-2 journal-panel rounded-2xl p-3 sm:p-4 flex flex-col gap-1.5 text-base font-handwritten text-lg text-center shadow-lg border border-[#D9C5B2] bg-[#FCF8F2]/95 backdrop-blur-md">
+      <a href="#hero" class="py-2 px-3 rounded-xl hover:bg-[#F7EFE5] hover:text-[#B7605F] active:scale-98 transition-all min-h-[44px] flex items-center justify-center">Journal Cover</a>
+      <a href="#story-beginning" class="py-2 px-3 rounded-xl hover:bg-[#F7EFE5] hover:text-[#B7605F] active:scale-98 transition-all min-h-[44px] flex items-center justify-center">Chapter I • 8th Standard Spark</a>
+      <a href="#story-whole-world" class="py-2 px-3 rounded-xl hover:bg-[#F7EFE5] hover:text-[#B7605F] active:scale-98 transition-all min-h-[44px] flex items-center justify-center">Chapter II • Best Buds & Everyday Magic</a>
+      <a href="#gallery" class="py-2 px-3 rounded-xl hover:bg-[#F7EFE5] hover:text-[#B7605F] active:scale-98 transition-all min-h-[44px] flex items-center justify-center">All 47 Memories 📸</a>
+      <a href="#reasons" class="py-2 px-3 rounded-xl hover:bg-[#F7EFE5] hover:text-[#B7605F] active:scale-98 transition-all min-h-[44px] flex items-center justify-center">Why I Adore You ♡</a>
+      <a href="#letter" class="py-2 px-3 rounded-xl hover:bg-[#F7EFE5] hover:text-[#B7605F] active:scale-98 transition-all min-h-[44px] flex items-center justify-center">Birthday Love Letter 💌</a>
     </div>
   </header>
 
   <!-- =========================================================================
        HERO SECTION: SCRAPBOOK JOURNAL COVER & HEADLINE
        ========================================================================= -->
-  <section id="hero" class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 pt-28 pb-16 z-10">
+  <section id="hero" class="relative min-h-screen flex flex-col justify-center items-center text-center px-3.5 sm:px-6 pt-24 sm:pt-28 pb-12 sm:pb-16 z-10">
     <div class="max-w-4xl mx-auto flex flex-col items-center">
       
       <!-- Top Handwritten Stamp Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#D9C5B2] shadow-sm mb-6">
+      <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white border border-[#D9C5B2] shadow-sm mb-4 sm:mb-6 max-w-full">
         <i data-lucide="heart" class="w-3.5 h-3.5 text-[#B7605F] fill-[#B7605F]"></i>
-        <span id="hero-badge-text" class="text-xs font-handwritten text-base tracking-wide text-[#684045] font-semibold">
+        <span id="hero-badge-text" class="text-xs font-handwritten text-sm sm:text-base tracking-wide text-[#684045] font-semibold truncate">
           📖 KUNJU'S BIRTHDAY SCRAPBOOK & DIGITAL JOURNAL 🌸
         </span>
       </div>
 
       <!-- Main Headline in Warm Expressive Typography -->
       <h1 class="text-center mb-3">
-        <span id="hero-title-prefix" class="block font-handwritten text-3xl sm:text-5xl md:text-6xl text-[#899481] italic mb-1">
+        <span id="hero-title-prefix" class="block font-handwritten text-2xl sm:text-5xl md:text-6xl text-[#899481] italic mb-1">
           To My Dearest Kunju,
         </span>
-        <span id="hero-title-highlight" class="font-handwritten text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-[#684045] font-bold tracking-tight block drop-shadow-sm">
+        <span id="hero-title-highlight" class="font-handwritten text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-[#684045] font-bold tracking-tight block drop-shadow-sm leading-tight">
           Happy Birthday, Kunju! 🎂✨
         </span>
       </h1>
 
       <!-- Parchment Quotation Block with Stitched Edges -->
-      <div class="max-w-3xl mx-auto my-6 p-6 sm:p-8 rounded-2xl bg-white border-2 border-dashed border-[#B7605F]/40 shadow-md relative">
+      <div class="max-w-3xl mx-auto my-4 sm:my-6 p-4 sm:p-8 rounded-2xl bg-white border-2 border-dashed border-[#B7605F]/40 shadow-md relative">
         <div class="washi-tape rose"></div>
-        <p class="font-handwritten text-2xl sm:text-3xl md:text-4xl text-[#684045] leading-relaxed">
+        <p class="font-handwritten text-xl sm:text-3xl md:text-4xl text-[#684045] leading-relaxed">
           “From the quiet glances in 8th standard to every laugh we share today, you are my favorite person in every universe. Happy Birthday, Kunju.”
         </p>
       </div>
 
       <!-- Sentimental Subtitle -->
-      <p id="hero-subtitle" class="font-note text-base sm:text-lg md:text-xl text-[#635356] max-w-2xl font-light leading-relaxed mb-8">
+      <p id="hero-subtitle" class="font-note text-sm sm:text-lg md:text-xl text-[#635356] max-w-2xl font-light leading-relaxed mb-6 sm:mb-8 px-2">
         You think of me as your best bud, but my heart chose you a long time ago. Welcome to a keepsake journal crafted just for you, Kunju.
       </p>
 
       <!-- Action Buttons -->
-      <div class="flex flex-wrap items-center justify-center gap-4 mb-12">
-        <a href="#story-beginning" class="btn-scrapbook px-7 py-3 rounded-full font-handwritten text-xl font-bold tracking-wide text-white flex items-center gap-2 shadow-md">
+      <div class="flex flex-col xs:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 w-full xs:w-auto px-4">
+        <a href="#story-beginning" class="btn-scrapbook w-full xs:w-auto px-6 sm:px-7 py-3 rounded-full font-handwritten text-lg sm:text-xl font-bold tracking-wide text-white flex items-center justify-center gap-2 shadow-md">
           <span>Turn to Chapter I</span>
           <i data-lucide="book-open" class="w-4 h-4"></i>
         </a>
-        <a href="#gallery" class="btn-paper px-7 py-3 rounded-full font-handwritten text-xl font-bold text-[#684045] flex items-center gap-2">
+        <a href="#gallery" class="btn-paper w-full xs:w-auto px-6 sm:px-7 py-3 rounded-full font-handwritten text-lg sm:text-xl font-bold text-[#684045] flex items-center justify-center gap-2">
           <i data-lucide="camera" class="w-4 h-4 text-[#B7605F]"></i>
           <span>Explore All 47 Polaroids 📸</span>
         </a>
       </div>
 
       <!-- Live Hand-Stamped Milestone Tracker -->
-      <div class="journal-panel px-6 sm:px-8 py-5 rounded-2xl max-w-xl w-full border border-[#D9C5B2]">
-        <div class="text-xs uppercase tracking-wider text-[#B7605F] font-mono mb-3 flex items-center justify-center gap-2">
+      <div class="journal-panel px-3.5 sm:px-8 py-4 sm:py-5 rounded-2xl max-w-xl w-full border border-[#D9C5B2]">
+        <div class="text-[11px] sm:text-xs uppercase tracking-wider text-[#B7605F] font-mono mb-2.5 sm:mb-3 flex items-center justify-center gap-1.5 sm:gap-2">
           <i data-lucide="heart" class="w-3.5 h-3.5 text-[#B7605F] fill-[#B7605F] animate-pulse"></i>
-          <span class="font-handwritten text-lg font-bold">Adoring You Every Single Second Since 8th Standard</span>
+          <span class="font-handwritten text-base sm:text-lg font-bold">Adoring You Every Single Second Since 8th Standard</span>
         </div>
 
-        <div class="grid grid-cols-4 gap-2 sm:gap-4 text-center">
-          <div class="bg-white rounded-xl py-2 px-1 border border-[#D9C5B2] shadow-sm">
-            <span id="count-days" class="font-serif text-2xl sm:text-3xl font-bold text-[#684045]">00</span>
-            <span class="block text-[11px] text-[#899481] font-note mt-0.5">Days</span>
+        <div class="grid grid-cols-4 gap-1.5 sm:gap-4 text-center">
+          <div class="bg-white rounded-xl py-2 px-0.5 sm:px-1 border border-[#D9C5B2] shadow-sm">
+            <span id="count-days" class="font-serif text-xl sm:text-3xl font-bold text-[#684045]">00</span>
+            <span class="block text-[10px] sm:text-[11px] text-[#899481] font-note mt-0.5">Days</span>
           </div>
-          <div class="bg-white rounded-xl py-2 px-1 border border-[#D9C5B2] shadow-sm">
-            <span id="count-hours" class="font-serif text-2xl sm:text-3xl font-bold text-[#684045]">00</span>
-            <span class="block text-[11px] text-[#899481] font-note mt-0.5">Hours</span>
+          <div class="bg-white rounded-xl py-2 px-0.5 sm:px-1 border border-[#D9C5B2] shadow-sm">
+            <span id="count-hours" class="font-serif text-xl sm:text-3xl font-bold text-[#684045]">00</span>
+            <span class="block text-[10px] sm:text-[11px] text-[#899481] font-note mt-0.5">Hours</span>
           </div>
-          <div class="bg-white rounded-xl py-2 px-1 border border-[#D9C5B2] shadow-sm">
-            <span id="count-minutes" class="font-serif text-2xl sm:text-3xl font-bold text-[#684045]">00</span>
-            <span class="block text-[11px] text-[#899481] font-note mt-0.5">Minutes</span>
+          <div class="bg-white rounded-xl py-2 px-0.5 sm:px-1 border border-[#D9C5B2] shadow-sm">
+            <span id="count-minutes" class="font-serif text-xl sm:text-3xl font-bold text-[#684045]">00</span>
+            <span class="block text-[10px] sm:text-[11px] text-[#899481] font-note mt-0.5">Minutes</span>
           </div>
-          <div class="bg-white rounded-xl py-2 px-1 border border-[#D9C5B2] shadow-sm">
-            <span id="count-seconds" class="font-serif text-2xl sm:text-3xl font-bold text-[#B7605F]">00</span>
-            <span class="block text-[11px] text-[#899481] font-note mt-0.5">Seconds</span>
+          <div class="bg-white rounded-xl py-2 px-0.5 sm:px-1 border border-[#D9C5B2] shadow-sm">
+            <span id="count-seconds" class="font-serif text-xl sm:text-3xl font-bold text-[#B7605F]">00</span>
+            <span class="block text-[10px] sm:text-[11px] text-[#899481] font-note mt-0.5">Seconds</span>
           </div>
         </div>
       </div>
@@ -659,11 +661,11 @@
   <!-- =========================================================================
        CHAPTER 1: "THE DAY TIME STOOD STILL IN 8TH STANDARD 🎒"
        ========================================================================= -->
-  <section id="story-beginning" class="relative py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto z-10">
-    <div class="journal-panel rounded-3xl p-6 sm:p-10 lg:p-14 border border-[#D9C5B2] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white shadow-md">
+  <section id="story-beginning" class="relative py-12 sm:py-20 px-3.5 sm:px-6 lg:px-8 max-w-6xl mx-auto z-10">
+    <div class="journal-panel rounded-3xl p-4 sm:p-10 lg:p-14 border border-[#D9C5B2] grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center bg-white shadow-md">
       
       <!-- Left Column: Authentic Dual Polaroid Showcase (Stage Costume + Uniforms) -->
-      <div class="lg:col-span-5 relative grid grid-cols-2 gap-4">
+      <div class="lg:col-span-5 relative grid grid-cols-2 gap-3 sm:gap-4">
         <!-- Polaroid 1: Kunju on Stage (tia_19.jpeg) -->
         <div class="polaroid-card tilt-p-neg2 relative">
           <div class="washi-tape gold"></div>
@@ -678,7 +680,7 @@
             />
           </div>
           <div class="pt-2 text-center">
-            <span class="font-handwritten text-lg text-[#684045] font-bold block leading-tight">School Day Stage Grace</span>
+            <span class="font-handwritten text-base sm:text-lg text-[#684045] font-bold block leading-tight">School Day Stage Grace</span>
             <span class="text-[10px] text-[#899481] font-note">8th Standard • Pala</span>
           </div>
         </div>
@@ -697,24 +699,24 @@
             />
           </div>
           <div class="pt-2 text-center">
-            <span class="font-handwritten text-lg text-[#684045] font-bold block leading-tight">Carmel & Chavara Days</span>
+            <span class="font-handwritten text-base sm:text-lg text-[#684045] font-bold block leading-tight">Carmel & Chavara Days</span>
             <span class="text-[10px] text-[#899481] font-note">Together in Pala 🎒</span>
           </div>
         </div>
       </div>
 
       <!-- Right Column: Heartfelt Ruled Diary Narrative -->
-      <div class="lg:col-span-7 space-y-5 text-left ruled-paper-margin">
+      <div class="lg:col-span-7 space-y-4 sm:space-y-5 text-left ruled-paper-margin">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FCF8F2] border border-[#D9C5B2] text-[#B7605F] text-xs font-handwritten text-base font-bold">
           <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
           <span>Chapter I • The Pala School Days Spark</span>
         </div>
 
-        <h2 class="font-handwritten text-4xl sm:text-5xl text-[#684045] font-bold leading-tight">
+        <h2 class="font-handwritten text-3xl sm:text-5xl text-[#684045] font-bold leading-tight">
           The Day Time Stood Still in 8th Standard 🎒
         </h2>
 
-        <p class="font-handwritten text-2xl text-[#B7605F] leading-snug italic border-l-2 border-[#B7605F]/50 pl-3">
+        <p class="font-handwritten text-xl sm:text-2xl text-[#B7605F] leading-snug italic border-l-2 border-[#B7605F]/50 pl-3">
           “Before there was any label, before we counted the years together, there was already an unspoken gravity. The moment you walked into that classroom in Pala, everything else simply faded into the background.”
         </p>
 
@@ -738,21 +740,21 @@
   <!-- =========================================================================
        CHAPTER 2: "BEST BUDS & MY ENTIRE FUTURE ☕"
        ========================================================================= -->
-  <section id="story-whole-world" class="relative py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto z-10">
-    <div class="journal-panel rounded-3xl p-6 sm:p-10 lg:p-14 border border-[#D9C5B2] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white shadow-md">
+  <section id="story-whole-world" class="relative py-12 sm:py-20 px-3.5 sm:px-6 lg:px-8 max-w-6xl mx-auto z-10">
+    <div class="journal-panel rounded-3xl p-4 sm:p-10 lg:p-14 border border-[#D9C5B2] grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center bg-white shadow-md">
       
       <!-- Left Column: Story Text -->
-      <div class="lg:col-span-7 space-y-5 text-left order-2 lg:order-1 ruled-paper-margin">
+      <div class="lg:col-span-7 space-y-4 sm:space-y-5 text-left order-2 lg:order-1 ruled-paper-margin">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FCF8F2] border border-[#D9C5B2] text-[#B7605F] text-xs font-handwritten text-base font-bold">
           <i data-lucide="coffee" class="w-3.5 h-3.5"></i>
           <span>Chapter II • Best Buds & Everyday Magic</span>
         </div>
 
-        <h2 class="font-handwritten text-4xl sm:text-5xl text-[#684045] font-bold leading-tight">
+        <h2 class="font-handwritten text-3xl sm:text-5xl text-[#684045] font-bold leading-tight">
           Best Buds, Everyday Magic & You ☕
         </h2>
 
-        <p class="font-handwritten text-2xl text-[#B7605F] leading-snug italic border-l-2 border-[#B7605F]/50 pl-3">
+        <p class="font-handwritten text-xl sm:text-2xl text-[#B7605F] leading-snug italic border-l-2 border-[#B7605F]/50 pl-3">
           “How one person can turn late night banter outside Blossom, cozy car drives, and simple laughter into the most sacred memories of my life will forever be my greatest wonder.”
         </p>
 
@@ -848,44 +850,44 @@
   </section>
 
   <!-- Vintage Album Lightbox Modal -->
-  <div id="cinema-lightbox" class="lightbox-modal cinema-lightbox fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-md" role="dialog" aria-modal="true" aria-label="Scrapbook Album View">
+  <div id="cinema-lightbox" class="lightbox-modal cinema-lightbox fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 bg-black/90 backdrop-blur-md" role="dialog" aria-modal="true" aria-label="Scrapbook Album View">
     <div class="lightbox-backdrop absolute inset-0"></div>
 
-    <div class="modal-content relative z-10 max-w-4xl w-full bg-[#FCF8F2] rounded-3xl overflow-hidden border-2 border-dashed border-[#D9C5B2] shadow-2xl flex flex-col">
+    <div class="modal-content relative z-10 max-w-4xl w-full bg-[#FCF8F2] rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-dashed border-[#D9C5B2] shadow-2xl flex flex-col max-h-[94vh]">
       <!-- Top Bar -->
-      <div class="flex items-center justify-between p-4 sm:p-5 border-b border-[#E8DACB] bg-[#F7EFE5]">
-        <div class="flex items-center gap-3">
-          <span id="cinema-counter" class="text-xs font-handwritten text-base text-white bg-[#B7605F] px-3 py-0.5 rounded-full shadow-sm">
+      <div class="flex items-center justify-between px-3.5 py-3 sm:p-5 border-b border-[#E8DACB] bg-[#F7EFE5]">
+        <div class="flex items-center gap-2.5 sm:gap-3">
+          <span id="cinema-counter" class="text-xs font-handwritten text-sm sm:text-base text-white bg-[#B7605F] px-2.5 sm:px-3 py-0.5 rounded-full shadow-sm">
             1 / 47
           </span>
-          <span id="cinema-tag" class="text-xs font-note text-[#899481]"></span>
+          <span id="cinema-tag" class="text-[11px] sm:text-xs font-note text-[#899481]"></span>
         </div>
 
         <button id="cinema-close-btn" class="cinema-ctrl-btn touch-target-44" aria-label="Close View (Esc)" title="Close">
-          <i data-lucide="x" class="w-5 h-5"></i>
+          <i data-lucide="x" class="w-4 h-4 sm:w-5 sm:h-5"></i>
         </button>
       </div>
 
       <!-- Media Display Area -->
-      <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-[#EDE4D8] flex items-center justify-center overflow-hidden">
-        <img id="cinema-image-player" src="" alt="Album Memory" class="w-full h-full object-contain p-2" />
-        <video id="cinema-video-player" class="hidden w-full h-full object-contain p-2" controls autoplay playsinline loop></video>
+      <div class="relative w-full h-[45vh] sm:h-[55vh] max-h-[580px] bg-[#EDE4D8] flex items-center justify-center overflow-hidden">
+        <img id="cinema-image-player" src="" alt="Album Memory" class="w-full h-full object-contain p-1.5 sm:p-2" />
+        <video id="cinema-video-player" class="hidden w-full h-full object-contain p-1.5 sm:p-2" controls autoplay playsinline loop></video>
       </div>
 
       <!-- Bottom Handwritten Caption & Navigation -->
-      <div class="p-5 sm:p-6 bg-[#FCF8F2] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-[#E8DACB]">
+      <div class="p-3.5 sm:p-6 bg-[#FCF8F2] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 border-t border-[#E8DACB]">
         <div class="space-y-1 max-w-xl text-left">
-          <h3 id="cinema-title" class="font-handwritten text-3xl text-[#684045] font-bold leading-tight"></h3>
-          <p id="cinema-caption" class="font-note text-xs sm:text-sm text-[#635356] leading-relaxed italic border-l-2 border-[#B7605F]/50 pl-3"></p>
+          <h3 id="cinema-title" class="font-handwritten text-2xl sm:text-3xl text-[#684045] font-bold leading-tight"></h3>
+          <p id="cinema-caption" class="font-note text-xs sm:text-sm text-[#635356] leading-relaxed italic border-l-2 border-[#B7605F]/50 pl-2.5 sm:pl-3"></p>
         </div>
 
         <!-- Previous / Next Controls -->
-        <div class="flex items-center gap-3 self-end sm:self-center">
+        <div class="flex items-center gap-2.5 sm:gap-3 self-end sm:self-center">
           <button id="cinema-prev-btn" class="cinema-ctrl-btn touch-target-44" aria-label="Previous Memory" title="Previous">
-            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            <i data-lucide="chevron-left" class="w-4 h-4 sm:w-5 sm:h-5"></i>
           </button>
           <button id="cinema-next-btn" class="cinema-ctrl-btn touch-target-44" aria-label="Next Memory" title="Next">
-            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            <i data-lucide="chevron-right" class="w-4 h-4 sm:w-5 sm:h-5"></i>
           </button>
         </div>
       </div>
@@ -956,21 +958,21 @@
     </div>
 
     <!-- Letter Stationery Envelope -->
-    <div class="parchment-letter rounded-3xl p-6 sm:p-12 relative overflow-hidden min-h-[460px]">
+    <div class="parchment-letter rounded-2xl sm:rounded-3xl p-4 sm:p-12 relative overflow-hidden min-h-[420px] sm:min-h-[460px]">
       
       <!-- Closed Envelope Cover with 3D Wax Seal -->
-      <div id="letter-envelope-cover" class="absolute inset-0 z-20 flex flex-col items-center justify-center bg-gradient-to-b from-[#F9EAD9] via-[#F3DECB] to-[#ECD5C0] p-6 text-center">
-        <div class="mb-4">
+      <div id="letter-envelope-cover" class="absolute inset-0 z-20 flex flex-col items-center justify-center bg-gradient-to-b from-[#F9EAD9] via-[#F3DECB] to-[#ECD5C0] p-4 sm:p-6 text-center">
+        <div class="mb-3 sm:mb-4">
           <span class="font-mono text-xs uppercase tracking-widest text-[#899481] block mb-1">
             CONFIDENTIAL & TIMELESS
           </span>
-          <h3 id="letter-greeting-text" class="font-handwritten text-3xl sm:text-4xl text-[#684045] font-bold">
+          <h3 id="letter-greeting-text" class="font-handwritten text-2xl sm:text-4xl text-[#684045] font-bold">
             To My Beloved Kunju,
           </h3>
         </div>
 
         <!-- 3D Artisan Burgundy Wax Seal -->
-        <div class="relative flex items-center justify-center my-6">
+        <div class="relative flex items-center justify-center my-4 sm:my-6">
           <div class="seal-halo-glow"></div>
           <div class="seal-stardust-orbit"></div>
 
@@ -994,7 +996,7 @@
               </svg>
 
               <div class="wax-heart-center">
-                <i data-lucide="heart" class="w-8 h-8 text-[#FFE5E0] fill-[#FFB2A6] group-hover:scale-120 transition-all duration-300 drop-shadow"></i>
+                <i data-lucide="heart" class="w-7 h-7 sm:w-8 sm:h-8 text-[#FFE5E0] fill-[#FFB2A6] group-hover:scale-120 transition-all duration-300 drop-shadow"></i>
               </div>
             </div>
 
@@ -1002,28 +1004,28 @@
           </button>
         </div>
 
-        <span class="font-handwritten text-xl text-[#B7605F] font-bold flex items-center gap-2 mt-2 animate-pulse">
-          <i data-lucide="sparkles" class="w-4 h-4"></i>
+        <span class="font-handwritten text-lg sm:text-xl text-[#B7605F] font-bold flex items-center gap-1.5 sm:gap-2 mt-2 animate-pulse">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
           <span>Click Heart Seal to Open Letter</span>
-          <i data-lucide="sparkles" class="w-4 h-4"></i>
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
         </span>
       </div>
 
       <!-- Letter Body Content (Typewriter Target on Ruled Stationery) -->
       <div id="letter-paper-content" class="hidden relative z-10 ruled-paper-margin pt-2">
-        <div id="letter-typewriter-body" class="min-h-[280px]"></div>
+        <div id="letter-typewriter-body" class="min-h-[260px] sm:min-h-[280px]"></div>
 
-        <div class="pt-8 mt-8 border-t border-[#D9C5B2] flex flex-wrap items-center justify-between gap-4">
+        <div class="pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-[#D9C5B2] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
           <button 
             id="letter-replay-btn" 
-            class="hidden font-handwritten text-base text-[#899481] hover:text-[#B7605F] flex items-center gap-1.5 transition-colors touch-target-44">
+            class="hidden font-handwritten text-base text-[#899481] hover:text-[#B7605F] flex items-center justify-center gap-1.5 transition-colors touch-target-44 py-2">
             <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Replay Letter
           </button>
 
           <button 
             id="open-my-heart-btn" 
             aria-label="Open my entire heart celebration modal"
-            class="btn-scrapbook ml-auto px-8 py-3 rounded-full font-handwritten text-xl font-bold tracking-wide text-white flex items-center gap-2 shadow-md touch-target-44">
+            class="btn-scrapbook w-full sm:w-auto sm:ml-auto px-6 sm:px-8 py-3 rounded-full font-handwritten text-lg sm:text-xl font-bold tracking-wide text-white flex items-center justify-center gap-2 shadow-md touch-target-44">
             <i data-lucide="heart" class="w-4 h-4 fill-white"></i>
             <span>Open My Entire Heart ✨</span>
           </button>
@@ -1034,8 +1036,8 @@
   </section>
 
   <!-- Grand Finale Celebration Modal -->
-  <div id="finale-modal" class="lightbox-modal fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md" role="dialog" aria-modal="true" aria-label="Grand Finale Declaration">
-    <div class="modal-content relative z-10 max-w-xl w-full bg-[#FCF8F2] rounded-3xl p-8 sm:p-10 border-2 border-dashed border-[#B7605F] text-center shadow-2xl">
+  <div id="finale-modal" class="lightbox-modal fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md" role="dialog" aria-modal="true" aria-label="Grand Finale Declaration">
+    <div class="modal-content relative z-10 max-w-xl w-full bg-[#FCF8F2] rounded-2xl sm:rounded-3xl p-5 sm:p-10 border-2 border-dashed border-[#B7605F] text-center shadow-2xl max-h-[92vh] overflow-y-auto">
       <div class="w-16 h-16 rounded-full bg-[#B7605F]/15 border border-[#B7605F]/40 flex items-center justify-center mx-auto mb-4 text-[#B7605F] shadow">
         <i data-lucide="sparkles" class="w-8 h-8"></i>
       </div>
@@ -1066,10 +1068,10 @@
   </div>
 
   <!-- Secret Scrapbook Keepsake Box Modal -->
-  <div id="vault-modal" class="lightbox-modal fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md" role="dialog" aria-modal="true" aria-label="Secret Keepsake Chamber">
-    <div class="modal-content relative z-10 max-w-lg w-full bg-[#FCF8F2] rounded-3xl p-8 border-2 border-[#D9C5B2] shadow-2xl">
-      <div class="flex items-center justify-between mb-5">
-        <div class="flex items-center gap-2 text-[#B7605F] font-handwritten text-xl font-bold">
+  <div id="vault-modal" class="lightbox-modal fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md" role="dialog" aria-modal="true" aria-label="Secret Keepsake Chamber">
+    <div class="modal-content relative z-10 max-w-lg w-full bg-[#FCF8F2] rounded-2xl sm:rounded-3xl p-5 sm:p-8 border-2 border-[#D9C5B2] shadow-2xl max-h-[92vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-4 sm:mb-5">
+        <div class="flex items-center gap-2 text-[#B7605F] font-handwritten text-lg sm:text-xl font-bold">
           <i data-lucide="lock" class="w-4 h-4"></i>
           <span>Secret Keepsake Chamber</span>
         </div>
@@ -1080,10 +1082,10 @@
 
       <!-- Vault Key Form -->
       <div id="vault-form-section" class="text-center">
-        <h3 class="font-handwritten text-3xl text-[#684045] font-bold mb-1">
+        <h3 class="font-handwritten text-2xl sm:text-3xl text-[#684045] font-bold mb-1">
           Unlock Our Secret Keepsake
         </h3>
-        <p class="text-xs text-[#899481] mb-5 font-note">
+        <p class="text-xs text-[#899481] mb-4 sm:mb-5 font-note">
           Enter our special key (e.g. kunju, kevin, 8th standard, birthday) to open this hidden journal box.
         </p>
 
@@ -1110,16 +1112,16 @@
         <div class="w-12 h-12 rounded-full bg-[#B7605F]/15 border border-[#B7605F]/40 flex items-center justify-center mx-auto mb-2 text-[#B7605F]">
           <i data-lucide="unlock" class="w-6 h-6"></i>
         </div>
-        <h3 class="font-handwritten text-3xl text-[#684045] font-bold mb-1">
+        <h3 class="font-handwritten text-2xl sm:text-3xl text-[#684045] font-bold mb-1">
           Keepsake Chamber Unlocked!
         </h3>
         <div class="polaroid-card my-3 !p-2 !pb-6">
-          <div class="aspect-[3/4] max-h-[380px] rounded overflow-hidden bg-[#F7EFE5]">
+          <div class="aspect-[3/4] max-h-[260px] sm:max-h-[380px] rounded overflow-hidden bg-[#F7EFE5]">
             <img src="assets/photos/tia/tia_15.jpeg" alt="Kevin and Kunju tender portrait" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='tia/tia_15.jpeg';}" />
           </div>
           <span class="font-handwritten text-base text-[#684045] font-bold block pt-1">Forever & Always Beside You</span>
         </div>
-        <p class="text-sm font-handwritten text-2xl text-[#B7605F] italic mb-3 leading-snug">
+        <p class="text-sm font-handwritten text-xl sm:text-2xl text-[#B7605F] italic mb-3 leading-snug">
           “You found the most sacred chamber of my heart, Kunju! Standing beside you, laughing through the years, and building our world together—my forever begins and ends with you.”
         </p>
       </div>
@@ -1129,7 +1131,7 @@
   <!-- =========================================================================
        FOOTER
        ========================================================================= -->
-  <footer class="relative py-10 px-4 border-t border-[#D9C5B2] text-center text-xs font-mono text-[#899481] z-10 bg-[#F7EFE5]">
+  <footer class="relative py-8 sm:py-10 px-4 border-t border-[#D9C5B2] text-center text-xs font-mono text-[#899481] z-10 bg-[#F7EFE5]" style="padding-bottom: calc(2rem + var(--sab, 0px));">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
       <div class="flex items-center gap-2 text-[#684045]">
         <i data-lucide="heart" class="w-4 h-4 text-[#B7605F] fill-[#B7605F]"></i>

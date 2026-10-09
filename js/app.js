@@ -214,6 +214,16 @@ function initNavigation() {
         mobileMenu.classList.add('hidden');
       });
     });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.classList.contains('hidden')) {
+        if (!mobileMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+          mobileToggle.setAttribute('aria-expanded', 'false');
+          mobileMenu.classList.add('hidden');
+        }
+      }
+    });
   }
 
   // Scroll to section helper

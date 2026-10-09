@@ -181,20 +181,23 @@ class StardustUniverse {
         this.ctx.lineWidth = 0.8;
         this.ctx.stroke();
 
-        for (let j = i + 1; j < this.fireflies.length; j++) {
-          const f2 = this.fireflies[j];
-          const d2x = f1.x - f2.x;
-          const d2y = f1.y - f2.y;
-          const dist2 = Math.sqrt(d2x * d2x + d2y * d2y);
+        // Draw ambient threads on desktop fine pointer to conserve mobile GPU & battery
+        if (this.width >= 768) {
+          for (let j = i + 1; j < this.fireflies.length; j++) {
+            const f2 = this.fireflies[j];
+            const d2x = f1.x - f2.x;
+            const d2y = f1.y - f2.y;
+            const dist2 = Math.sqrt(d2x * d2x + d2y * d2y);
 
-          if (dist2 < this.config.threadDistance) {
-            const threadAlpha = (1 - dist2 / this.config.threadDistance) * 0.2;
-            this.ctx.beginPath();
-            this.ctx.moveTo(f1.x, f1.y);
-            this.ctx.lineTo(f2.x, f2.y);
-            this.ctx.strokeStyle = `rgba(236, 200, 128, ${threadAlpha})`;
-            this.ctx.lineWidth = 0.5;
-            this.ctx.stroke();
+            if (dist2 < this.config.threadDistance) {
+              const threadAlpha = (1 - dist2 / this.config.threadDistance) * 0.2;
+              this.ctx.beginPath();
+              this.ctx.moveTo(f1.x, f1.y);
+              this.ctx.lineTo(f2.x, f2.y);
+              this.ctx.strokeStyle = `rgba(236, 200, 128, ${threadAlpha})`;
+              this.ctx.lineWidth = 0.5;
+              this.ctx.stroke();
+            }
           }
         }
       }

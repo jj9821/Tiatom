@@ -56,8 +56,11 @@
     }
   }
 
-  // 1. Disable Right-Click Context Menu
+  // 1. Disable Right-Click Context Menu (Permit inside inputs for pasting)
   document.addEventListener('contextmenu', (e) => {
+    if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) {
+      return true;
+    }
     e.preventDefault();
     e.stopPropagation();
     showProtectionAlert();

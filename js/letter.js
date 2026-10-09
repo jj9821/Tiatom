@@ -49,6 +49,15 @@ class RomanticLoveLetter {
       this.replayBtn.addEventListener('click', () => this.restartTypewriter());
     }
 
+    if (this.letterPaper) {
+      this.letterPaper.addEventListener('click', (e) => {
+        if (e.target.closest('#open-my-heart-btn') || e.target.closest('#letter-replay-btn')) return;
+        if (this.isTyping) {
+          this.finishTypewriterInstantly();
+        }
+      });
+    }
+
     if (this.finaleBtn) {
       this.finaleBtn.addEventListener('click', () => this.triggerGrandFinale());
     }
@@ -215,6 +224,23 @@ class RomanticLoveLetter {
     if (this.typeTimeout) clearTimeout(this.typeTimeout);
     this.isTyping = false;
     this.startTypewriter();
+  }
+
+  finishTypewriterInstantly() {
+    if (!this.isTyping) return;
+    if (this.typeTimeout) clearTimeout(this.typeTimeout);
+    this.isTyping = false;
+    this.isFinished = true;
+
+    const paragraphs = this.config.paragraphs || [];
+    const bodyStream = document.getElementById('typewriter-body-stream');
+    const signoffEl = document.getElementById('typewriter-signoff');
+
+    if (bodyStream) {
+      bodyStream.innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
+    }
+    if (signoffEl) signoffEl.style.opacity = '1';
+    if (this.replayBtn) this.replayBtn.classList.remove('hidden');
   }
 
   /* --------------------------------------------------------------------------

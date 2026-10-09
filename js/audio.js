@@ -26,10 +26,10 @@ class RomanticAudioEngine {
     this.playerContainer = document.getElementById('audio-player-widget');
     this.trackTitleEl = document.getElementById('audio-track-title');
 
-    // Create dedicated full-length audio element for tia.mp3
+    // Create dedicated full-length audio element for kunju.mp3
     // Bind to the direct HTML5 audio element
-    this.audioEl = document.getElementById('bg-audio-player') || new Audio('assets/audio/tia.mp3');
-    this.audioEl.src = this.config.customAudioUrl || 'assets/audio/tia.mp3';
+    this.audioEl = document.getElementById('bg-audio-player') || new Audio('assets/audio/kunju.mp3');
+    this.audioEl.src = this.config.customAudioUrl || 'assets/audio/kunju.mp3';
     this.audioEl.loop = true;
     this.audioEl.volume = this.volume;
     this.audioEl.preload = 'auto';
@@ -51,7 +51,7 @@ class RomanticAudioEngine {
     }
 
     if (this.trackTitleEl) {
-      this.trackTitleEl.textContent = this.config.trackTitle || "Our Song (tia.mp3)";
+      this.trackTitleEl.textContent = this.config.trackTitle || "Our Song (kunju.mp3)";
     }
 
     if (this.playBtn) {
