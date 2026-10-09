@@ -1,11 +1,11 @@
 /**
  * ============================================================================
- * 🌌 "REASONS WHY YOU'RE MY UNIVERSE" BENTO GRID & MICRO-INTERACTIONS
+ * 🌌 "REASONS WHY YOU MEAN THE WORLD" BENTO GRID & STICKY NOTES
  * ============================================================================
  * Features:
- * - Interactive Bento Grid with 3D Flip and Frosted Mist Reveals
+ * - Interactive Scrapbook Bento Grid with 3D Flip & Kraft Paper Note Reveals
  * - Floating Heart Bursts at exact cursor/tap location
- * - Dynamic Sweet Affirmations & Whispers Generator
+ * - Handwritten Affirmations & Tea-Stained Whispers Generator
  * ============================================================================
  */
 
@@ -29,7 +29,10 @@ class ReasonsBentoGrid {
   renderBentoCards() {
     if (!this.container) return;
 
-    this.container.innerHTML = this.reasons.map((item) => {
+    this.container.innerHTML = this.reasons.map((item, index) => {
+      const tapeStyles = ['rose', 'gold', 'sage', 'peach'];
+      const tapeClass = tapeStyles[index % tapeStyles.length];
+
       if (item.interactiveType === 'flip') {
         return `
           <div 
@@ -37,116 +40,117 @@ class ReasonsBentoGrid {
             data-id="${item.id}"
             tabindex="0"
             role="button"
-            aria-label="Flip card: ${item.title}. Press Enter or Space to reveal note."
+            aria-label="Flip note: ${item.title}. Press Enter or Space to reveal note."
             aria-expanded="false">
             <div class="bento-flip-inner">
-              <!-- Card Front -->
-              <div class="bento-card-front glass-panel p-6 flex flex-col justify-between overflow-hidden relative">
-                <div class="absolute top-0 right-0 w-36 h-36 bg-gradient-to-bl ${item.accentGradient} rounded-full blur-2xl pointer-events-none"></div>
+              <!-- Card Front: Pinned Kraft / Stationery Note -->
+              <div class="bento-card-front p-6 flex flex-col justify-between overflow-hidden relative bg-white border border-[#D9C5B2] shadow-sm rounded-2xl">
+                <!-- Top washi tape accent -->
+                <div class="washi-tape ${tapeClass} !w-16 !h-4 !top-[-8px]"></div>
 
                 <div>
-                  <div class="flex items-center justify-between mb-4">
-                    <span class="px-3 py-1 rounded-full text-[11px] font-mono tracking-wider bg-rose-500/10 text-rose-300 border border-rose-400/20">
+                  <div class="flex items-center justify-between mb-3 mt-1">
+                    <span class="px-3 py-1 rounded-full text-xs font-handwritten text-sm bg-[#FCF8F2] text-[#B7605F] border border-[#D9C5B2]">
                       ${item.badge}
                     </span>
-                    <div class="w-9 h-9 rounded-full bg-white/5 border border-rose-200/15 flex items-center justify-center text-rose-300 group-hover:scale-110 group-hover:bg-rose-500/20 transition-all">
+                    <div class="w-8 h-8 rounded-full bg-[#F7EFE5] border border-[#D9C5B2] flex items-center justify-center text-[#B7605F] group-hover:scale-110 transition-transform">
                       <i data-lucide="${item.icon}" class="w-4 h-4"></i>
                     </div>
                   </div>
 
-                  <span class="text-xs uppercase tracking-widest text-gray-400 font-mono">${item.category}</span>
-                  <h3 class="font-serif-editorial text-2xl text-rose-100 font-semibold mt-1 mb-2 leading-snug">
+                  <span class="text-xs uppercase tracking-wider text-[#899481] font-mono">${item.category}</span>
+                  <h3 class="font-handwritten text-2xl text-[#684045] font-bold mt-1 mb-2 leading-snug">
                     ${item.title}
                   </h3>
-                  <p class="text-sm text-gray-300/80 font-sans leading-relaxed">
+                  <p class="text-xs sm:text-sm text-[#635356] font-note leading-relaxed">
                     ${item.shortDescription}
                   </p>
                 </div>
 
-                <div class="pt-4 mt-auto flex items-center justify-between text-xs text-rose-300/90 font-medium">
+                <div class="pt-4 mt-auto flex items-center justify-between text-xs text-[#B7605F] font-handwritten text-base">
                   <span class="flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
-                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-rose-400"></i> Tap or press Enter to reveal
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Tap to flip & read
                   </span>
-                  <i data-lucide="arrow-right" class="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity"></i>
+                  <i data-lucide="arrow-right" class="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity"></i>
                 </div>
               </div>
 
-              <!-- Card Back -->
-              <div class="bento-card-back p-6 flex flex-col justify-between overflow-hidden relative">
-                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-to-tr ${item.accentGradient} rounded-full blur-2xl pointer-events-none"></div>
-
+              <!-- Card Back: Handwritten Journal Entry -->
+              <div class="bento-card-back p-6 flex flex-col justify-between overflow-hidden relative bg-[#F7EFE5] border-2 border-dashed border-[#B7605F]/40 shadow-md rounded-2xl">
                 <div>
                   <div class="flex items-center justify-between mb-3">
-                    <span class="text-xs font-mono text-rose-300/80 uppercase tracking-wider flex items-center gap-1">
-                      <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-400 fill-rose-400"></i> From My Heart
+                    <span class="text-xs font-note text-[#B7605F] uppercase tracking-wider flex items-center gap-1">
+                      <i data-lucide="heart" class="w-3.5 h-3.5 text-[#B7605F] fill-[#B7605F]"></i> From Kevin's Heart
                     </span>
-                    <span class="text-[11px] text-gray-400">Tap / Enter to flip back</span>
+                    <span class="text-[11px] font-handwritten text-sm text-[#899481]">Tap to flip back</span>
                   </div>
 
-                  <h4 class="font-serif-editorial text-xl text-rose-200 font-semibold mb-3">
+                  <h4 class="font-handwritten text-2xl text-[#684045] font-bold mb-2">
                     ${item.title}
                   </h4>
 
-                  <p class="text-sm text-rose-100/90 font-sans leading-relaxed italic border-l-2 border-rose-400/40 pl-3">
+                  <p class="text-xs sm:text-sm text-[#2B2225] font-note leading-relaxed italic border-l-2 border-[#B7605F]/50 pl-3">
                     “${item.revealedContent}”
                   </p>
                 </div>
 
-                <div class="pt-4 mt-auto text-right">
-                  <span class="text-xs font-cursive text-rose-200 text-lg">forever yours ♡</span>
+                <div class="pt-3 mt-auto text-right">
+                  <span class="font-cursive text-xl text-[#B7605F]">forever yours, Kevin ♡</span>
                 </div>
               </div>
             </div>
           </div>
         `;
       } else {
-        // Scratch / Mist Reveal Card
+        // Scratch / Frosted Mist Reveal Card
         return `
           <div 
-            class="${item.gridSpan} relative rounded-2xl overflow-hidden glass-panel p-6 min-h-[260px] flex flex-col justify-between group" 
+            class="${item.gridSpan} relative rounded-2xl overflow-hidden bg-white border border-[#D9C5B2] shadow-sm p-6 min-h-[260px] flex flex-col justify-between group cursor-pointer" 
             data-id="${item.id}"
             tabindex="0"
             role="button"
             aria-label="Mist card: ${item.title}. Press Enter or Space to clear mist."
             aria-expanded="false">
+            <div class="washi-tape ${tapeClass} !w-16 !h-4 !top-[-8px]"></div>
+
             <!-- Background Content (Revealed) -->
             <div class="relative z-0 h-full flex flex-col justify-between">
               <div>
-                <div class="flex items-center justify-between mb-3">
-                  <span class="px-3 py-1 rounded-full text-[11px] font-mono tracking-wider bg-rose-500/10 text-rose-300 border border-rose-400/20">
+                <div class="flex items-center justify-between mb-3 mt-1">
+                  <span class="px-3 py-1 rounded-full text-xs font-handwritten text-sm bg-[#FCF8F2] text-[#B7605F] border border-[#D9C5B2]">
                     ${item.badge}
                   </span>
-                  <div class="w-8 h-8 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-300">
+                  <div class="w-8 h-8 rounded-full bg-[#F7EFE5] border border-[#D9C5B2] flex items-center justify-center text-[#B7605F]">
                     <i data-lucide="${item.icon}" class="w-4 h-4"></i>
                   </div>
                 </div>
 
-                <h3 class="font-serif-editorial text-2xl text-rose-100 font-semibold mb-2">
+                <h3 class="font-handwritten text-2xl text-[#684045] font-bold mb-2">
                   ${item.title}
                 </h3>
-                <p class="text-sm text-rose-100/90 leading-relaxed italic border-l-2 border-rose-400/50 pl-3 font-sans">
+                <p class="text-xs sm:text-sm text-[#2B2225] leading-relaxed italic border-l-2 border-[#B7605F]/50 pl-3 font-note">
                   “${item.revealedContent}”
                 </p>
               </div>
 
-              <div class="pt-4 text-xs text-rose-300/70 font-mono flex items-center gap-1.5">
-                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-rose-400"></i> Secret Whispers Unveiled
+              <div class="pt-3 text-xs text-[#899481] font-handwritten text-base flex items-center gap-1.5">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-[#B7605F]"></i> Secret Keepsake Unveiled
               </div>
             </div>
 
-            <!-- Scratch / Frosted Mist Overlay -->
+            <!-- Scratch / Frosted Parchment Overlay -->
             <div class="scratch-overlay p-6 text-center">
-              <div class="w-12 h-12 rounded-full bg-rose-500/15 border border-rose-300/30 flex items-center justify-center text-rose-200 mb-3 animate-pulse">
-                <i data-lucide="sparkles" class="w-6 h-6"></i>
+              <div class="w-12 h-12 rounded-full bg-[#FCF8F2] border border-[#D9C5B2] flex items-center justify-center text-[#B7605F] mb-3 shadow-sm">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
               </div>
-              <h4 class="font-serif-editorial text-xl text-rose-100 font-semibold mb-1">
+              <h4 class="font-handwritten text-2xl text-[#684045] font-bold mb-1">
                 ${item.title}
               </h4>
-              <p class="text-xs text-gray-300 font-sans max-w-xs mb-3">
+              <p class="text-xs text-[#635356] font-note max-w-xs mb-3">
                 ${item.shortDescription}
               </p>
-              <span class="px-4 py-1.5 rounded-full text-xs font-mono bg-white/10 hover:bg-rose-500/20 text-rose-200 border border-rose-200/30 transition-all shadow-sm">
-                ✨ Click or press Enter to clear
+              <span class="px-4 py-1.5 rounded-full text-xs font-handwritten text-sm bg-white hover:bg-[#B7605F] hover:text-white text-[#B7605F] border border-[#D9C5B2] transition-all shadow-sm">
+                ✨ Tap to peel note
               </span>
             </div>
           </div>
@@ -156,65 +160,53 @@ class ReasonsBentoGrid {
 
     if (window.lucide) window.lucide.createIcons();
 
-    // Attach card flip listeners & 3D perspective hover tilt
+    // Attach card click & keyboard flip listeners
     this.container.querySelectorAll('.bento-flip-card').forEach(card => {
-      const inner = card.querySelector('.bento-flip-inner');
-
-      // 3D Cursor Hover Tilt
-      card.addEventListener('mousemove', (e) => {
-        if (card.classList.contains('is-flipped')) return;
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -8;
-        const rotateY = ((x - centerX) / centerX) * 8;
-        if (inner) {
-          inner.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        }
-      });
-
-      card.addEventListener('mouseleave', () => {
-        if (!card.classList.contains('is-flipped') && inner) {
-          inner.style.transform = '';
-        }
-      });
-
-      const toggleFlip = (e) => {
+      const toggleFlip = () => {
         const isFlipped = card.classList.toggle('is-flipped');
-        if (inner) inner.style.transform = '';
-        card.setAttribute('aria-expanded', isFlipped ? 'true' : 'false');
-        this.spawnHeartBurst(e.clientX || e.pageX, e.clientY || e.pageY);
-        if (window.audioEngine) window.audioEngine.playHeartPop();
+        card.setAttribute('aria-expanded', isFlipped);
+        if (window.audioEngine) window.audioEngine.playChime();
       };
 
       card.addEventListener('click', toggleFlip);
       card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          toggleFlip(e);
+          toggleFlip();
         }
       });
     });
 
-    // Attach scratch overlay listeners
+    // Attach scratch overlay reveal listeners
     this.container.querySelectorAll('.scratch-overlay').forEach(overlay => {
-      const parentCard = overlay.closest('[data-id]');
-      const revealMist = (e) => {
+      const revealCard = (e) => {
         e.stopPropagation();
         overlay.classList.add('revealed');
+        const parentCard = overlay.closest('[data-id]');
         if (parentCard) parentCard.setAttribute('aria-expanded', 'true');
-        this.spawnHeartBurst(e.clientX || e.pageX, e.clientY || e.pageY);
-        if (window.audioEngine) window.audioEngine.playChime();
+        if (window.audioEngine) window.audioEngine.playConfettiFanfare();
+
+        if (typeof confetti === 'function') {
+          const rect = overlay.getBoundingClientRect();
+          confetti({
+            particleCount: 25,
+            spread: 45,
+            origin: {
+              x: (rect.left + rect.width / 2) / window.innerWidth,
+              y: (rect.top + rect.height / 2) / window.innerHeight
+            },
+            colors: ['#B7605F', '#F08A78', '#ECC880', '#899481']
+          });
+        }
       };
 
-      overlay.addEventListener('click', revealMist);
-      if (parentCard) {
-        parentCard.addEventListener('keydown', (e) => {
-          if ((e.key === 'Enter' || e.key === ' ') && !overlay.classList.contains('revealed')) {
+      overlay.addEventListener('click', revealCard);
+      const parent = overlay.closest('[data-id]');
+      if (parent) {
+        parent.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            revealMist(e);
+            revealCard(e);
           }
         });
       }
@@ -224,65 +216,57 @@ class ReasonsBentoGrid {
   initWhisperGenerator() {
     if (!this.whisperBtn || !this.whisperTextEl || !this.whispers.length) return;
 
-    let currentIndex = 0;
-    this.whisperTextEl.textContent = `“${this.whispers[0]}”`;
+    let currentIdx = 0;
 
-    this.whisperBtn.addEventListener('click', (e) => {
-      currentIndex = (currentIndex + 1) % this.whispers.length;
-      
+    this.whisperBtn.addEventListener('click', () => {
       this.whisperTextEl.style.opacity = '0';
-      this.whisperTextEl.style.transform = 'translateY(6px)';
+      this.whisperTextEl.style.transform = 'translateY(8px)';
 
       setTimeout(() => {
-        this.whisperTextEl.textContent = `“${this.whispers[currentIndex]}”`;
+        currentIdx = (currentIdx + 1) % this.whispers.length;
+        this.whisperTextEl.textContent = `“${this.whispers[currentIdx]}”`;
         this.whisperTextEl.style.opacity = '1';
         this.whisperTextEl.style.transform = 'translateY(0)';
-      }, 250);
+      }, 200);
 
-      this.spawnHeartBurst(e.clientX, e.clientY);
-      if (window.audioEngine) window.audioEngine.playHeartPop();
+      if (window.audioEngine) window.audioEngine.playChime();
     });
   }
 
   initGlobalHeartBursts() {
-    // Add subtle heart burst on button clicks
-    document.querySelectorAll('.trigger-heart').forEach(el => {
-      el.addEventListener('click', (e) => {
-        this.spawnHeartBurst(e.clientX, e.clientY);
-      });
-    });
-  }
+    let lastBurstTime = 0;
 
-  spawnHeartBurst(x, y) {
-    if (!x || !y) {
-      x = window.innerWidth / 2;
-      y = window.innerHeight / 2;
-    }
+    const createHeartBurst = (x, y) => {
+      const now = Date.now();
+      if (now - lastBurstTime < 180) return;
+      lastBurstTime = now;
 
-    const emojis = ['💖', '✨', '🌸', '💕', '🌹', '💫', '❤️'];
-    const count = 5;
+      const heart = document.createElement('div');
+      heart.className = 'floating-heart-burst';
+      heart.style.left = `${x}px`;
+      heart.style.top = `${y}px`;
 
-    for (let i = 0; i < count; i++) {
-      const el = document.createElement('div');
-      el.className = 'floating-heart-burst';
-      el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-      
-      const dx = (Math.random() - 0.5) * 80;
+      const dx = (Math.random() - 0.5) * 60;
       const rot = (Math.random() - 0.5) * 50;
-      const size = Math.random() * 10 + 16;
+      heart.style.setProperty('--dx', `${dx}px`);
+      heart.style.setProperty('--rot', `${rot}deg`);
 
-      el.style.left = `${x}px`;
-      el.style.top = `${y}px`;
-      el.style.fontSize = `${size}px`;
-      el.style.setProperty('--dx', `${dx}px`);
-      el.style.setProperty('--rot', `${rot}deg`);
+      const emojis = ['♡', '💖', '✨', '🌸', '🎂'];
+      heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      heart.style.fontSize = `${Math.floor(Math.random() * 8 + 18)}px`;
+      heart.style.color = '#B7605F';
 
-      document.body.appendChild(el);
+      document.body.appendChild(heart);
 
       setTimeout(() => {
-        if (el.parentNode) el.parentNode.removeChild(el);
+        if (heart.parentNode) heart.parentNode.removeChild(heart);
       }, 1400);
-    }
+    };
+
+    window.addEventListener('click', (e) => {
+      if (e.target.closest('button') || e.target.closest('a') || e.target.closest('input')) return;
+      createHeartBurst(e.clientX, e.clientY);
+    });
   }
 }
 

@@ -100,7 +100,7 @@ class RomanticLoveLetter {
         particleCount: 35,
         spread: 60,
         origin: { y: 0.65 },
-        colors: ['#e63946', '#f4d0d2', '#fceade', '#ffd700']
+        colors: ['#B7605F', '#ECC880', '#684045', '#F08A78', '#FFF8DC']
       });
     }
 
@@ -135,17 +135,17 @@ class RomanticLoveLetter {
     if (this.replayBtn) this.replayBtn.classList.add('hidden');
 
     const paragraphs = this.config.paragraphs || [];
-    const greeting = this.config.greeting || "My Dearest,";
-    const signOff = this.config.signOff || "Yours Forever,";
-    const signature = this.config.signatureName || "Soulmate";
+    const greeting = this.config.greeting || "To My Dearest Kunju,";
+    const signOff = this.config.signOff || "Always by your side,";
+    const signature = this.config.signatureName || "Kevin ❤️";
 
-    // Build the full narrative text with HTML formatting markers
+    // Build the full narrative text with warm stationery ink styling
     this.typewriterTarget.innerHTML = `
-      <div class="font-serif-editorial text-2xl text-rose-200 font-bold mb-4 tracking-wide">${greeting}</div>
-      <div id="typewriter-body-stream" class="space-y-4 font-serif-editorial text-lg md:text-xl text-rose-100/90 leading-relaxed"></div>
+      <div class="font-handwritten text-3xl text-[#684045] font-bold mb-4 tracking-wide">${greeting}</div>
+      <div id="typewriter-body-stream" class="space-y-4 font-note text-base md:text-lg text-[#2B2225] leading-relaxed"></div>
       <div id="typewriter-signoff" class="mt-8 pt-4 opacity-0 transition-opacity duration-700">
-        <div class="font-serif-editorial text-rose-300 text-lg italic">${signOff}</div>
-        <div class="font-cursive text-3xl md:text-4xl text-gradient-gold mt-1">${signature}</div>
+        <div class="font-handwritten text-2xl text-[#899481] italic">${signOff}</div>
+        <div class="font-cursive text-3xl md:text-4xl text-[#B7605F] mt-1">${signature}</div>
       </div>
     `;
 

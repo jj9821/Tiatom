@@ -1,20 +1,20 @@
 /**
  * ============================================================================
- * 📸 42-ITEM HYBRID BENTO-MASONRY GALLERY & CINEMA LIGHTBOX ENGINE
+ * 📸 47-ITEM SCRAPBOOK POLAROID GALLERY & ALBUM LIGHTBOX (Kevin & Kunju)
  * ============================================================================
  * Features:
- * - 42 structured items (photos and HD videos)
- * - IntersectionObserver for lazy loading & auto-pausing off-screen videos
- * - Inline video hover preview & muted viewport playback
- * - Cinema Lightbox modal supporting both photo zoom & video playback
- * - Category filter chips ("All", "The Beginning", "My Whole World", "Adventures", "Unfiltered", "Favorites")
- * - Scroll milestone heart burst triggers & final gallery completion celebration
+ * - 47 authentic photos from Pala school days (Carmel & Chavara), road trips, and memories
+ * - Organic tilted Polaroid frames with washi tape ribbons (rose, sage, gold, peach)
+ * - Handwritten titles (Caveat) and captions (Playpen Sans)
+ * - Category filter tabs & vintage scrapbook album lightbox
  * ============================================================================
  */
 
 class MediaGalleryEngine {
   constructor() {
-    this.mediaItems = window.MEDIA_ITEMS || [];
+    this.mediaItems = (typeof window !== 'undefined' && window.MEDIA_ITEMS && window.MEDIA_ITEMS.length)
+      ? window.MEDIA_ITEMS
+      : (typeof MEDIA_ITEMS !== 'undefined' ? MEDIA_ITEMS : []);
     this.currentFilter = 'all';
     this.currentIndex = 0;
     
@@ -40,24 +40,24 @@ class MediaGalleryEngine {
     if (!this.filterContainer) return;
 
     const filters = [
-      { id: 'all', label: 'All 42 Memories ✨', count: this.mediaItems.length },
-      { id: 'beginning', label: 'Loved You Before We Began 🌙', count: this.mediaItems.filter(m => m.tag === 'beginning').length },
-      { id: 'whole-world', label: 'My Whole World 💖', count: this.mediaItems.filter(m => m.tag === 'whole-world').length },
-      { id: 'adventures', label: 'Our Adventures 🚗', count: this.mediaItems.filter(m => m.tag === 'adventures').length },
-      { id: 'unfiltered', label: 'Unfiltered & Candid ☕', count: this.mediaItems.filter(m => m.tag === 'unfiltered').length },
+      { id: 'all', label: `All ${this.mediaItems.length} Memories ✨`, count: this.mediaItems.length },
+      { id: 'school-days', label: '8th Grade Spark 🎒', count: this.mediaItems.filter(m => m.tag === 'school-days').length },
+      { id: 'best-buds', label: 'Best Buds & Banter ☕', count: this.mediaItems.filter(m => m.tag === 'best-buds').length },
+      { id: 'adventures', label: 'Adventures & Drives 🚗', count: this.mediaItems.filter(m => m.tag === 'adventures').length },
+      { id: 'unfiltered', label: 'Candid & Unfiltered 🍕', count: this.mediaItems.filter(m => m.tag === 'unfiltered').length },
       { id: 'favorites', label: 'Forever Keepsakes 👑', count: this.mediaItems.filter(m => m.tag === 'favorites').length }
     ];
 
     this.filterContainer.innerHTML = filters.map(f => `
       <button 
         data-filter="${f.id}"
-        class="filter-chip px-5 py-2 rounded-full text-xs font-mono tracking-wider transition-all duration-300 flex items-center gap-2 ${
+        class="filter-chip px-4 py-1.5 rounded-full text-xs font-handwritten text-base tracking-wide transition-all duration-300 flex items-center gap-2 ${
           this.currentFilter === f.id 
-            ? 'bg-rose-500/25 text-rose-100 border border-rose-300/50 shadow-md shadow-rose-500/20 scale-105' 
-            : 'bg-white/5 text-gray-400 hover:text-rose-200 hover:bg-white/10 border border-white/10'
+            ? 'bg-[#B7605F] text-white shadow-md shadow-[#B7605F]/30 scale-105 border border-[#8B3F3E]' 
+            : 'bg-white text-[#635356] hover:text-[#B7605F] hover:bg-[#F7EFE5] border border-[#D9C5B2] shadow-sm'
         }">
         <span>${f.label}</span>
-        <span class="text-[10px] opacity-70 px-1.5 py-0.5 rounded-full bg-black/30">${f.count}</span>
+        <span class="text-[11px] px-1.5 py-0.2 rounded-full ${this.currentFilter === f.id ? 'bg-black/20 text-white' : 'bg-[#FCF8F2] text-[#899481] border border-[#D9C5B2]'}">${f.count}</span>
       </button>
     `).join('');
 
@@ -91,15 +91,11 @@ class MediaGalleryEngine {
       entries.forEach(entry => {
         const video = entry.target;
         if (entry.isIntersecting) {
-          // Play video muted when in view
           const playPromise = video.play();
           if (playPromise !== undefined) {
-            playPromise.catch(() => {
-              // Autoplay policy fallback
-            });
+            playPromise.catch(() => {});
           }
         } else {
-          // Pause video when scrolled away
           video.pause();
         }
       });
@@ -116,58 +112,66 @@ class MediaGalleryEngine {
 
     if (items.length === 0) {
       this.gridContainer.innerHTML = `
-        <div class="col-span-full py-20 text-center text-rose-200/60 font-serif-editorial text-2xl">
-          No memories found in this constellation.
+        <div class="col-span-full py-20 text-center text-[#B7605F] font-handwritten text-3xl">
+          No polaroid entries found in this journal chapter.
         </div>
       `;
       return;
     }
 
+    // Organic rotations and washi tape patterns
+    const rotations = [-2.0, 1.8, -1.2, 2.4, -2.8, 1.4, -1.9, 2.2];
+    const tapeTypes = ['rose', 'gold', 'sage', 'peach', 'gingham'];
+
     this.gridContainer.innerHTML = items.map((item, index) => {
-      // Dynamic aspect ratio class matching intrinsic photo/video orientation
       let aspectClass = 'aspect-[3/4]';
       if (item.aspectRatio === 'portrait') aspectClass = 'aspect-[3/4] sm:aspect-[4/5]';
       if (item.aspectRatio === 'landscape') aspectClass = 'aspect-[16/10] sm:aspect-[16/11]';
       if (item.aspectRatio === 'square') aspectClass = 'aspect-square';
 
       const isVideo = item.type === 'video';
+      const rot = rotations[index % rotations.length];
+      const tapeClass = tapeTypes[index % tapeTypes.length];
 
       return `
         <div 
-          class="media-card tilt-card break-inside-avoid w-full mb-6 group cursor-pointer"
+          class="media-card polaroid-card break-inside-avoid w-full mb-8 group cursor-pointer"
           data-id="${item.id}"
           data-index="${index}"
+          style="transform: rotate(${rot}deg);"
           tabindex="0"
           role="button"
           aria-label="View memory #${item.id}: ${item.title}. Press Enter to expand.">
           
-          <!-- Top Interactive Frosted Glass Action Buttons -->
-          <div class="absolute top-3 left-3 right-3 flex items-center justify-between z-20 pointer-events-auto gap-2">
+          <!-- Washi Tape Ribbon Strip -->
+          <div class="washi-tape ${tapeClass}"></div>
+
+          <!-- Top Interactive Ribbon Action Tabs -->
+          <div class="absolute top-2 left-2 right-2 flex items-center justify-between z-20 pointer-events-auto gap-2">
             <button 
               type="button"
-              class="card-song-btn glass-pill px-2.5 py-1 rounded-full text-[10px] font-mono text-rose-200 hover:text-white flex items-center gap-1.5 border border-white/20 bg-black/50 backdrop-blur-md transition-all hover:scale-105 active:scale-95 shadow-md shadow-black/40 touch-target-44"
+              class="card-song-btn px-2.5 py-0.5 rounded-full text-[10px] font-handwritten text-sm text-[#4A272C] bg-[#FCF8F2]/90 hover:bg-[#B7605F] hover:text-white flex items-center gap-1 border border-[#D9C5B2] shadow-sm transition-all hover:scale-105 active:scale-95 touch-target-44"
               data-card-id="${item.id}"
               aria-label="Play Our Song for ${item.title}"
               title="Tap for Our Song">
-              <i data-lucide="music" class="w-3 h-3 text-rose-300"></i>
+              <i data-lucide="music" class="w-3 h-3 text-[#B7605F]"></i>
               <span>Our Song</span>
             </button>
             
             <button 
               type="button"
-              class="card-voice-btn glass-pill px-2.5 py-1 rounded-full text-[10px] font-mono text-amber-200 hover:text-white flex items-center gap-1.5 border border-white/20 bg-black/50 backdrop-blur-md transition-all hover:scale-105 active:scale-95 shadow-md shadow-black/40 touch-target-44"
+              class="card-voice-btn px-2.5 py-0.5 rounded-full text-[10px] font-handwritten text-sm text-[#4A272C] bg-[#FCF8F2]/90 hover:bg-[#899481] hover:text-white flex items-center gap-1 border border-[#D9C5B2] shadow-sm transition-all hover:scale-105 active:scale-95 touch-target-44"
               data-card-id="${item.id}"
               aria-label="Hear voice note for ${item.title}"
               title="Click to Hear My Voice">
-              <i data-lucide="mic" class="w-3 h-3 text-amber-300"></i>
-              <span>Hear Voice</span>
+              <i data-lucide="mic" class="w-3 h-3 text-[#899481]"></i>
+              <span>Voice Note</span>
             </button>
           </div>
 
-          <!-- Media Container with Dynamic Framing -->
-          <div class="relative w-full ${aspectClass} overflow-hidden bg-black/60">
+          <!-- Media Container with Polaroid Photo Border -->
+          <div class="relative w-full ${aspectClass} overflow-hidden rounded bg-[#F7EFE5] border border-[#E8DACB]">
             ${isVideo ? `
-              <!-- HD Video Tile -->
               <video 
                 class="media-thumb inline-video w-full h-full object-cover"
                 src="${item.src}"
@@ -179,52 +183,44 @@ class MediaGalleryEngine {
                 x5-playsinline="true"
                 preload="none">
               </video>
-
-              <!-- Video Badge Overlay -->
-              <div class="video-badge">
-                <span class="video-play-pulse"></span>
-                <span>HD REEL</span>
-              </div>
-
-              <div class="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:scale-110 transition-transform">
-                <div class="w-11 h-11 rounded-full bg-black/50 backdrop-blur-md border border-rose-300/40 flex items-center justify-center text-rose-100 shadow-lg group-hover:bg-rose-500/40 group-hover:border-rose-300 transition-all">
-                  <i data-lucide="play" class="w-4.5 h-4.5 fill-rose-100 ml-0.5"></i>
-                </div>
+              <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-full bg-black/60 text-white font-mono text-[9px] flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#E63946] animate-pulse"></span>
+                <span>REEL</span>
               </div>
             ` : `
-              <!-- High-Resolution Photo Tile -->
               <img 
                 src="${item.src}" 
                 alt="${item.title}"
                 loading="lazy"
                 decoding="async"
-                class="media-thumb w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                class="media-thumb w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                onerror="if(!this.dataset.retry){this.dataset.retry='1';if(this.src.includes('assets/photos/tia/')){this.src=this.src.replace('assets/photos/tia/','tia/');}else{this.src='tia/'+this.getAttribute('src').split('/').pop();}}"
               />
             `}
 
-            <!-- Hover Quick Info Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 pointer-events-none">
-              <span class="text-[10px] font-mono uppercase tracking-widest text-rose-300/90 mb-1 flex items-center gap-1">
-                <i data-lucide="maximize-2" class="w-3 h-3"></i> Expand Cinema View
-              </span>
+            <!-- Hover Quick View Icon -->
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+              <div class="w-10 h-10 rounded-full bg-white/90 text-[#684045] flex items-center justify-center shadow-lg">
+                <i data-lucide="maximize-2" class="w-4 h-4"></i>
+              </div>
             </div>
           </div>
 
-          <!-- Flush Personalized Metadata Bar with Embedded Captions -->
-          <div class="p-4 bg-gradient-to-b from-[#161324] to-[#100d1c] border-t border-rose-200/10 flex flex-col gap-1.5">
-            <div class="flex items-center justify-between text-[10px] font-mono uppercase text-rose-300/70">
-              <span class="flex items-center gap-1.5">
-                <i data-lucide="${isVideo ? 'video' : 'camera'}" class="w-3 h-3 text-rose-400"></i>
+          <!-- Handwritten Polaroid Bottom Margin -->
+          <div class="pt-3 pb-1 px-1 flex flex-col gap-1 text-left">
+            <div class="flex items-center justify-between text-[11px] font-note text-[#899481]">
+              <span class="flex items-center gap-1">
+                <i data-lucide="${isVideo ? 'video' : 'camera'}" class="w-3 h-3 text-[#B7605F]"></i>
                 ${item.tag.replace('-', ' ')}
               </span>
-              <span class="text-gray-400 font-mono text-[9px] px-1.5 py-0.5 rounded bg-black/40 border border-white/5">#${item.id}</span>
+              <span class="font-mono text-[10px] text-[#9B878A]">#${item.id}</span>
             </div>
 
-            <h3 class="font-serif-editorial text-base text-rose-100 font-medium group-hover:text-rose-200 transition-colors leading-tight">
+            <h3 class="font-handwritten text-2xl text-[#684045] font-bold group-hover:text-[#B7605F] transition-colors leading-tight">
               ${item.title}
             </h3>
 
-            <p class="text-xs text-gray-300 font-sans italic leading-relaxed pt-0.5 border-t border-white/5">
+            <p class="font-note text-xs text-[#635356] leading-relaxed pt-0.5 border-t border-[#F2DEC7]">
               “${item.caption}”
             </p>
           </div>
@@ -233,11 +229,6 @@ class MediaGalleryEngine {
     }).join('');
 
     if (window.lucide) window.lucide.createIcons();
-
-    // Reattach Tilt engine
-    if (window.tiltEngine) {
-      window.tiltEngine.attachElements();
-    }
 
     // Observe videos for viewport auto-play
     if (this.videoObserver) {
@@ -254,8 +245,8 @@ class MediaGalleryEngine {
         if (window.audioEngine) {
           window.audioEngine.playCardSong(id);
         }
-        btn.classList.add('scale-110', 'bg-rose-500/40');
-        setTimeout(() => btn.classList.remove('scale-110', 'bg-rose-500/40'), 500);
+        btn.classList.add('scale-110');
+        setTimeout(() => btn.classList.remove('scale-110'), 500);
       });
     });
 
@@ -266,12 +257,12 @@ class MediaGalleryEngine {
         if (window.audioEngine) {
           window.audioEngine.playVoiceNote(id);
         }
-        btn.classList.add('scale-110', 'bg-amber-500/40');
-        setTimeout(() => btn.classList.remove('scale-110', 'bg-amber-500/40'), 500);
+        btn.classList.add('scale-110');
+        setTimeout(() => btn.classList.remove('scale-110'), 500);
       });
     });
 
-    // Attach card click & keyboard handlers to open Cinema Lightbox
+    // Attach card click & keyboard handlers to open Lightbox
     this.gridContainer.querySelectorAll('.media-card').forEach(card => {
       const openCard = (e) => {
         if (e.target.closest('.card-song-btn') || e.target.closest('.card-voice-btn')) return;
@@ -309,7 +300,7 @@ class MediaGalleryEngine {
       }
     });
 
-    // Touch Swipe Gestures for Mobile (Next/Prev/Close)
+    // Touch Swipe Gestures for Mobile
     let touchStartX = 0;
     let touchStartY = 0;
     let touchEndX = 0;
@@ -331,16 +322,14 @@ class MediaGalleryEngine {
       const diffY = touchEndY - touchStartY;
 
       if (Math.abs(diffX) > Math.abs(diffY)) {
-        // Horizontal Swipe
         if (diffX < -45) {
-          this.nextItem(); // Swipe left -> Next
+          this.nextItem();
         } else if (diffX > 45) {
-          this.prevItem(); // Swipe right -> Previous
+          this.prevItem();
         }
       } else {
-        // Vertical Swipe
         if (diffY > 80) {
-          this.closeCinemaLightbox(); // Swipe down -> Close
+          this.closeCinemaLightbox();
         }
       }
     };
@@ -390,11 +379,18 @@ class MediaGalleryEngine {
       if (imgEl) {
         imgEl.classList.remove('hidden');
         imgEl.src = item.src;
+        imgEl.onerror = function() {
+          if (!this.dataset.retry) {
+            this.dataset.retry = '1';
+            if (this.src.includes('assets/photos/tia/')) this.src = this.src.replace('assets/photos/tia/', 'tia/');
+            else this.src = 'tia/' + this.getAttribute('src').split('/').pop();
+          }
+        };
       }
     }
 
     if (titleEl) titleEl.textContent = item.title;
-    if (tagEl) tagEl.textContent = `Era: ${item.tag.replace('-', ' ').toUpperCase()}`;
+    if (tagEl) tagEl.textContent = `Journal Chapter: ${item.tag.replace('-', ' ').toUpperCase()}`;
     if (captionEl) captionEl.textContent = item.caption;
     if (counterEl) counterEl.textContent = `${this.currentIndex + 1} / ${this.mediaItems.length}`;
 
@@ -428,7 +424,6 @@ class MediaGalleryEngine {
   }
 
   initScrollMilestones() {
-    // Trigger celebratory confetti / hearts when user reaches bottom of gallery
     const triggerEl = document.getElementById('gallery-completion-trigger');
     if (!triggerEl || !('IntersectionObserver' in window)) return;
 
@@ -454,7 +449,7 @@ class MediaGalleryEngine {
         particleCount: 70,
         spread: 90,
         origin: { y: 0.8 },
-        colors: ['#F4D0D2', '#E8A598', '#FCEADE', '#FF6B8B', '#FFD700']
+        colors: ['#B7605F', '#F08A78', '#ECC880', '#899481', '#FCF8F2']
       });
     }
   }
@@ -462,4 +457,4 @@ class MediaGalleryEngine {
 
 // Attach globally
 window.MediaGalleryEngine = MediaGalleryEngine;
-window.MemoryTimeline = MediaGalleryEngine; // Backwards compatible alias
+window.MemoryTimeline = MediaGalleryEngine;

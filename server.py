@@ -51,6 +51,7 @@ def run_server():
         '.webp': 'image/webp',
     })
 
+    socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(("", port), Handler) as httpd:
         print("=" * 60)
         print(" 💖 DIGITAL SANCTUARY - LOCAL PREVIEW SERVER")

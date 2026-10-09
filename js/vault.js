@@ -11,10 +11,10 @@
 class MilestoneAndVault {
   constructor() {
     this.config = window.SANCTUARY_CONFIG || {};
-    // Milestone start: March 14, 2023 00:00:00 (14/03/2023)
+    // Milestone start: 8th Standard Spark Baseline (approx June 1, 2018)
     this.anniversary = (this.config.anniversaryDate instanceof Date)
       ? this.config.anniversaryDate
-      : new Date(2023, 2, 14, 0, 0, 0);
+      : new Date(2018, 5, 1, 0, 0, 0);
     this.vaultConfig = this.config.secretVault || {};
     
     this.cachedDigits = { days: '', hours: '', minutes: '', seconds: '' };
@@ -136,7 +136,7 @@ class MilestoneAndVault {
       }
 
       const val = inputEl.value.trim().toLowerCase();
-      const validCodes = (this.vaultConfig.validCodes || ['140323', '1402', 'bebo', 'forever']).map(c => c.toLowerCase());
+      const validCodes = (this.vaultConfig.validCodes || ['kunju', 'tia', 'kevin', 'birthday', '8thstandard', '8th', 'bestfriend', 'forever', '123987', '140323']).map(c => c.toLowerCase());
 
       if (validCodes.includes(val)) {
         // Unlock Vault!
@@ -193,7 +193,7 @@ class MilestoneAndVault {
           if (errorEl) {
             errorEl.classList.remove('hidden');
             const remaining = this.maxAttempts - this.failedAttempts;
-            errorEl.textContent = `That's not the key, my love! (${remaining} attempts left) Hint: Special date 140323 or nickname 💖`;
+            errorEl.textContent = `That's not the key, Kunju! (${remaining} attempts left) Hint: kunju, kevin, 8th standard, or birthday ✨`;
           }
         }
 

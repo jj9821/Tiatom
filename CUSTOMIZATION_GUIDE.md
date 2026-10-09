@@ -1,65 +1,53 @@
-# 💖 Digital Sanctuary Customization Guide (Maria & Bebo Edition)
+# 💖 Scrapbook & Digital Journal Customization Guide (Kunju & Kevin Edition)
 
-This guide walks you through customizing and adding photos, videos, and narrative memories to Maria's digital sanctuary.
+This guide walks you through customizing and adding photos, memories, and personal notes to Kunju's birthday scrapbook and digital journal.
 
 ---
 
 ## 📸 Media Data Structure (`memories.ts` & `mediaData.js`)
 
-All 42 memories and videos are managed in **[`memories.ts`](file:///home/jo_vellappani/bebo/memories.ts)** (TypeScript) and **[`mediaData.js`](file:///home/jo_vellappani/bebo/mediaData.js)** (Browser runtime).
+All 47 memories are managed in **[`memories.ts`](file:///home/jo_vellappani/bebo/memories.ts)** (TypeScript) and **[`mediaData.js`](file:///home/jo_vellappani/bebo/mediaData.js)** (Browser runtime).
 
 ### Structure of a Media Item:
-```typescript
-interface MediaItem {
-  id: number;
-  type: 'image' | 'video';
-  src: string;          // Path to image or MP4 video URL
-  poster?: string;       // Thumbnail image for video preview
-  title: string;         // Headline title
-  caption: string;       // Sentimental description / memory story
-  tag: string;           // 'beginning' | 'whole-world' | 'adventures' | 'unfiltered' | 'favorites'
-  aspectRatio: 'portrait' | 'landscape' | 'square';
-}
-```
-
-### Adding New Photos or Videos:
-1. Save your photos in `assets/photos/` (e.g. `assets/photos/my_photo.jpg`).
-2. Save short video clips in `assets/videos/` (e.g. `assets/videos/our_reel.mp4`).
-3. Update `mediaData.js` (and `memories.ts`):
 ```javascript
 {
   id: 1,
-  type: 'video',
-  src: 'assets/videos/our_reel.mp4',
-  poster: 'assets/photos/my_photo.jpg',
-  title: 'Our Spontaneous Road Trip',
-  caption: 'Driving with the windows down, singing at the top of our lungs...',
-  tag: 'adventures',
-  aspectRatio: 'portrait'
+  type: "image",
+  src: "assets/photos/tia/tia_01.jpeg",
+  title: "The Unspoken Fascination ✨",
+  caption: "Even when you are just looking away lost in thought, you have this effortless grace...",
+  tag: "favorites", // 'school-days' | 'best-buds' | 'adventures' | 'unfiltered' | 'favorites'
+  aspectRatio: "portrait" // 'portrait' | 'landscape' | 'square'
 }
 ```
 
----
-
-## 📖 Storytelling Spotlight Chapters
-
-In [`index.html`](file:///home/jo_vellappani/bebo/index.html), you'll find two dedicated narrative chapters:
-1. **Chapter I: "Loved You Before We Ever Began"** (`#story-beginning`): Captures the early unspoken realization of falling for Maria before day one.
-2. **Chapter II: "My Whole World"** (`#story-whole-world`): Celebrates everyday magic with Bebo (morning glasses, café sunshine, dosa breakfast dates).
-
-You can easily adjust the text directly in the HTML or in `config.js`!
+### Adding New Photos:
+1. Save your photos in `assets/photos/tia/` or `assets/photos/kunju/` (e.g. `tia_48.jpeg`).
+2. Add the entry to `mediaData.js` and `memories.ts`.
 
 ---
 
-## 🗝️ Secret Vault Passcode
+## 📖 Storytelling Diary Chapters
 
-- **Vault Key**: `140323` (March 14, 2023)
-- Also unlocks with: `bebo`, `maria`, `forever`, `love`
+In [`index.html`](file:///home/jo_vellappani/bebo/index.html):
+1. **Chapter I: "The Day Time Stood Still in 8th Standard 🎒"** (`#story-beginning`): Captures the Pala days (Carmel & Chavara) with dual polaroids (`tia_19.jpeg` on stage & `tia_47.jpeg` in uniform).
+2. **Chapter II: "Best Buds, Everyday Magic & You ☕"** (`#story-whole-world`): Celebrates late-night banter outside Blossom, car rides, and Kevin's heartfelt confession.
 
 ---
 
-## 🌐 Deploying to the Web
+## 🗝️ Secret Journal Compartment Keys
 
-- **Vercel**: Import the GitHub repo → Click **Deploy**.
-- **Netlify**: Drag & drop the `bebo` folder to [netlify.com/drop](https://app.netlify.com/drop).
-- **GitHub Pages**: Go to Repo Settings → Pages → Deploy from `main` branch.
+- Keys: `kunju`, `tia`, `kevin`, `birthday`, `8thstandard`, `8th`, `bestfriend`, `forever`, `123987`
+- Cover Lock Screen PIN: `123987`
+
+---
+
+## 🎨 Color Palette Reference
+
+- Warm Cream Background: `#FCF8F2`
+- Aged Journal Paper: `#F7EFE5`
+- Primary Terracotta: `#B7605F`
+- Soft Peach: `#F08A78`
+- Vintage Deep Maroon: `#684045`
+- Sage Green: `#899481`
+- Earthy Charcoal Ink: `#2B2225`

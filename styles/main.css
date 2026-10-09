@@ -1,23 +1,56 @@
 /* ==========================================================================
-   ✨ MIDNIGHT LUXURY ROMANCE - CORE DESIGN SYSTEM & STYLES
+   📖 KUNJU'S SCRAPBOOK & DIGITAL JOURNAL - CORE DESIGN SYSTEM & STYLES
+   ==========================================================================
+   A heartwarming, cozy, and nostalgic handcrafted scrapbook aesthetic:
+   - Warm paper textures, crinkled journal pages, and warm off-white creams
+   - Terracotta, soft peach, vintage maroon, and sage green accents
+   - Polaroid snapshots with wide white borders, organic tilt, & washi tape
+   - Google Fonts: Caveat, Indie Flower, Playpen Sans, Plus Jakarta Sans, Lora
+   - Handcrafted leather/linen journal lockscreen cover with brass lock
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Indie+Flower&family=Playpen+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Sacramento&display=swap');
 @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
 
 :root {
-  /* Color Palette */
-  --bg-obsidian: #06060c;
-  --bg-midnight: #0a0a14;
-  --bg-amethyst: #120d1c;
-  --bg-velvet: #0e0e18;
+  /* 🎨 Scrapbook & Digital Journal Color Palette */
+  --bg-paper: #FCF8F2;        /* Crinkled warm cream main backdrop */
+  --bg-journal: #F7EFE5;      /* Aged journal paper for cards & diary pages */
+  --bg-cover: #5A2D33;        /* Vintage deep leather maroon */
+  --bg-cover-warm: #733940;   /* Leather cover warm gradient stop */
+  --bg-cover-inner: #451F24;  /* Inner spine shadow */
+  
+  --parchment: #F9EAD9;       /* Stationery, love letter envelope, vellum */
+  --parchment-deep: #F3DECB;  /* Folded paper crease & shading */
+  --kraft: #D9C5B2;           /* Kraft paper tags, bookmarks, tape backing */
+  --kraft-dark: #BFAB98;      /* Kraft card border & drop shadows */
 
-  --rose-blush: #f4d0d2;
-  --coral-dusty: #e8a598;
-  --champagne: #fceade;
-  --rose-gold: #e5b299;
-  --gold-warm: #f6d8ae;
-  --crimson-glow: #e63946;
+  --terracotta: #B7605F;      /* Primary warm accent, stamps, bookmarks */
+  --terracotta-dark: #9A4C4B;
+  --peach: #F08A78;           /* Coral & peach highlights, warm glowing embers */
+  --peach-soft: #FFB2A6;
+  --peach-tint: #FFF0ED;
+
+  --maroon: #684045;          /* Deep vintage maroon, wax seal, headers */
+  --maroon-dark: #47262A;
+
+  --sage: #899481;            /* Botanical stickers, school badges, calm accent */
+  --sage-light: #B4BA9A;
+  --sage-tint: #EFF4ED;
+
+  --charcoal: #2B2225;        /* Earthy charcoal fountain pen ink for main text */
+  --sepia: #635356;           /* Soft sepia pencil lead for captions & dates */
+  --sepia-light: #948083;     /* Muted metadata notes & rulers */
+  
+  --brass: #C89D56;           /* Antique brass hardware, padlocks, eyelets */
+  --brass-dark: #8F6927;
+
+  /* Washi Tape Colors */
+  --tape-rose: rgba(240, 138, 120, 0.72);
+  --tape-sage: rgba(137, 148, 129, 0.72);
+  --tape-gold: rgba(222, 184, 135, 0.75);
+  --tape-peach: rgba(255, 178, 166, 0.78);
+  --tape-gingham: rgba(183, 96, 95, 0.65);
 
   /* Easing Curves Tokens */
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -25,19 +58,20 @@
   --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* Glassmorphism Tokens */
-  --glass-bg: rgba(18, 16, 28, 0.65);
-  --glass-bg-hover: rgba(26, 22, 40, 0.8);
-  --glass-border: rgba(244, 208, 210, 0.12);
-  --glass-border-hover: rgba(244, 208, 210, 0.35);
-  --glass-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.6), 0 0 30px 2px rgba(232, 165, 152, 0.05);
+  /* Paper Drop Shadows */
+  --shadow-paper: 0 4px 6px -1px rgba(43, 34, 37, 0.07), 0 12px 24px -4px rgba(43, 34, 37, 0.1);
+  --shadow-paper-lg: 0 10px 25px -3px rgba(43, 34, 37, 0.12), 0 24px 48px -4px rgba(43, 34, 37, 0.14);
+  --shadow-polaroid: 0 6px 12px -2px rgba(43, 34, 37, 0.1), 0 18px 36px -6px rgba(43, 34, 37, 0.16);
+  --shadow-polaroid-hover: 0 14px 28px -4px rgba(43, 34, 37, 0.18), 0 28px 56px -8px rgba(43, 34, 37, 0.24);
 
   /* Typography */
-  --font-sf-pro: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-serif-editorial: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-  --font-serif-display: 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-cursive: 'Great Vibes', 'Sacramento', cursive;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-handwritten: 'Caveat', cursive;
+  --font-journal: 'Indie Flower', cursive;
+  --font-note: 'Playpen Sans', cursive, sans-serif;
+  --font-cursive: 'Sacramento', cursive;
+  --font-sf-pro: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* --------------------------------------------------------------------------
@@ -53,12 +87,13 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
+  background-color: var(--bg-paper);
 }
 
 body {
-  background-color: var(--bg-obsidian);
-  color: #f3f3f7;
+  background-color: var(--bg-paper);
+  color: var(--charcoal);
   font-family: var(--font-sans);
   overflow-x: hidden;
   position: relative;
@@ -66,19 +101,33 @@ body {
   line-height: 1.6;
 }
 
-::selection {
-  background: rgba(232, 165, 152, 0.35);
-  color: #ffffff;
+/* Authentic Paper Grain & Crinkle Texture Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(rgba(104, 64, 69, 0.05) 1px, transparent 1px),
+    radial-gradient(rgba(183, 96, 95, 0.035) 1px, transparent 1px);
+  background-size: 28px 28px, 44px 44px;
+  background-position: 0 0, 14px 14px;
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* Accessible Focus Rings */
+::selection {
+  background: rgba(240, 138, 120, 0.35);
+  color: var(--charcoal);
+}
+
+/* Accessible Focus Rings with Terracotta Glow */
 button:focus-visible, 
 a:focus-visible, 
 input:focus-visible, 
 div[tabindex="0"]:focus-visible {
-  outline: 2px solid var(--rose-blush) !important;
+  outline: 2px solid var(--terracotta) !important;
   outline-offset: 3px !important;
-  box-shadow: 0 0 16px rgba(244, 208, 210, 0.5) !important;
+  box-shadow: 0 0 12px rgba(183, 96, 95, 0.45) !important;
 }
 
 /* Minimum 44x44px Touch Targets */
@@ -87,190 +136,317 @@ div[tabindex="0"]:focus-visible {
   min-height: 44px;
 }
 
-/* --------------------------------------------------------------------------
-   ✨ IntersectionObserver Scroll-Triggered Reveals
-   -------------------------------------------------------------------------- */
-.reveal-on-scroll {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.85s var(--ease-smooth), transform 0.85s var(--ease-smooth);
-}
-
-.reveal-stagger > * {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.75s var(--ease-smooth), transform 0.75s var(--ease-smooth);
-}
-
-/* Custom Smooth Scrollbar */
+/* Custom Smooth Warm Paper Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 9px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-obsidian);
+  background: var(--bg-journal);
+  border-left: 1px solid rgba(217, 197, 178, 0.4);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(244, 208, 210, 0.2);
+  background: var(--kraft);
   border-radius: 9999px;
-  border: 2px solid var(--bg-obsidian);
+  border: 2px solid var(--bg-journal);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(244, 208, 210, 0.4);
+  background: var(--terracotta);
 }
 
 /* --------------------------------------------------------------------------
-   Typography Utilities
+   Typography Utility Classes
    -------------------------------------------------------------------------- */
+.font-handwritten {
+  font-family: var(--font-handwritten);
+}
+.font-journal {
+  font-family: var(--font-journal);
+}
+.font-note {
+  font-family: var(--font-note);
+}
 .font-serif-editorial {
-  font-family: var(--font-serif-editorial);
+  font-family: var(--font-serif);
 }
-
-.font-serif-display {
-  font-family: var(--font-serif-display);
-}
-
 .font-cursive {
   font-family: var(--font-cursive);
 }
 
-/* Gradient Text Shimmers */
-.text-gradient-rose {
-  background: linear-gradient(135deg, #ffffff 0%, var(--rose-blush) 40%, var(--coral-dusty) 80%, var(--champagne) 100%);
+/* Scrapbook Hand-Penned Text Accents */
+.text-terracotta {
+  color: var(--terracotta);
+}
+.text-maroon {
+  color: var(--maroon);
+}
+.text-sage {
+  color: var(--sage);
+}
+.text-sepia {
+  color: var(--sepia);
+}
+
+/* Soft Warm Headings & Gradient Foil Texts */
+.text-gradient-rose,
+.text-gradient-foil {
+  background: linear-gradient(135deg, var(--maroon) 0%, var(--terracotta) 45%, var(--peach) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, #ffffff 10%, var(--champagne) 50%, var(--rose-gold) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-subtle {
-  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
+  background: linear-gradient(135deg, #7A531C 0%, var(--brass) 55%, #D6A75A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* --------------------------------------------------------------------------
-   Background Atmospheres & Canvas
+   Scrapbook Decorative Material Classes
    -------------------------------------------------------------------------- */
-#stardust-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 0;
+/* Hand-Stitched Border */
+.stitched-border {
+  border: 2px dashed rgba(183, 96, 95, 0.35);
+}
+.stitched-border-sage {
+  border: 2px dashed rgba(137, 148, 129, 0.45);
+}
+.stitched-border-kraft {
+  border: 2px dashed rgba(191, 171, 152, 0.6);
 }
 
-.ambient-orb {
+/* Ruled Notebook Paper Background */
+.ruled-paper {
+  background-color: var(--bg-journal);
+  background-image: linear-gradient(rgba(183, 96, 95, 0.08) 1px, transparent 1px);
+  background-size: 100% 28px;
+  line-height: 28px;
+}
+
+/* Red Margin Guide on Left Side */
+.ruled-paper-margin {
+  position: relative;
+  padding-left: 2.75rem !important;
+}
+.ruled-paper-margin::before {
+  content: "";
   position: absolute;
+  left: 2rem;
+  top: 0;
+  bottom: 0;
+  width: 1.5px;
+  background: rgba(183, 96, 95, 0.28);
+  pointer-events: none;
+}
+
+/* Grid Drafting Paper */
+.grid-paper {
+  background-color: var(--bg-paper);
+  background-image: 
+    linear-gradient(rgba(217, 197, 178, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 197, 178, 0.35) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Warm Journal Paper Panels */
+.journal-panel {
+  background: var(--bg-journal);
+  border: 1px solid rgba(217, 197, 178, 0.7);
+  box-shadow: var(--shadow-paper);
+  border-radius: 1.25rem;
+  position: relative;
+}
+
+.journal-pill {
+  background: rgba(252, 248, 242, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(217, 197, 178, 0.7);
+  box-shadow: 0 4px 15px -3px rgba(43, 34, 37, 0.08);
+}
+
+/* Sticky Note Styles */
+.sticky-note {
+  box-shadow: 0 3px 6px rgba(43, 34, 37, 0.08), 0 10px 20px -3px rgba(43, 34, 37, 0.12);
+  border-radius: 2px;
+  position: relative;
+  transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease;
+}
+.sticky-note:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(43, 34, 37, 0.12), 0 16px 32px -4px rgba(43, 34, 37, 0.16);
+}
+.sticky-yellow { background-color: #FFF9D6; border: 1px solid #EFE4A8; color: #2B2225; }
+.sticky-peach  { background-color: #FFEAE4; border: 1px solid #F5CFC5; color: #2B2225; }
+.sticky-sage   { background-color: #EEF4EB; border: 1px solid #D5E2D0; color: #2B2225; }
+.sticky-pink   { background-color: #FDF0F3; border: 1px solid #F8D3DC; color: #2B2225; }
+.sticky-kraft  { background-color: #F4E8D8; border: 1px solid #E2CEB9; color: #2B2225; }
+
+/* --------------------------------------------------------------------------
+   📸 Authentic Polaroid Snapshot Card & Organic Rotations
+   -------------------------------------------------------------------------- */
+.polaroid-card {
+  background: #FFFFFF;
+  padding: 12px 12px 28px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(217, 197, 178, 0.4);
+  box-shadow: var(--shadow-polaroid);
+  transition: transform 0.4s var(--ease-spring), box-shadow 0.35s ease, z-index 0.2s ease;
+  transform-origin: center center;
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.polaroid-card:hover {
+  transform: translateY(-8px) scale(1.025) !important;
+  z-index: 30;
+  box-shadow: var(--shadow-polaroid-hover);
+}
+
+/* Washi Tape Ribbon Strips */
+.washi-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg);
+  width: 90px;
+  height: 24px;
+  background: var(--tape-rose);
+  backdrop-filter: blur(2px);
+  border-left: 2px dashed rgba(255, 255, 255, 0.6);
+  border-right: 2px dashed rgba(255, 255, 255, 0.6);
+  box-shadow: 0 2px 6px rgba(43, 34, 37, 0.15);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.washi-tape.gold {
+  background: var(--tape-gold);
+}
+.washi-tape.sage {
+  background: var(--tape-sage);
+}
+.washi-tape.peach {
+  background: var(--tape-peach);
+}
+.washi-tape.gingham {
+  background: var(--tape-gingham);
+  background-image: radial-gradient(white 15%, transparent 16%);
+  background-size: 6px 6px;
+}
+.washi-tape.corner-left {
+  top: -6px;
+  left: -8px;
+  transform: rotate(-35deg);
+  width: 70px;
+  height: 20px;
+}
+.washi-tape.corner-right {
+  top: -6px;
+  right: -8px;
+  left: auto;
+  transform: rotate(35deg);
+  width: 70px;
+  height: 20px;
+}
+
+/* Polaroid Rotation Classes for Handcrafted Asymmetry */
+.tilt-p-neg1 { transform: rotate(-1.2deg); }
+.tilt-p-pos1 { transform: rotate(1.4deg); }
+.tilt-p-neg2 { transform: rotate(-2.3deg); }
+.tilt-p-pos2 { transform: rotate(2.1deg); }
+.tilt-p-neg3 { transform: rotate(-3.1deg); }
+
+/* --------------------------------------------------------------------------
+   📔 Handcrafted Private Journal Lock Screen Cover
+   -------------------------------------------------------------------------- */
+#ipad-lock-screen {
+  background-color: var(--bg-cover);
+  background-image: 
+    radial-gradient(ellipse at 50% 20%, rgba(183, 96, 95, 0.25) 0%, transparent 70%),
+    radial-gradient(rgba(0, 0, 0, 0.3) 1px, transparent 1px);
+  background-size: 100% 100%, 16px 16px;
+}
+
+/* Journal Leather Cover Frame */
+.journal-cover-frame {
+  border: 4px solid #82474E;
+  outline: 2px dashed #C89D56;
+  outline-offset: -12px;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6), 0 20px 60px rgba(0, 0, 0, 0.7);
+  background: radial-gradient(circle at 50% 30%, #6E363D 0%, #4D2328 100%);
+  position: relative;
+}
+
+/* Brass Padlock Clasp */
+.brass-lock-badge {
+  background: linear-gradient(135deg, #ECC880 0%, #C89D56 50%, #8F6927 100%);
+  border: 2px solid #FFF1C5;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+  color: #3D2205;
+}
+
+/* Vintage Clay / Wooden Stamp Keypad Buttons */
+.journal-key {
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.35;
-  animation: orbFloat 18s ease-in-out infinite alternate;
+  background: #FCF8F2;
+  border: 2px solid #D9C5B2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--charcoal);
+  box-shadow: 0 4px 12px rgba(43, 34, 37, 0.2), inset 0 2px 3px #FFFFFF;
+  transition: all 0.12s ease;
+  user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
-.ambient-orb-rose {
-  background: radial-gradient(circle, rgba(232, 165, 152, 0.4) 0%, rgba(18, 13, 28, 0) 70%);
+.journal-key:hover {
+  background: #FFFDFC;
+  border-color: var(--terracotta);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(43, 34, 37, 0.25);
 }
 
-.ambient-orb-purple {
-  background: radial-gradient(circle, rgba(142, 68, 173, 0.25) 0%, rgba(18, 13, 28, 0) 70%);
+.journal-key:active {
+  background: #EFE4D6;
+  transform: translateY(2px) scale(0.94);
+  box-shadow: 0 2px 5px rgba(43, 34, 37, 0.25), inset 0 2px 4px rgba(43, 34, 37, 0.15);
 }
 
-.ambient-orb-champagne {
-  background: radial-gradient(circle, rgba(252, 234, 222, 0.25) 0%, rgba(18, 13, 28, 0) 70%);
-}
-
-@keyframes orbFloat {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(30px, -40px) scale(1.12);
-  }
-  100% {
-    transform: translate(-30px, 30px) scale(0.95);
-  }
-}
-
-/* Subtle Vignette Overlay */
-.vignette-overlay {
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at 50% 50%, transparent 60%, rgba(6, 6, 12, 0.8) 100%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* --------------------------------------------------------------------------
-   Glassmorphism Containers
-   -------------------------------------------------------------------------- */
-.glass-panel {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.glass-panel:hover {
-  border-color: var(--glass-border-hover);
-  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.7), 0 0 35px 4px rgba(244, 208, 210, 0.12);
-}
-
-.glass-pill {
-  background: rgba(22, 18, 34, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(244, 208, 210, 0.15);
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
-}
-
-.animate-fadeIn {
-  animation: fadeInMenu 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes fadeInMenu {
-  from {
-    opacity: 0;
-    transform: translateY(8px) scale(0.97);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+@media (max-width: 480px) {
+  .journal-key {
+    width: 62px;
+    height: 62px;
   }
 }
 
-/* --------------------------------------------------------------------------
-   📱 iPad Lock Screen PIN & Keypad Styles
-   -------------------------------------------------------------------------- */
+/* PIN Indicator Dots */
 .pin-dot {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border: 2px solid #ECC880;
   background: transparent;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s var(--ease-smooth);
 }
 
 .pin-dot.filled {
-  background: #ffffff;
-  border-color: #ffffff;
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.9);
-  transform: scale(1.15);
+  background: #ECC880;
+  box-shadow: 0 0 12px #ECC880, 0 0 4px #FFFFFF;
+  transform: scale(1.18);
 }
 
 .pin-dot.error {
-  background: #e63946;
-  border-color: #e63946;
-  box-shadow: 0 0 14px rgba(230, 57, 70, 0.9);
+  background: #D94553;
+  border-color: #D94553;
+  box-shadow: 0 0 12px #D94553;
 }
 
 .animate-shake {
@@ -284,255 +460,48 @@ div[tabindex="0"]:focus-visible {
   40%, 60% { transform: translate3d(6px, 0, 0); }
 }
 
-.ipad-key {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  transition: all 0.12s ease;
-  user-select: none;
-  touch-action: manipulation;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-}
-
-.ipad-key:active {
-  background: rgba(255, 255, 255, 0.35);
-  transform: scale(0.92);
-}
-
-@media (max-width: 480px) {
-  .ipad-key {
-    width: 64px;
-    height: 64px;
-  }
-}
-
-/* Authentic Official Apple iPadOS Lock Screen Typography */
-.apple-font {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-}
-
-.apple-clock-time {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  font-weight: 300 !important;
-  letter-spacing: -0.04em !important;
-  font-feature-settings: "tnum" 1;
-  font-variant-numeric: tabular-nums;
-  line-height: 1;
-}
-
-.apple-clock-date {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  font-weight: 500 !important;
-  letter-spacing: -0.01em !important;
-}
-
-.apple-status-text {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  font-weight: 600 !important;
-  letter-spacing: -0.01em !important;
-}
-
-.apple-passcode-title {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  font-weight: 400 !important;
-  letter-spacing: -0.01em !important;
-}
-
-.apple-keypad-number {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  font-weight: 300 !important;
-  line-height: 1 !important;
-}
-
-.apple-keypad-subletters {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.16em !important;
-}
-
-.apple-cancel-btn {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  font-weight: 400 !important;
-}
-
-/* Home Bar Indicator & Text Shimmer */
-.ios-home-bar {
-  width: 140px;
-  height: 5px;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 9999px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  animation: pulseBar 2s infinite ease-in-out;
-}
-
-@keyframes pulseBar {
-  0%, 100% { opacity: 0.8; transform: translateY(0); }
-  50% { opacity: 1; transform: translateY(-4px); }
-}
-
-.shimmer-text {
-  background: linear-gradient(90deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.4) 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmerSweep 2.8s infinite linear;
-}
-
-@keyframes shimmerSweep {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-
 /* --------------------------------------------------------------------------
-   📱 ADAPTIVE PHONE & IPAD LAYOUTS (Portrait & Landscape Support)
+   Soft Ambient Fireflies & Fairylight Embers Canvas
    -------------------------------------------------------------------------- */
-#orientation-guard {
-  display: none !important;
-}
-
-/* Compact Landscape Phone Adaptation (Height < 520px) */
-@media screen and (max-height: 520px) and (orientation: landscape) {
-  #ipad-wallpaper-view {
-    padding: 0.75rem 1.5rem !important;
-  }
-  #ipad-cover-time {
-    font-size: 3.25rem !important;
-  }
-  #ipad-cover-date {
-    font-size: 0.85rem !important;
-    margin-top: 0.15rem !important;
-  }
-  #ipad-passcode-view {
-    padding: 0.5rem 1.5rem !important;
-  }
-  #ipad-passcode-view .my-auto {
-    margin-top: auto !important;
-    margin-bottom: auto !important;
-  }
-  .ipad-key {
-    width: 44px !important;
-    height: 44px !important;
-  }
-  .ipad-key .apple-keypad-number {
-    font-size: 1.25rem !important;
-  }
-  .ipad-key .apple-keypad-subletters {
-    display: none !important;
-  }
-  #ipad-pin-dots {
-    margin-bottom: 0.5rem !important;
-    gap: 0.5rem !important;
-  }
-  .pin-dot {
-    width: 10px !important;
-    height: 10px !important;
-  }
-}
-
-/* Standard Mobile Phone Portrait Adaptation (Width <= 640px) */
-@media screen and (max-width: 640px) and (min-height: 521px) {
-  #ipad-cover-time {
-    font-size: 4.75rem !important;
-  }
-  #ipad-cover-date {
-    font-size: 0.95rem !important;
-  }
-  .ipad-key {
-    width: 60px !important;
-    height: 60px !important;
-  }
-  .ipad-key .apple-keypad-number {
-    font-size: 1.65rem !important;
-  }
-}
-
-/* iPad / Tablet / Desktop Spacious Layout (Width > 640px & Height > 520px) */
-@media screen and (min-width: 641px) and (min-height: 521px) {
-  #ipad-cover-time {
-    font-size: 6.5rem !important;
-  }
-  .ipad-key {
-    width: 72px !important;
-    height: 72px !important;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   3D Tilt & Parallax Utilities
-   -------------------------------------------------------------------------- */
-.tilt-card {
-  transform-style: preserve-3d;
-  transition: transform 0.15s ease-out, box-shadow 0.3s ease;
-  will-change: transform;
-  position: relative;
-}
-
-.tilt-glare {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
+#stardust-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
-  opacity: 0;
-  mix-blend-mode: overlay;
-  transition: opacity 0.3s ease;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.35) 0%, transparent 60%);
-  z-index: 10;
+  z-index: 1;
 }
 
-/* --------------------------------------------------------------------------
-   Polaroid Cards & Memory Wall
-   -------------------------------------------------------------------------- */
-.polaroid-card {
-  background: linear-gradient(175deg, #181524 0%, #12101b 100%);
-  border: 1px solid rgba(244, 208, 210, 0.18);
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 20px 1px rgba(232, 165, 152, 0.08);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s ease;
-  transform-origin: center center;
-  position: relative;
-}
-
-.polaroid-card:hover {
-  transform: translateY(-8px) scale(1.03) !important;
-  z-index: 20;
-  border-color: rgba(244, 208, 210, 0.45);
-  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.85), 0 0 35px 4px rgba(244, 208, 210, 0.25);
-}
-
-/* Washi Tape Accent */
-.washi-tape {
+/* Ambient Warm Atmospheric Glow Orbs */
+.ambient-orb {
   position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-1deg);
-  width: 90px;
-  height: 24px;
-  background: rgba(244, 208, 210, 0.25);
-  backdrop-filter: blur(4px);
-  border-left: 2px dashed rgba(255, 255, 255, 0.3);
-  border-right: 2px dashed rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 5;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.45;
+  animation: warmOrbDrift 20s ease-in-out infinite alternate;
 }
 
-.washi-tape.gold {
-  background: rgba(246, 216, 174, 0.3);
+.ambient-orb-rose {
+  background: radial-gradient(circle, rgba(240, 138, 120, 0.35) 0%, rgba(252, 248, 242, 0) 70%);
+}
+.ambient-orb-sage {
+  background: radial-gradient(circle, rgba(137, 148, 129, 0.28) 0%, rgba(252, 248, 242, 0) 70%);
+}
+.ambient-orb-champagne {
+  background: radial-gradient(circle, rgba(249, 234, 217, 0.45) 0%, rgba(252, 248, 242, 0) 70%);
 }
 
-.washi-tape.blush {
-  background: rgba(232, 165, 152, 0.35);
+@keyframes warmOrbDrift {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(35px, -35px) scale(1.1); }
+  100% { transform: translate(-30px, 30px) scale(0.95); }
 }
 
 /* --------------------------------------------------------------------------
-   Bento Grid & Interactive Flip Cards
+   Bento Flip Cards (Sticky Note / Kraft Cards)
    -------------------------------------------------------------------------- */
 .bento-flip-card {
   perspective: 1200px;
@@ -567,22 +536,28 @@ div[tabindex="0"]:focus-visible {
   -webkit-transform: translate3d(0, 0, 0);
 }
 
+.bento-card-front {
+  background: #FFFFFF;
+  border: 1px solid rgba(217, 197, 178, 0.6);
+  box-shadow: var(--shadow-paper);
+}
+
 .bento-card-back {
   transform: rotateY(180deg) translate3d(0, 0, 0);
   -webkit-transform: rotateY(180deg) translate3d(0, 0, 0);
-  background: linear-gradient(145deg, #1c162e 0%, #110d1f 100%);
-  border: 1px solid rgba(244, 208, 210, 0.3);
-  box-shadow: 0 0 35px 2px rgba(232, 165, 152, 0.15);
+  background: var(--bg-journal);
+  border: 2px dashed rgba(183, 96, 95, 0.45);
+  box-shadow: var(--shadow-paper-lg);
 }
 
-/* Scratch / Mist Reveal Card */
+/* Scratch / Frosted Mist Reveal Card */
 .scratch-overlay {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(25, 20, 38, 0.96) 0%, rgba(15, 12, 25, 0.98) 100%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: linear-gradient(135deg, rgba(247, 239, 229, 0.98) 0%, rgba(243, 222, 203, 0.96) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -590,6 +565,7 @@ div[tabindex="0"]:focus-visible {
   transition: opacity 0.6s var(--ease-smooth), transform 0.6s var(--ease-smooth);
   z-index: 10;
   cursor: pointer;
+  border: 2px dashed rgba(191, 171, 152, 0.7);
 }
 
 .scratch-overlay.revealed {
@@ -599,35 +575,33 @@ div[tabindex="0"]:focus-visible {
 }
 
 /* --------------------------------------------------------------------------
-   Interactive Love Letter & Stationary
+   Vintage Love Letter & Artisan Maroon Wax Seal
    -------------------------------------------------------------------------- */
 .parchment-letter {
-  background: radial-gradient(ellipse at 50% 30%, #1c172b 0%, #110e1d 100%);
-  border: 1px solid rgba(244, 208, 210, 0.25);
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 40px 3px rgba(244, 208, 210, 0.1);
+  background: var(--parchment);
+  border: 1px solid rgba(217, 197, 178, 0.8);
+  box-shadow: 0 15px 45px -8px rgba(43, 34, 37, 0.15), 0 0 0 8px rgba(243, 222, 203, 0.5);
   position: relative;
 }
 
 .parchment-letter::before {
   content: '';
   position: absolute;
-  inset: 8px;
-  border: 1px solid rgba(244, 208, 210, 0.08);
+  inset: 12px;
+  border: 1px dashed rgba(183, 96, 95, 0.35);
   border-radius: inherit;
   pointer-events: none;
 }
 
-/* --------------------------------------------------------------------------
-   Luxury 3D Artisan Wax Seal & Aesthetic Glowing Heart
-   -------------------------------------------------------------------------- */
+/* 3D Deep Maroon Wax Heart Seal */
 .seal-halo-glow {
   position: absolute;
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(230, 57, 70, 0.35) 0%, rgba(244, 208, 210, 0.15) 50%, transparent 70%);
-  filter: blur(12px);
-  animation: sealPulseGlow 3s ease-in-out infinite alternate;
+  background: radial-gradient(circle, rgba(183, 96, 95, 0.3) 0%, rgba(240, 138, 120, 0.12) 50%, transparent 70%);
+  filter: blur(10px);
+  animation: sealPulseWarm 3s ease-in-out infinite alternate;
   pointer-events: none;
   z-index: 1;
 }
@@ -637,47 +611,43 @@ div[tabindex="0"]:focus-visible {
   width: 130px;
   height: 130px;
   border-radius: 50%;
-  border: 1px dashed rgba(244, 208, 210, 0.25);
-  animation: rotateOrbit 20s linear infinite;
+  border: 1px dashed rgba(183, 96, 95, 0.35);
+  animation: rotateOrbit 25s linear infinite;
   pointer-events: none;
   z-index: 2;
 }
 
-.aesthetic-wax-seal,
-.wax-seal-btn {
+.aesthetic-wax-seal {
   position: relative;
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 32%, #f04353 0%, #b31624 45%, #6a0b14 85%, #3d0308 100%);
+  background: radial-gradient(circle at 35% 32%, #A24248 0%, #74292F 45%, #4C171C 85%, #300C0F 100%);
   box-shadow: 
-    0 18px 40px -8px rgba(0, 0, 0, 0.85),
-    0 0 35px 2px rgba(230, 57, 70, 0.5),
-    inset 0 3px 6px rgba(255, 255, 255, 0.45),
-    inset 0 -4px 8px rgba(0, 0, 0, 0.7);
+    0 14px 30px -6px rgba(43, 34, 37, 0.55),
+    0 0 25px 2px rgba(183, 96, 95, 0.4),
+    inset 0 3px 5px rgba(255, 255, 255, 0.4),
+    inset 0 -4px 6px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border: 2px solid rgba(252, 234, 222, 0.3);
+  border: 2px solid rgba(249, 234, 217, 0.4);
   transition: all 0.4s var(--ease-spring);
   z-index: 5;
   outline: none;
 }
 
-.aesthetic-wax-seal:hover,
-.wax-seal-btn:hover {
+.aesthetic-wax-seal:hover {
   transform: scale(1.08) rotate(3deg);
   box-shadow: 
-    0 25px 50px -10px rgba(0, 0, 0, 0.9),
-    0 0 45px 8px rgba(230, 57, 70, 0.75),
-    0 0 25px rgba(244, 208, 210, 0.6),
-    inset 0 3px 8px rgba(255, 255, 255, 0.6);
-  border-color: rgba(252, 234, 222, 0.6);
+    0 20px 40px -8px rgba(43, 34, 37, 0.65),
+    0 0 35px 6px rgba(183, 96, 95, 0.55),
+    inset 0 3px 6px rgba(255, 255, 255, 0.55);
+  border-color: rgba(249, 234, 217, 0.7);
 }
 
-.aesthetic-wax-seal:active,
-.wax-seal-btn:active {
+.aesthetic-wax-seal:active {
   transform: scale(0.95);
 }
 
@@ -687,31 +657,27 @@ div[tabindex="0"]:focus-visible {
 
 @keyframes sealFracture {
   0% { transform: scale(1) rotate(0deg); opacity: 1; filter: brightness(1); }
-  25% { transform: scale(1.18) rotate(-6deg); filter: brightness(1.5); box-shadow: 0 0 60px rgba(230, 57, 70, 1); }
+  25% { transform: scale(1.15) rotate(-6deg); filter: brightness(1.3); box-shadow: 0 0 45px rgba(183, 96, 95, 0.8); }
   60% { transform: scale(0.85) rotate(14deg); opacity: 0.75; }
   100% { transform: scale(0.3) rotate(30deg); opacity: 0; pointer-events: none; }
 }
 
-/* Organic Scalloped Wax Border */
 .wax-scallop-border {
   position: absolute;
   inset: -3px;
   border-radius: 50%;
   background: transparent;
-  border: 2px solid rgba(244, 208, 210, 0.15);
+  border: 2px solid rgba(249, 234, 217, 0.25);
   pointer-events: none;
 }
 
-/* Inner Stamping Chamber */
 .wax-inner-core {
   width: 76px;
   height: 76px;
   border-radius: 50%;
-  background: radial-gradient(circle at 40% 40%, #9e1420 0%, #5c070e 80%, #3e0307 100%);
-  border: 1.5px solid rgba(252, 234, 222, 0.35);
-  box-shadow: 
-    inset 0 4px 8px rgba(0, 0, 0, 0.75),
-    0 1px 3px rgba(255, 255, 255, 0.25);
+  background: radial-gradient(circle at 40% 40%, #872F35 0%, #52191D 80%, #300C0F 100%);
+  border: 1.5px solid rgba(249, 234, 217, 0.45);
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -719,7 +685,6 @@ div[tabindex="0"]:focus-visible {
   overflow: hidden;
 }
 
-/* Gold Monogram Lettering Ring */
 .wax-text-ring {
   position: absolute;
   inset: 0;
@@ -731,25 +696,23 @@ div[tabindex="0"]:focus-visible {
 }
 
 .wax-rim-text {
-  fill: #fceade;
+  fill: #F9EAD9;
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 8px;
   font-weight: 700;
   letter-spacing: 2.2px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-/* Central 3D Heart */
 .wax-heart-center {
   position: relative;
   z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
 }
 
-/* Glossy Specular Sheen */
 .wax-light-sheen {
   position: absolute;
   top: 4px;
@@ -763,54 +726,22 @@ div[tabindex="0"]:focus-visible {
   z-index: 6;
 }
 
-@keyframes sealPulseGlow {
-  0% {
-    transform: scale(0.9);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1.2);
-    opacity: 0.9;
-  }
+@keyframes sealPulseWarm {
+  0% { transform: scale(0.92); opacity: 0.5; }
+  100% { transform: scale(1.15); opacity: 0.85; }
 }
 
 @keyframes rotateOrbit {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.animate-heartbeat-soft {
-  animation: heartbeatSoft 2s ease-in-out infinite;
-}
-
-@keyframes heartbeatSoft {
-  0%, 100% {
-    transform: scale(1);
-    filter: drop-shadow(0 0 6px rgba(255, 180, 190, 0.6));
-  }
-  25% {
-    transform: scale(1.12);
-    filter: drop-shadow(0 0 14px rgba(255, 180, 190, 0.9));
-  }
-  35% {
-    transform: scale(1.02);
-  }
-  45% {
-    transform: scale(1.16);
-    filter: drop-shadow(0 0 18px rgba(255, 200, 210, 1));
-  }
-}
-
-/* Typewriter Caret */
+/* Typewriter Fountain Pen Caret */
 .typewriter-cursor {
   display: inline-block;
-  width: 2px;
-  height: 1.1em;
-  background-color: var(--rose-blush);
+  width: 2.5px;
+  height: 1.15em;
+  background-color: var(--terracotta);
   vertical-align: middle;
   margin-left: 2px;
   animation: cursorBlink 0.9s infinite;
@@ -822,11 +753,11 @@ div[tabindex="0"]:focus-visible {
 }
 
 /* --------------------------------------------------------------------------
-   Audio Equalizer Visualizer Bars
+   Cozy Vintage Cassette Audio Player & Warm Equalizer
    -------------------------------------------------------------------------- */
 .eq-bar {
   width: 3px;
-  background: linear-gradient(to top, var(--coral-dusty), var(--rose-blush), var(--champagne));
+  background: linear-gradient(to top, var(--terracotta), var(--peach), #ECC880);
   border-radius: 9999px;
   transition: height 0.08s ease;
   height: 4px;
@@ -841,7 +772,92 @@ div[tabindex="0"]:focus-visible {
 
 @keyframes eqPulse {
   0%, 100% { height: 4px; }
-  50% { height: 22px; }
+  50% { height: 20px; }
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Buttons (Terracotta & Brass Stamp Buttons)
+   -------------------------------------------------------------------------- */
+.btn-celestial,
+.btn-scrapbook {
+  background: linear-gradient(135deg, var(--terracotta) 0%, #D4746A 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 15px -2px rgba(183, 96, 95, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  color: #FFFFFF !important;
+  transition: all 0.3s var(--ease-spring);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-celestial:hover,
+.btn-scrapbook:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(135deg, #C26766 0%, #DF7F75 100%);
+  box-shadow: 0 8px 24px -3px rgba(183, 96, 95, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.btn-celestial:active,
+.btn-scrapbook:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Soft Paper Action Buttons */
+.btn-paper {
+  background: #FFFFFF;
+  border: 1px solid rgba(217, 197, 178, 0.8);
+  color: var(--charcoal);
+  box-shadow: 0 2px 6px rgba(43, 34, 37, 0.08);
+  transition: all 0.25s ease;
+}
+.btn-paper:hover {
+  background: var(--bg-journal);
+  border-color: var(--terracotta);
+  color: var(--terracotta);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   Lightbox Modal (Open Vintage Scrapbook Spread)
+   -------------------------------------------------------------------------- */
+.lightbox-modal {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.lightbox-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-modal .modal-content {
+  transform: scale(0.92) translateY(20px);
+  transition: transform 0.4s var(--ease-spring);
+}
+
+.lightbox-modal.is-open .modal-content {
+  transform: scale(1) translateY(0);
+}
+
+.cinema-ctrl-btn {
+  background: #FCF8F2;
+  border: 1px solid rgba(217, 197, 178, 0.8);
+  color: var(--charcoal);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(43, 34, 37, 0.1);
+}
+
+.cinema-ctrl-btn:hover {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  color: #FFFFFF;
+  transform: scale(1.08);
 }
 
 /* --------------------------------------------------------------------------
@@ -870,11 +886,11 @@ div[tabindex="0"]:focus-visible {
   }
 }
 
-/* Screen Celestial Flash Effect */
+/* Screen Warm Bloom Overlay */
 .celestial-flash {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(244, 208, 210, 0.45) 0%, rgba(255, 230, 240, 0.1) 70%, transparent 100%);
+  background: radial-gradient(circle at 50% 50%, rgba(255, 230, 220, 0.7) 0%, rgba(252, 248, 242, 0.4) 60%, transparent 100%);
   pointer-events: none;
   z-index: 9998;
   opacity: 0;
@@ -886,211 +902,8 @@ div[tabindex="0"]:focus-visible {
 }
 
 /* --------------------------------------------------------------------------
-   Lightbox Spring Modal
+   Mobile Optimizations & Safe Areas
    -------------------------------------------------------------------------- */
-.lightbox-modal {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.35s ease, visibility 0.35s ease;
-}
-
-.lightbox-modal.is-open {
-  opacity: 1;
-  visibility: visible;
-}
-
-.lightbox-modal .modal-content {
-  transform: scale(0.92) translateY(20px);
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.lightbox-modal.is-open .modal-content {
-  transform: scale(1) translateY(0);
-}
-
-/* --------------------------------------------------------------------------
-   Pulsing Glow Badges & Buttons
-   -------------------------------------------------------------------------- */
-.btn-celestial {
-  background: linear-gradient(135deg, rgba(232, 165, 152, 0.25) 0%, rgba(244, 208, 210, 0.15) 100%);
-  border: 1px solid rgba(244, 208, 210, 0.35);
-  box-shadow: 0 10px 30px -5px rgba(232, 165, 152, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-celestial::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-  transform: skewX(-25deg);
-  transition: left 0.75s ease;
-}
-
-.btn-celestial:hover {
-  transform: translateY(-2px);
-  border-color: rgba(244, 208, 210, 0.6);
-  box-shadow: 0 15px 40px -5px rgba(232, 165, 152, 0.5), 0 0 25px 3px rgba(244, 208, 210, 0.3);
-}
-
-.btn-celestial:hover::before {
-  left: 150%;
-}
-
-.btn-celestial:active {
-  transform: translateY(0) scale(0.98);
-}
-
-/* --------------------------------------------------------------------------
-   Storytelling Spotlight Chapters
-   -------------------------------------------------------------------------- */
-.spotlight-card {
-  background: linear-gradient(145deg, rgba(26, 20, 42, 0.7) 0%, rgba(14, 11, 24, 0.85) 100%);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(244, 208, 210, 0.2);
-  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.8), 0 0 40px 2px rgba(232, 165, 152, 0.12);
-  position: relative;
-  overflow: hidden;
-}
-
-.spotlight-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, rgba(232, 165, 152, 0.15) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-/* --------------------------------------------------------------------------
-   Dynamic Masonry 42-Item Gallery Grid
-   -------------------------------------------------------------------------- */
-.gallery-grid,
-#media-gallery-grid {
-  column-fill: balance;
-}
-
-/* Media Item Card Styles */
-.media-card {
-  break-inside: avoid;
-  page-break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(175deg, #181524 0%, #110f1c 100%);
-  border: 1px solid rgba(244, 208, 210, 0.16);
-  border-radius: 1.25rem;
-  overflow: hidden;
-  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7), 0 0 20px 1px rgba(232, 165, 152, 0.06);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.3s ease;
-  position: relative;
-  display: block;
-  width: 100%;
-}
-
-.media-card:hover {
-  transform: translateY(-6px) scale(1.015);
-  border-color: rgba(244, 208, 210, 0.45);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85), 0 0 30px 3px rgba(244, 208, 210, 0.2);
-  z-index: 15;
-}
-
-.media-card img,
-.media-card video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Video Badge & Reel Overlays */
-.video-badge {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(10, 8, 18, 0.75);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(244, 208, 210, 0.3);
-  color: #fceade;
-  padding: 4px 10px;
-  border-radius: 9999px;
-  font-family: monospace;
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  z-index: 10;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-.video-play-pulse {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #e63946;
-  animation: playDotPulse 1.4s infinite;
-}
-
-@keyframes playDotPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(1.4); }
-}
-
-/* Progressive Image/Video Blur-Up Loading */
-.media-thumb {
-  transition: opacity 0.5s ease, filter 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.media-thumb.is-loading {
-  filter: blur(12px);
-  opacity: 0.7;
-}
-
-/* Cinema Lightbox Enhancements */
-.cinema-lightbox video {
-  max-height: 70vh;
-  width: auto;
-  margin: 0 auto;
-  border-radius: 1rem;
-}
-
-.cinema-ctrl-btn {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(244, 208, 210, 0.2);
-  color: #fdeded;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.25s ease;
-}
-
-.cinema-ctrl-btn:hover {
-  background: rgba(232, 165, 152, 0.3);
-  border-color: rgba(244, 208, 210, 0.5);
-  transform: scale(1.08);
-  color: #ffffff;
-}
-
-/* ==========================================================================
-   📱 COMPREHENSIVE MOBILE OPTIMIZATION & TOUCH ERGONOMICS
-   ========================================================================== */
-
-/* 1. iOS Safe Area Handling & Smooth Tap Highlights */
 :root {
   --sat: env(safe-area-inset-top, 0px);
   --sab: env(safe-area-inset-bottom, 0px);
@@ -1107,314 +920,21 @@ body {
   touch-action: manipulation;
 }
 
-button, a, input {
-  touch-action: manipulation;
-  -webkit-touch-callout: none;
-}
-
-/* 2. Touch Device Performance & Hover Isolation */
-@media (hover: none) and (pointer: coarse) {
-  /* Prevent sticky hover jumps on touch devices */
-  .tilt-card {
-    transform: none !important;
-  }
-  .tilt-glare {
-    display: none !important;
-  }
-  .media-card {
-    transition: transform 0.15s ease, box-shadow 0.2s ease !important;
-  }
-  .media-card:active {
-    transform: scale(0.98) !important;
-  }
-  .glass-panel:hover {
-    transform: none;
-  }
-}
-
-/* 3. Small Screen Optimizations (< 640px) */
 @media (max-width: 640px) {
-  html, body {
-    overflow-x: hidden;
-    width: 100vw;
+  .polaroid-card {
+    padding: 8px 8px 22px 8px;
+    margin-bottom: 1.25rem;
   }
-
-  /* Compact Header Pill */
-  header .glass-pill {
-    padding: 0.6rem 1rem;
-  }
-
-  /* Full Width Mobile Action Buttons */
-  .btn-celestial, .glass-panel.px-7 {
-    width: 100%;
-    justify-content: center;
-    padding-top: 0.85rem;
-    padding-bottom: 0.85rem;
-  }
-
-  /* Milestone Counter Mobile Fit */
-  #hero .grid-cols-4 {
-    gap: 0.35rem;
-  }
-  #hero .grid-cols-4 span.font-bold {
-    font-size: 1.25rem;
-  }
-
-  /* Fluid Column Masonry */
-  #media-gallery-grid {
-    column-gap: 1rem;
-  }
-  .media-card {
-    margin-bottom: 1rem;
-    border-radius: 1.25rem;
-  }
-
-  /* Mobile Card Action Buttons */
-  .card-song-btn, .card-voice-btn {
-    padding: 0.35rem 0.65rem;
-    font-size: 0.65rem;
-    min-height: 32px;
-  }
-
-  /* Wax Seal Stamp Mobile Scale */
-  .wax-seal-monogram {
-    width: 72px;
-    height: 72px;
-  }
-
-  /* Cinema Lightbox Full Mobile Framing */
-  .cinema-lightbox {
-    padding: 0.75rem;
-  }
-  .cinema-lightbox video, .cinema-lightbox img {
-    max-height: 60vh;
-    max-width: 96vw;
-    border-radius: 0.85rem;
-  }
-
-  /* Secret Vault Keypad Mobile Touch Targets */
-  .vault-key {
-    width: 62px;
-    height: 62px;
-    font-size: 1.25rem;
+  .washi-tape {
+    width: 70px;
+    height: 18px;
+    top: -9px;
   }
 }
 
-/* ==========================================================================
-   ✨ CELESTIAL MOTION & GSAP-COMPATIBLE ANIMATION SYSTEM
-   ========================================================================== */
-
-/* Ambient Aurora Gradient Breathing */
-@keyframes celestialAuroraBreath {
-  0% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
-    filter: blur(80px) saturate(1);
-  }
-  50% {
-    transform: translate(30px, -25px) scale(1.12) rotate(15deg);
-    filter: blur(100px) saturate(1.25);
-  }
-  100% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
-    filter: blur(80px) saturate(1);
-  }
-}
-
-.ambient-orb {
-  animation: celestialAuroraBreath 18s ease-in-out infinite alternate !important;
-  will-change: transform, filter;
-}
-.ambient-orb-purple {
-  animation-duration: 24s !important;
-  animation-delay: -6s !important;
-}
-.ambient-orb-champagne {
-  animation-duration: 20s !important;
-  animation-delay: -12s !important;
-}
-
-/* Floating Breathing Hero Badge */
-@keyframes floatGlow {
-  0%, 100% {
-    transform: translateY(0);
-    box-shadow: 0 0 15px rgba(244, 208, 210, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  }
-  50% {
-    transform: translateY(-5px);
-    box-shadow: 0 0 28px rgba(244, 208, 210, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-  }
-}
-
-.hero-badge-float {
-  animation: floatGlow 4.5s ease-in-out infinite;
-}
-
-/* Word & Character Reveal Typography */
-.reveal-word {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(18px) rotateX(15deg);
-  transition: opacity 0.65s var(--ease-smooth), transform 0.65s var(--ease-smooth);
-  will-change: opacity, transform;
-}
-
-.reveal-word.is-revealed {
-  opacity: 1;
-  transform: translateY(0) rotateX(0deg);
-}
-
-/* Rolling Odometer Digit Transition */
-.digit-box {
-  display: inline-block;
-  overflow: hidden;
-  position: relative;
-  height: 1.35em;
-  line-height: 1.35em;
-  vertical-align: baseline;
-}
-
-.digit-value {
-  display: inline-block;
-  transition: transform 0.42s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s ease;
-  will-change: transform, opacity;
-}
-
-.digit-value.is-rolling {
-  animation: digitRollIn 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-}
-
-@keyframes digitRollIn {
-  0% {
-    transform: translateY(80%);
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Keypad Micro-Ripple & Physical Feedback */
-.ipad-key {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.12s var(--ease-smooth), background-color 0.15s ease;
-}
-
-.ipad-key:active {
-  transform: scale(0.92) !important;
-}
-
-.key-tap-ripple {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.45);
-  transform: translate(-50%, -50%) scale(0);
-  animation: keyRippleAnim 0.35s ease-out forwards;
-  pointer-events: none;
-}
-
-@keyframes keyRippleAnim {
-  0% {
-    transform: translate(-50%, -50%) scale(0.2);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1.5);
-    opacity: 0;
-  }
-}
-
-/* Celestial Comet Scroll Progress */
-#celestial-scroll-comet {
-  transition: opacity 0.4s ease;
-}
-
-.comet-head {
-  box-shadow: 0 0 12px #ffb4be, 0 0 24px #e8a598, 0 0 36px #c084fc;
-  animation: cometPulse 1.8s infinite alternate ease-in-out;
-  transform: translate(-50%, -50%);
-}
-
-@keyframes cometPulse {
-  0% {
-    transform: translate(-50%, -50%) scale(0.85);
-    box-shadow: 0 0 10px #ffb4be, 0 0 20px #e8a598;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1.3);
-    box-shadow: 0 0 16px #ffb4be, 0 0 32px #e8a598, 0 0 44px #c084fc;
-  }
-}
-
-/* Secret Vault Radiant Chamber Glow */
-.vault-unlocked-reveal {
-  animation: chamberOpen 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes chamberOpen {
-  0% {
-    opacity: 0;
-    transform: scale(0.88) translateY(20px);
-    filter: blur(12px) brightness(1.6);
-  }
-  60% {
-    filter: blur(2px) brightness(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    filter: blur(0) brightness(1);
-  }
-}
-
-/* Interactive Pulsing Heart Hover */
-.group:hover .hover-heart-beat,
-button:hover .hover-heart-beat {
-  animation: heartPulseSoft 0.85s infinite ease-in-out !important;
-}
-
-@keyframes heartPulseSoft {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.24);
-  }
-}
-
-/* Reduced Motion User Accessibility Preferences */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-  .ambient-orb {
-    animation: none !important;
-  }
-  .reveal-word {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  #celestial-scroll-comet {
-    display: none !important;
-  }
-}
-
-/* ==========================================================================
-   🛡️ CONTENT & SOURCE CODE PROTECTION
-   ========================================================================== */
+/* --------------------------------------------------------------------------
+   🛡️ Content Protection Modal
+   -------------------------------------------------------------------------- */
 *,
 *::before,
 *::after {
@@ -1439,7 +959,6 @@ video {
   user-drag: none !important;
 }
 
-/* Styled Centered Protection Alert Modal */
 .protection-alert-modal {
   position: fixed;
   inset: 0;
@@ -1448,9 +967,9 @@ video {
   align-items: center;
   justify-content: center;
   padding: 1.25rem;
-  background: rgba(8, 6, 14, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(43, 34, 37, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.25s var(--ease-smooth), visibility 0.25s var(--ease-smooth);
@@ -1463,19 +982,18 @@ video {
 }
 
 .protection-alert-card {
-  background: linear-gradient(135deg, rgba(28, 18, 36, 0.95) 0%, rgba(18, 12, 28, 0.98) 100%);
-  border: 1px solid rgba(244, 114, 134, 0.45);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(244, 114, 134, 0.3);
-  border-radius: 1.75rem;
+  background: #FCF8F2;
+  border: 2px dashed var(--terracotta);
+  box-shadow: 0 20px 50px rgba(43, 34, 37, 0.4);
+  border-radius: 1.5rem;
   padding: 2rem 2.5rem;
-  max-width: 460px;
+  max-width: 440px;
   width: 100%;
   text-align: center;
-  transform: scale(0.88) translateY(12px);
-  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: scale(0.9) translateY(10px);
+  transition: transform 0.28s var(--ease-spring);
 }
 
 .protection-alert-modal.is-active .protection-alert-card {
   transform: scale(1) translateY(0);
 }
-

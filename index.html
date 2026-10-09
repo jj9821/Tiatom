@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#06060c" />
+  <meta name="theme-color" content="#5A2D33" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <title>Maria’s Sanctuary (Bebo) — Our Memory Sanctuary</title>
-  <meta name="description" content="A breathtaking, romantic, high-aesthetic digital sanctuary dedicated to Maria (Bebo)." />
+  <title>Kunju’s Birthday Scrapbook & Digital Journal 🌸 (From Kevin)</title>
+  <meta name="description" content="A heart-warming, cozy, and nostalgic birthday gift and romantic confession journal from Kevin to Kunju." />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -16,28 +16,44 @@
       theme: {
         extend: {
           colors: {
-            obsidian: '#06060c',
-            midnight: '#0a0a14',
-            amethyst: '#120d1c',
-            rose: {
-              100: '#fdeded',
-              200: '#f4d0d2',
-              300: '#e8a598',
-              400: '#dd8b7c',
-              500: '#d16a57',
+            paper: '#FCF8F2',
+            journal: '#F7EFE5',
+            parchment: '#F9EAD9',
+            terracotta: {
+              DEFAULT: '#B7605F',
+              dark: '#9A4C4B',
+              light: '#D4746A'
             },
-            champagne: '#fceade',
-            rosegold: '#e5b299',
-            warmgold: '#f6d8ae',
+            peach: {
+              DEFAULT: '#F08A78',
+              soft: '#FFB2A6',
+              tint: '#FFF0ED'
+            },
+            maroon: {
+              DEFAULT: '#684045',
+              dark: '#451F24'
+            },
+            sage: {
+              DEFAULT: '#899481',
+              light: '#B4BA9A',
+              tint: '#EFF4ED'
+            },
+            charcoal: '#2B2225',
+            sepia: '#635356',
+            kraft: '#D9C5B2',
+            brass: '#C89D56',
           },
           fontFamily: {
-            serif: ['"Cormorant Garamond"', '"Playfair Display"', 'Georgia', 'serif'],
-            display: ['"Playfair Display"', 'Georgia', 'serif'],
             sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            cursive: ['"Great Vibes"', '"Sacramento"', 'cursive'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            handwritten: ['"Caveat"', 'cursive'],
+            journal: ['"Indie Flower"', 'cursive'],
+            note: ['"Playpen Sans"', 'cursive', 'sans-serif'],
+            cursive: ['"Sacramento"', 'cursive'],
           },
           scale: {
             '102': '1.02',
+            '105': '1.05',
             '108': '1.08',
           }
         }
@@ -59,102 +75,103 @@
   <link rel="stylesheet" href="styles/main.css" />
 </head>
 
-<body class="bg-obsidian text-rose-100 font-sans selection:bg-rose-400/30 selection:text-white relative min-h-screen">
+<body class="bg-[#FCF8F2] text-[#2B2225] font-sans selection:bg-[#F08A78]/30 selection:text-[#2B2225] relative min-h-screen">
 
-  <!-- Direct HTML5 Background Audio Stream (1.mp3 Autoplay & Multiple Source Fallbacks) -->
+  <!-- Direct HTML5 Background Audio Stream (tia.mp3 Autoplay & Fallbacks) -->
   <audio id="bg-audio-player" preload="auto" loop playsinline>
+    <source src="assets/audio/kunju.mp3" type="audio/mpeg">
+    <source src="kunju.mp3" type="audio/mpeg">
+    <source src="assets/audio/tia.mp3" type="audio/mpeg">
+    <source src="tia.mp3" type="audio/mpeg">
     <source src="assets/audio/1.mp3" type="audio/mpeg">
     <source src="1.mp3" type="audio/mpeg">
-    <source src="assets/audio/our_song.mp3" type="audio/mpeg">
   </audio>
 
   <!-- =========================================================================
-       📱 AUTHENTIC APPLE LOCK SCREEN (Wallpaper -> Swipe Up -> Passcode: 123987)
+       📔 HANDCRAFTED PRIVATE JOURNAL COVER (Cover -> Tap to Open -> PIN: 123987)
        ========================================================================= -->
-  <div id="ipad-lock-screen" class="fixed inset-0 z-[99999] overflow-hidden select-none transition-all duration-700 bg-black">
+  <div id="ipad-lock-screen" class="fixed inset-0 z-[99999] overflow-hidden select-none transition-all duration-700 bg-[#4A2026]">
     
-    <!-- PHASE 1: Fullscreen Wallpaper Cover View -->
-    <div id="ipad-wallpaper-view" class="absolute inset-0 flex flex-col items-center justify-between p-4 sm:p-8 md:p-10 z-10 transition-all duration-500 cursor-pointer apple-font">
-      <!-- High-Res Wallpaper Background -->
-      <img 
-        src="assets/photos/ipad_lockscreen_wallpaper.jpg" 
-        alt="Bebo iPad Wallpaper" 
-        class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
-      />
-      <!-- Soft Vignette & Atmospheric Tint -->
-      <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/75 pointer-events-none"></div>
-
-      <!-- Top Status Bar -->
-      <div class="relative w-full max-w-4xl flex items-center justify-between apple-status-text text-white/90 drop-shadow-md z-20 pt-1">
-        <span class="flex items-center gap-1.5 tracking-wide">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-rose-300"></i>
-          <span class="device-status-label">Bebo's iPad</span>
+    <!-- PHASE 1: Fullscreen Leather Journal Cover View -->
+    <div id="ipad-wallpaper-view" class="absolute inset-0 flex flex-col items-center justify-between p-4 sm:p-8 md:p-10 z-10 transition-all duration-500 cursor-pointer">
+      
+      <!-- Top Cover Ribbon Header -->
+      <div class="relative w-full max-w-3xl flex items-center justify-between text-[#ECC880] drop-shadow z-20 pt-1">
+        <span class="flex items-center gap-1.5 font-handwritten text-xl tracking-wide">
+          <i data-lucide="sparkles" class="w-4 h-4 text-[#ECC880]"></i>
+          <span class="device-status-label">Kunju's Private Keepsake Journal</span>
         </span>
-        <div class="flex items-center gap-1.5">
-          <i data-lucide="lock" class="w-4 h-4 text-white/90"></i>
-        </div>
-        <span class="flex items-center gap-2.5">
-          <i data-lucide="wifi" class="w-3.5 h-3.5 text-white"></i>
-          <span class="text-xs">100%</span>
-          <i data-lucide="battery-charging" class="w-4 h-4 text-emerald-400"></i>
-        </span>
-      </div>
-
-      <!-- Upper Clock & Date (Authentic Apple SF Pro iPad Style) -->
-      <div class="relative flex flex-col items-center text-center z-20 mt-4 sm:mt-8">
-        <div class="w-8 h-8 rounded-full bg-black/20 backdrop-blur-md border border-white/20 flex items-center justify-center text-white/90 mb-2 shadow-md">
-          <i data-lucide="lock" class="w-4 h-4 text-rose-200"></i>
-        </div>
-        <div id="ipad-cover-time" class="apple-clock-time text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white drop-shadow-2xl">
-          12:34
-        </div>
-        <div id="ipad-cover-date" class="apple-clock-date text-sm sm:text-base md:text-lg text-white/95 drop-shadow-md mt-1">
-          Tuesday, September 1
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#ECC880] animate-pulse"></span>
+          <span class="font-mono text-xs tracking-widest uppercase text-[#ECC880]/80">Strictly Private</span>
         </div>
       </div>
 
-      <!-- Bottom Swipe-Up Indicator (Apple Home Bar) -->
-      <div class="relative flex flex-col items-center gap-3 z-20 mb-2">
-        <div class="flex flex-col items-center gap-1 animate-bounce" style="animation-duration: 2s;">
-          <i data-lucide="chevron-up" class="w-5 h-5 text-white/80"></i>
-          <span class="apple-font text-xs sm:text-sm tracking-widest shimmer-text uppercase font-semibold">
-            Swipe up to unlock
+      <!-- Center Journal Vignette: Vellum Window Frame -->
+      <div class="relative flex flex-col items-center text-center z-20 my-auto max-w-sm sm:max-w-md w-full">
+        <div class="relative w-48 h-48 sm:w-56 sm:h-56 p-3 rounded-full bg-[#FCF8F2]/10 border-2 border-dashed border-[#ECC880] shadow-2xl flex items-center justify-center mb-6">
+          <div class="w-full h-full rounded-full overflow-hidden border-2 border-[#ECC880]/60 shadow-inner relative">
+            <img 
+              src="assets/photos/tia/tia_13.jpeg" 
+              alt="Kunju Smiling Radiantly" 
+              class="w-full h-full object-cover object-center pointer-events-none"
+              onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='tia/tia_13.jpeg';}"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#4A2026]/60 via-transparent to-transparent"></div>
+          </div>
+          <!-- Antique Brass Padlock Icon Badge -->
+          <div class="brass-lock-badge absolute -bottom-2 w-11 h-11 rounded-full flex items-center justify-center shadow-lg">
+            <i data-lucide="lock" class="w-5 h-5 text-[#3D2205]"></i>
+          </div>
+        </div>
+
+        <div class="font-handwritten text-4xl sm:text-5xl text-[#FCF8F2] font-bold drop-shadow-md mb-1">
+          Kunju's Scrapbook Journal 📖
+        </div>
+        <div class="font-note text-sm sm:text-base text-[#ECC880] tracking-wide">
+          Handcrafted with all my love by Kevin
+        </div>
+
+        <!-- Clock & Date Stamped -->
+        <div class="mt-4 px-4 py-1.5 rounded-full bg-black/30 border border-[#ECC880]/30 flex items-center gap-3">
+          <span id="ipad-cover-time" class="font-mono text-lg text-[#FCF8F2] font-bold">12:34</span>
+          <span class="w-1 h-1 rounded-full bg-[#ECC880]"></span>
+          <span id="ipad-cover-date" class="font-handwritten text-base text-[#ECC880]">Special Birthday Edition</span>
+        </div>
+      </div>
+
+      <!-- Bottom Tap to Open Indicator -->
+      <div class="relative flex flex-col items-center gap-2 z-20 mb-2">
+        <div class="flex flex-col items-center gap-1 animate-bounce" style="animation-duration: 2.2s;">
+          <i data-lucide="chevron-up" class="w-5 h-5 text-[#ECC880]"></i>
+          <span class="font-handwritten text-lg sm:text-xl text-[#FCF8F2] tracking-wider font-semibold">
+            Tap or Swipe to Unlock Kunju's Journal 🌸
           </span>
         </div>
-        <div class="ios-home-bar"></div>
+        <div class="w-24 h-1 rounded-full bg-[#ECC880]/60"></div>
       </div>
     </div>
 
-    <!-- PHASE 2: iPad Passcode Keypad View (Slide Up & Blurred Wallpaper) -->
-    <div id="ipad-passcode-view" class="absolute inset-0 flex flex-col items-center justify-between p-6 sm:p-10 z-20 transition-all duration-500 translate-y-full opacity-0 pointer-events-none bg-black/55 backdrop-blur-2xl apple-font">
-      <!-- Background Mirror Blurry Wallpaper -->
-      <img 
-        src="assets/photos/ipad_lockscreen_wallpaper.jpg" 
-        alt="Bebo iPad Wallpaper Blur" 
-        class="absolute inset-0 w-full h-full object-cover object-center blur-2xl scale-110 opacity-30 pointer-events-none"
-      />
-      <div class="absolute inset-0 bg-gradient-to-b from-[#0e0a1a]/80 via-[#08060f]/85 to-[#040308]/90 pointer-events-none"></div>
-
-      <!-- Top Status Bar -->
-      <div class="relative w-full max-w-4xl flex items-center justify-between apple-status-text text-white/80 z-20 pt-1">
-        <span class="flex items-center gap-1.5">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-rose-300"></i>
-          <span class="device-status-label">Bebo's iPad</span>
+    <!-- PHASE 2: Journal Padlock Keypad View (PIN: 123987) -->
+    <div id="ipad-passcode-view" class="absolute inset-0 flex flex-col items-center justify-between p-6 sm:p-10 z-20 transition-all duration-500 translate-y-full opacity-0 pointer-events-none bg-[#3E1B20]/95 backdrop-blur-xl">
+      
+      <!-- Top Status Ribbon -->
+      <div class="relative w-full max-w-3xl flex items-center justify-between text-[#ECC880]/80 z-20 pt-1">
+        <span class="flex items-center gap-1.5 font-handwritten text-lg">
+          <i data-lucide="sparkles" class="w-4 h-4 text-[#ECC880]"></i>
+          <span>Private Memory Chamber</span>
         </span>
-        <span class="flex items-center gap-2.5">
-          <i data-lucide="wifi" class="w-3.5 h-3.5 text-white"></i>
-          <i data-lucide="battery-charging" class="w-4 h-4 text-emerald-400"></i>
-        </span>
+        <span class="font-mono text-xs uppercase tracking-wider text-[#ECC880]/70">PIN Code Required</span>
       </div>
 
       <!-- Passcode Center Column -->
       <div class="relative flex flex-col items-center text-center my-auto w-full max-w-md z-20">
-        <div id="ipad-lock-icon" class="w-11 h-11 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white mb-2 shadow-lg transition-transform">
-          <i data-lucide="lock" class="w-4.5 h-4.5 text-rose-200"></i>
+        <div id="ipad-lock-icon" class="brass-lock-badge w-12 h-12 rounded-full flex items-center justify-center mb-3 shadow-lg transition-transform">
+          <i data-lucide="lock" class="w-5 h-5 text-[#3D2205]"></i>
         </div>
 
-        <div id="ipad-passcode-label" class="apple-passcode-title text-base sm:text-lg text-white mb-3">
-          Enter Passcode
+        <div id="ipad-passcode-label" class="font-handwritten text-2xl sm:text-3xl text-[#FCF8F2] font-bold mb-2">
+          Enter Passcode to Peek Inside 📖
         </div>
 
         <!-- 6 PIN Indicator Dots -->
@@ -167,66 +184,66 @@
           <div class="pin-dot" id="pin-dot-5"></div>
         </div>
 
-        <div id="ipad-error-msg" class="text-xs font-sans text-rose-300 opacity-0 transition-opacity h-5">
-          Incorrect passcode. Hint: Your iPad PIN (6 digits)
+        <div id="ipad-error-msg" class="text-xs font-note text-[#FFB2A6] opacity-0 transition-opacity h-5">
+          Incorrect passcode. Hint: 123987 (6 digits)
         </div>
 
-        <!-- iPad Circular Keypad (Landscape & Mobile adaptive sizing) -->
+        <!-- Vintage Stamp Buttons Keypad -->
         <div class="grid grid-cols-3 gap-x-6 sm:gap-x-8 gap-y-2.5 sm:gap-y-3.5 max-w-[260px] sm:max-w-[300px] mx-auto mt-1" role="group" aria-label="Passcode Keypad">
-          <button type="button" class="ipad-key" data-key="1" aria-label="1">
-            <span class="apple-keypad-number text-2xl sm:text-3xl">1</span>
+          <button type="button" class="journal-key ipad-key" data-key="1" aria-label="1">
+            <span class="font-serif text-2xl sm:text-3xl font-bold">1</span>
           </button>
-          <button type="button" class="ipad-key" data-key="2" aria-label="2 ABC">
-            <span class="apple-keypad-number text-2xl sm:text-3xl">2</span>
-            <span class="apple-keypad-subletters text-[8px] text-white/80">ABC</span>
+          <button type="button" class="journal-key ipad-key" data-key="2" aria-label="2">
+            <span class="font-serif text-2xl sm:text-3xl font-bold">2</span>
+            <span class="text-[8px] font-mono text-[#635356]">ABC</span>
           </button>
-          <button type="button" class="ipad-key" data-key="3" aria-label="3 DEF">
-            <span class="apple-keypad-number text-2xl sm:text-3xl">3</span>
-            <span class="apple-keypad-subletters text-[8px] text-white/80">DEF</span>
-          </button>
-
-          <button type="button" class="ipad-key" data-key="4" aria-label="4 GHI">
-            <span class="apple-keypad-number text-2xl sm:text-3xl">4</span>
-            <span class="apple-keypad-subletters text-[8px] text-white/80">GHI</span>
-          </button>
-          <button type="button" class="ipad-key" data-key="5" aria-label="5 JKL">
-            <span class="apple-keypad-number text-2xl sm:text-3xl">5</span>
-            <span class="apple-keypad-subletters text-[8px] text-white/80">JKL</span>
-          </button>
-          <button type="button" class="ipad-key" data-key="6" aria-label="6 MNO">
-            <span class="apple-keypad-number text-2xl sm:text-3xl">6</span>
-            <span class="apple-keypad-subletters text-[8px] text-white/80">MNO</span>
+          <button type="button" class="journal-key ipad-key" data-key="3" aria-label="3">
+            <span class="font-serif text-2xl sm:text-3xl font-bold">3</span>
+            <span class="text-[8px] font-mono text-[#635356]">DEF</span>
           </button>
 
-          <button type="button" class="ipad-key" data-key="7" aria-label="7 PQRS">
-            <span class="apple-keypad-number text-2xl sm:text-3xl">7</span>
-            <span class="apple-keypad-subletters text-[8px] text-white/80">PQRS</span>
+          <button type="button" class="journal-key ipad-key" data-key="4" aria-label="4">
+            <span class="font-serif text-2xl sm:text-3xl font-bold">4</span>
+            <span class="text-[8px] font-mono text-[#635356]">GHI</span>
           </button>
-          <button type="button" class="ipad-key" data-key="8" aria-label="8 TUV">
-            <span class="apple-keypad-number text-2xl sm:text-3xl">8</span>
-            <span class="apple-keypad-subletters text-[8px] text-white/80">TUV</span>
+          <button type="button" class="journal-key ipad-key" data-key="5" aria-label="5">
+            <span class="font-serif text-2xl sm:text-3xl font-bold">5</span>
+            <span class="text-[8px] font-mono text-[#635356]">JKL</span>
           </button>
-          <button type="button" class="ipad-key" data-key="9" aria-label="9 WXYZ">
-            <span class="apple-keypad-number text-2xl sm:text-3xl">9</span>
-            <span class="apple-keypad-subletters text-[8px] text-white/80">WXYZ</span>
+          <button type="button" class="journal-key ipad-key" data-key="6" aria-label="6">
+            <span class="font-serif text-2xl sm:text-3xl font-bold">6</span>
+            <span class="text-[8px] font-mono text-[#635356]">MNO</span>
           </button>
 
-          <button type="button" class="ipad-key" id="ipad-key-cancel" aria-label="Cancel to lockscreen" title="Cancel (Back to Lockscreen)">
-            <span class="apple-cancel-btn text-xs sm:text-sm text-white/95">Cancel</span>
+          <button type="button" class="journal-key ipad-key" data-key="7" aria-label="7">
+            <span class="font-serif text-2xl sm:text-3xl font-bold">7</span>
+            <span class="text-[8px] font-mono text-[#635356]">PQRS</span>
           </button>
-          <button type="button" class="ipad-key" data-key="0" aria-label="0">
-            <span class="apple-keypad-number text-2xl sm:text-3xl">0</span>
+          <button type="button" class="journal-key ipad-key" data-key="8" aria-label="8">
+            <span class="font-serif text-2xl sm:text-3xl font-bold">8</span>
+            <span class="text-[8px] font-mono text-[#635356]">TUV</span>
           </button>
-          <button type="button" class="ipad-key" id="ipad-key-delete" aria-label="Delete last digit" title="Delete">
-            <i data-lucide="delete" class="w-4.5 h-4.5 text-white/90"></i>
+          <button type="button" class="journal-key ipad-key" data-key="9" aria-label="9">
+            <span class="font-serif text-2xl sm:text-3xl font-bold">9</span>
+            <span class="text-[8px] font-mono text-[#635356]">WXYZ</span>
+          </button>
+
+          <button type="button" class="journal-key ipad-key" id="ipad-key-cancel" aria-label="Cancel to cover" title="Cancel (Back to Cover)">
+            <span class="font-handwritten text-sm sm:text-base font-bold text-[#899481]">Cancel</span>
+          </button>
+          <button type="button" class="journal-key ipad-key" data-key="0" aria-label="0">
+            <span class="font-serif text-2xl sm:text-3xl font-bold">0</span>
+          </button>
+          <button type="button" class="journal-key ipad-key" id="ipad-key-delete" aria-label="Delete last digit" title="Delete">
+            <i data-lucide="delete" class="w-5 h-5 text-[#B7605F]"></i>
           </button>
         </div>
       </div>
 
       <!-- Bottom Hint -->
-      <div class="relative text-[11px] font-sans text-white/60 pb-1 flex items-center gap-1.5 z-20">
-        <i data-lucide="heart" class="w-3 h-3 text-rose-400 fill-rose-400 animate-pulse"></i>
-        <span>Protected Digital Memory Sanctum</span>
+      <div class="relative text-xs font-handwritten text-[#ECC880] pb-1 flex items-center gap-1.5 z-20">
+        <i data-lucide="heart" class="w-3.5 h-3.5 text-[#ECC880] fill-[#ECC880] animate-pulse"></i>
+        <span>Kevin's Private Gift for Kunju's Birthday</span>
       </div>
     </div>
   </div>
@@ -250,14 +267,6 @@
       var lockoutUntil = 0;
       var lockoutInterval = null;
 
-      // Adaptive Device Detection (iPhone vs iPad vs Desktop)
-      var isPhone = window.innerWidth <= 640 || /iPhone|Android.*Mobile|iPod/i.test(navigator.userAgent);
-      var deviceName = isPhone ? "Bebo's iPhone" : "Bebo's iPad";
-      document.querySelectorAll('.device-status-label').forEach(function(el) {
-        el.textContent = deviceName;
-      });
-
-      // Live iPad Clock update
       function updateClock() {
         var now = new Date();
         var hours = now.getHours();
@@ -272,10 +281,9 @@
       updateClock();
       setInterval(updateClock, 1000);
 
-      // Phase 1 -> Phase 2 Transition (Swipe Up to Passcode)
       function showPasscodeView() {
         if (!passcodeView || !wallpaperView) return;
-        wallpaperView.style.transform = 'translateY(-30%)';
+        wallpaperView.style.transform = 'translateY(-25%) scale(0.95)';
         wallpaperView.style.opacity = '0';
         wallpaperView.style.pointerEvents = 'none';
 
@@ -293,20 +301,17 @@
         passcodeView.classList.remove('translate-y-0', 'opacity-100');
         passcodeView.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
 
-        wallpaperView.style.transform = 'translateY(0)';
+        wallpaperView.style.transform = 'translateY(0) scale(1)';
         wallpaperView.style.opacity = '1';
         wallpaperView.style.pointerEvents = 'auto';
       }
 
-      // Tap / Swipe on Wallpaper View
       if (wallpaperView) {
         wallpaperView.addEventListener('click', showPasscodeView);
-
         var touchStartY = 0;
         wallpaperView.addEventListener('touchstart', function(e) {
           touchStartY = e.changedTouches[0].screenY;
         }, { passive: true });
-
         wallpaperView.addEventListener('touchend', function(e) {
           var touchEndY = e.changedTouches[0].screenY;
           if (touchStartY - touchEndY > 35) {
@@ -315,7 +320,6 @@
         }, { passive: true });
       }
 
-      // Cancel button -> back to wallpaper
       var cancelBtn = document.getElementById('ipad-key-cancel');
       if (cancelBtn) {
         cancelBtn.addEventListener('click', function(e) {
@@ -324,7 +328,6 @@
         });
       }
 
-      // Render PIN dots
       function renderDots() {
         for (var i = 0; i < 6; i++) {
           var dot = document.getElementById('pin-dot-' + i);
@@ -360,15 +363,14 @@
 
       function checkPasscode() {
         if (currentInput === TARGET_PASSCODE) {
-          // Success! Unlock
           failedAttempts = 0;
           if (lockIcon) {
-            lockIcon.innerHTML = '<i data-lucide="unlock" class="w-4.5 h-4.5 text-emerald-400"></i>';
-            lockIcon.classList.add('bg-emerald-500/20', 'border-emerald-300/40', 'scale-110');
+            lockIcon.innerHTML = '<i data-lucide="unlock" class="w-5 h-5 text-[#2B2225]"></i>';
+            lockIcon.classList.add('scale-110');
             if (window.lucide) window.lucide.createIcons();
           }
 
-          // Immediately start playing the song as soon as unlocking is done!
+          // Immediately start playing song as soon as unlocking is done!
           if (window.audioEngine) {
             window.audioEngine.play();
           }
@@ -381,7 +383,12 @@
           }
 
           if (typeof confetti === 'function') {
-            confetti({ particleCount: 55, spread: 70, origin: { y: 0.5 } });
+            confetti({
+              particleCount: 65,
+              spread: 75,
+              origin: { y: 0.5 },
+              colors: ['#B7605F', '#F08A78', '#ECC880', '#899481', '#FCF8F2']
+            });
           }
 
           setTimeout(function() {
@@ -394,7 +401,6 @@
             }
           }, 400);
         } else {
-          // Error! Shake
           failedAttempts++;
 
           if (pinContainer) {
@@ -411,7 +417,7 @@
 
             if (errorMsg) {
               errorMsg.style.opacity = '1';
-              errorMsg.textContent = 'iPad is disabled. Try again in 30 seconds';
+              errorMsg.textContent = 'Journal is locked. Try again in 30 seconds';
             }
 
             if (lockoutInterval) clearInterval(lockoutInterval);
@@ -421,14 +427,14 @@
                 clearInterval(lockoutInterval);
                 if (errorMsg) errorMsg.textContent = 'Enter Passcode (6 digits)';
               } else {
-                if (errorMsg) errorMsg.textContent = 'iPad is disabled. Try again in ' + remaining + ' seconds';
+                if (errorMsg) errorMsg.textContent = 'Journal locked. Try again in ' + remaining + 's';
               }
             }, 1000);
           } else {
             if (errorMsg) {
               errorMsg.style.opacity = '1';
               var attemptsLeft = maxAttempts - failedAttempts;
-              errorMsg.textContent = 'Incorrect passcode (' + attemptsLeft + ' left). Hint: iPad PIN';
+              errorMsg.textContent = 'Incorrect passcode (' + attemptsLeft + ' left). Hint: 123987';
             }
           }
 
@@ -440,14 +446,9 @@
         }
       }
 
-      // Keypad listeners with tactile ripple
-      document.querySelectorAll('.ipad-key[data-key]').forEach(function(btn) {
+      document.querySelectorAll('.journal-key[data-key]').forEach(function(btn) {
         btn.addEventListener('click', function(e) {
           e.stopPropagation();
-          var ripple = document.createElement('span');
-          ripple.className = 'key-tap-ripple';
-          btn.appendChild(ripple);
-          setTimeout(function() { if (ripple.parentNode) ripple.parentNode.removeChild(ripple); }, 400);
           handleKey(btn.dataset.key);
         });
       });
@@ -456,15 +457,10 @@
       if (deleteBtn) {
         deleteBtn.addEventListener('click', function(e) {
           e.stopPropagation();
-          var ripple = document.createElement('span');
-          ripple.className = 'key-tap-ripple';
-          deleteBtn.appendChild(ripple);
-          setTimeout(function() { if (ripple.parentNode) ripple.parentNode.removeChild(ripple); }, 400);
           handleDelete();
         });
       }
 
-      // Physical keyboard typing support
       window.addEventListener('keydown', function(e) {
         if (!lockScreen || !lockScreen.parentNode) return;
         if (wallpaperView && wallpaperView.style.opacity !== '0') {
@@ -481,137 +477,72 @@
     })();
   </script>
 
-  <!-- Interactive Stardust & Aurora Canvas -->
+  <!-- Interactive Floating Fireflies & Rose Petals Canvas -->
   <canvas id="stardust-canvas"></canvas>
 
-  <!-- Celestial Comet Scroll Progress Bar -->
-  <div id="celestial-scroll-comet" class="fixed right-2 sm:right-4 top-0 bottom-0 w-1.5 sm:w-2 z-40 pointer-events-none opacity-0 transition-opacity duration-500" aria-hidden="true">
-    <div class="comet-track absolute inset-y-0 w-[1px] left-1/2 -translate-x-1/2 bg-white/10"></div>
-    <div id="comet-head" class="comet-head absolute left-1/2 -translate-x-1/2 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-rose-200 shadow-[0_0_12px_#ffb4be,0_0_24px_#e8a598]"></div>
-  </div>
+  <!-- Ambient Warm Atmospheric Glow Orbs -->
+  <div class="ambient-orb ambient-orb-rose w-[500px] h-[500px] -top-24 -left-24"></div>
+  <div class="ambient-orb ambient-orb-sage w-[600px] h-[600px] top-[35%] -right-36"></div>
+  <div class="ambient-orb ambient-orb-champagne w-[500px] h-[500px] top-[70%] -left-28"></div>
 
-  <!-- Ambient Glowing Atmospheric Orbs -->
-  <div class="ambient-orb ambient-orb-rose w-[550px] h-[550px] -top-32 -left-32"></div>
-  <div class="ambient-orb ambient-orb-purple w-[650px] h-[650px] top-[30%] -right-48"></div>
-  <div class="ambient-orb ambient-orb-champagne w-[500px] h-[500px] top-[75%] -left-32"></div>
-
-  <!-- Screen Celestial Flash Overlay (Grand Climax) -->
+  <!-- Warm Screen Bloom Overlay -->
   <div id="celestial-flash-overlay" class="celestial-flash"></div>
 
-  <!-- Vignette Depth Layer -->
-  <div class="vignette-overlay"></div>
-
   <!-- =========================================================================
-       NAVIGATION BAR
+       NAVIGATION BAR (Paper Ribbon with Stitched Borders)
        ========================================================================= -->
-  <header class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-4">
-    <div class="max-w-7xl mx-auto flex items-center justify-between glass-pill px-6 py-3 rounded-full">
-      <!-- Logo & Recipient Sanctuary -->
+  <header class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-3">
+    <div class="max-w-7xl mx-auto flex items-center justify-between journal-pill px-5 sm:px-7 py-2.5 rounded-full border border-[#D9C5B2] shadow-md">
+      
+      <!-- Scrapbook Logo & Name -->
       <a href="#hero" class="flex items-center gap-2.5 group">
-        <div class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-300/30 flex items-center justify-center text-rose-200 group-hover:rotate-12 transition-transform shadow-sm shadow-rose-500/20">
-          <i data-lucide="sparkles" class="w-4 h-4 text-rose-300"></i>
+        <div class="w-8 h-8 rounded-full bg-[#B7605F]/15 border border-[#B7605F]/40 flex items-center justify-center text-[#B7605F] group-hover:rotate-12 transition-transform">
+          <i data-lucide="book-open" class="w-4 h-4"></i>
         </div>
-        <div class="flex flex-col">
-          <span class="font-serif-editorial text-lg tracking-wide text-rose-100 font-semibold leading-tight group-hover:text-rose-200 transition-colors">
-            <span id="nav-recipient-name">Maria</span>’s Sanctuary
+        <div class="flex flex-col text-left">
+          <span class="font-handwritten text-2xl font-bold tracking-wide text-[#684045] leading-none group-hover:text-[#B7605F] transition-colors">
+            <span id="nav-recipient-name">Kunju</span>’s Journal 🌸
           </span>
-          <span class="text-[10px] text-rose-300/70 uppercase tracking-widest font-mono">My Universe (Bebo)</span>
+          <span class="text-[10px] text-[#899481] uppercase tracking-widest font-mono">Kevin & Kunju • Pala Days</span>
         </div>
       </a>
 
-      <!-- Desktop Nav Links & Submenus -->
-      <nav class="hidden lg:flex items-center gap-5 text-xs uppercase tracking-widest font-mono text-gray-300">
-        <a href="#hero" class="hover:text-rose-200 transition-colors">Home</a>
-
-        <!-- About Dropdown (Affectionate Submenu) -->
-        <div class="relative group">
-          <button class="flex items-center gap-1 hover:text-rose-200 transition-colors py-2 focus:outline-none">
-            <span>About</span>
-            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-rose-300/70 group-hover:rotate-180 transition-transform"></i>
-          </button>
-          <div class="absolute left-0 top-full hidden group-hover:flex flex-col w-56 p-2 rounded-2xl glass-panel border border-rose-200/20 shadow-2xl z-50 animate-fadeIn">
-            <a href="#story-beginning" class="px-3.5 py-2.5 rounded-xl hover:bg-rose-500/20 hover:text-rose-100 text-[11px] normal-case font-serif-editorial text-gray-200 flex items-center gap-2 transition-colors">
-              <i data-lucide="compass" class="w-3.5 h-3.5 text-rose-400"></i>
-              <span>The Beginning Days</span>
-            </a>
-            <a href="#story-whole-world" class="px-3.5 py-2.5 rounded-xl hover:bg-rose-500/20 hover:text-rose-100 text-[11px] normal-case font-serif-editorial text-gray-200 flex items-center gap-2 transition-colors">
-              <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-400"></i>
-              <span>My Whole World</span>
-            </a>
-            <a href="#reasons" class="px-3.5 py-2.5 rounded-xl hover:bg-rose-500/20 hover:text-rose-100 text-[11px] normal-case font-serif-editorial text-gray-200 flex items-center gap-2 transition-colors">
-              <i data-lucide="star" class="w-3.5 h-3.5 text-amber-300"></i>
-              <span>Why I Adore You</span>
-            </a>
-            <a href="#letter" class="px-3.5 py-2.5 rounded-xl hover:bg-rose-500/20 hover:text-rose-100 text-[11px] normal-case font-serif-editorial text-gray-200 flex items-center gap-2 transition-colors">
-              <i data-lucide="mail" class="w-3.5 h-3.5 text-rose-300"></i>
-              <span>Letter to My Eternity</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Menu Jump Links -->
-        <a href="#gallery" class="hover:text-rose-200 transition-colors">Menu</a>
-
-        <!-- Midnight Stardust Player Track Switcher (Player Submenu) -->
-        <div class="relative group">
-          <button class="flex items-center gap-1.5 hover:text-rose-200 transition-colors py-2 text-rose-300/90 focus:outline-none">
-            <i data-lucide="disc" class="w-3.5 h-3.5 text-rose-400 animate-spin" style="animation-duration: 8s;"></i>
-            <span>Player</span>
-            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-rose-300/70 group-hover:rotate-180 transition-transform"></i>
-          </button>
-          <div class="absolute left-0 top-full hidden group-hover:flex flex-col w-64 p-2 rounded-2xl glass-panel border border-rose-200/20 shadow-2xl z-50 animate-fadeIn">
-            <span class="text-[10px] uppercase font-mono tracking-wider text-rose-300/60 px-3 py-1 block border-b border-white/5">
-              Select Soundscape
-            </span>
-            <button onclick="if(window.audioEngine) window.audioEngine.switchTrack('Our Song (1.mp3)')" class="text-left px-3.5 py-2 rounded-xl hover:bg-rose-500/20 hover:text-rose-100 text-xs normal-case font-sans text-rose-200 font-medium flex items-center gap-2 transition-colors bg-rose-500/10">
-              <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-400 fill-rose-400"></i>
-              <span>Our Special Song (1.mp3)</span>
-            </button>
-            <button onclick="if(window.audioEngine) window.audioEngine.switchTrack('Midnight Stardust (Lofi Pad)')" class="text-left px-3.5 py-2 rounded-xl hover:bg-rose-500/20 hover:text-rose-100 text-xs normal-case font-sans text-gray-200 flex items-center gap-2 transition-colors">
-              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-rose-400"></i>
-              <span>Midnight Stardust</span>
-            </button>
-            <button onclick="if(window.audioEngine) window.audioEngine.switchTrack('Celestial Waves (Harmonic Chimes)')" class="text-left px-3.5 py-2 rounded-xl hover:bg-rose-500/20 hover:text-rose-100 text-xs normal-case font-sans text-gray-200 flex items-center gap-2 transition-colors">
-              <i data-lucide="wind" class="w-3.5 h-3.5 text-cyan-400"></i>
-              <span>Celestial Waves</span>
-            </button>
-            <button onclick="if(window.audioEngine) window.audioEngine.switchTrack('Rain on Window (Cozy Lo-Fi)')" class="text-left px-3.5 py-2 rounded-xl hover:bg-rose-500/20 hover:text-rose-100 text-xs normal-case font-sans text-gray-200 flex items-center gap-2 transition-colors">
-              <i data-lucide="cloud-rain" class="w-3.5 h-3.5 text-blue-400"></i>
-              <span>Rain on Window</span>
-            </button>
-          </div>
-        </div>
-
-        <a href="#letter" class="hover:text-rose-200 transition-colors">Contact</a>
-        <a href="#story-beginning" class="hover:text-rose-200 transition-colors">Blog</a>
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-handwritten text-lg text-[#635356]">
+        <a href="#hero" class="hover:text-[#B7605F] transition-colors">Cover</a>
+        <a href="#story-beginning" class="hover:text-[#B7605F] transition-colors">Chapter I (8th Grade)</a>
+        <a href="#story-whole-world" class="hover:text-[#B7605F] transition-colors">Chapter II (Best Buds)</a>
+        <a href="#gallery" class="hover:text-[#B7605F] transition-colors">47 Memories 📸</a>
+        <a href="#reasons" class="hover:text-[#B7605F] transition-colors">Why I Adore You ♡</a>
+        <a href="#letter" class="hover:text-[#B7605F] transition-colors">Love Letter 💌</a>
       </nav>
 
-      <!-- Right Controls: Audio Player & Secret Vault Trigger -->
+      <!-- Right Controls: Audio Player Widget & Secret Keepsake Chamber -->
       <div class="flex items-center gap-3">
-        <!-- Secret Vault Trigger -->
+        <!-- Secret Chamber Trigger -->
         <button 
           id="vault-trigger-btn"
-          title="Secret Constellation Vault (Key: 140323)"
-          class="w-9 h-9 rounded-full bg-white/5 hover:bg-rose-500/20 border border-rose-200/20 flex items-center justify-center text-rose-300 hover:text-rose-100 transition-all hover:scale-105">
+          title="Secret Keepsake Chamber (Key: kunju)"
+          class="w-9 h-9 rounded-full bg-white hover:bg-[#B7605F] hover:text-white border border-[#D9C5B2] flex items-center justify-center text-[#B7605F] transition-all hover:scale-105 shadow-sm touch-target-44">
           <i data-lucide="key" class="w-4 h-4"></i>
         </button>
 
-        <!-- Ambient Audio Player Widget (Midnight Stardust Player) -->
-        <div id="audio-player-widget" class="flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/5 border border-rose-200/20 shadow-sm">
+        <!-- Cozy Mini Cassette Player Widget -->
+        <div id="audio-player-widget" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#D9C5B2] shadow-sm">
           <button 
             id="audio-toggle-btn" 
             title="Toggle Romantic Ambient Music"
-            class="w-7 h-7 rounded-full bg-rose-500/20 hover:bg-rose-500/40 text-rose-200 flex items-center justify-center transition-transform hover:scale-110">
+            class="w-7 h-7 rounded-full bg-[#B7605F] hover:bg-[#9A4C4B] text-white flex items-center justify-center transition-transform hover:scale-110">
             <i data-lucide="music" class="w-3.5 h-3.5"></i>
           </button>
           
-          <div class="hidden sm:flex flex-col">
-            <span id="audio-track-title" class="text-[10px] text-rose-200/90 font-mono tracking-wider truncate max-w-[120px]">
-              Our Song (1.mp3)
+          <div class="hidden sm:flex flex-col text-left">
+            <span id="audio-track-title" class="text-[11px] text-[#684045] font-note font-semibold truncate max-w-[110px]">
+              Our Song (kunju.mp3)
             </span>
           </div>
 
-          <!-- Pulsing Equalizer Bars -->
+          <!-- Equalizer Bars -->
           <div class="flex items-end gap-0.5 h-4 px-1" title="Real-time Equalizer">
             <div class="eq-bar"></div>
             <div class="eq-bar"></div>
@@ -623,93 +554,95 @@
         </div>
 
         <!-- Mobile Menu Toggle -->
-        <button id="mobile-nav-toggle" class="lg:hidden w-8 h-8 flex items-center justify-center text-rose-200">
+        <button id="mobile-nav-toggle" class="lg:hidden w-8 h-8 flex items-center justify-center text-[#684045] touch-target-44" aria-label="Toggle navigation menu">
           <i data-lucide="menu" class="w-5 h-5"></i>
         </button>
       </div>
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div id="mobile-nav-menu" class="hidden lg:hidden max-w-7xl mx-auto mt-2 glass-panel rounded-2xl p-4 flex flex-col gap-3 text-sm font-mono text-center">
-      <a href="#hero" class="py-2 hover:text-rose-200">Home</a>
-      <a href="#story-beginning" class="py-2 hover:text-rose-200">About (Our Story)</a>
-      <a href="#gallery" class="py-2 hover:text-rose-200">Menu (Memories Grid)</a>
-      <a href="#reasons" class="py-2 hover:text-rose-200">Reasons I Love You</a>
-      <a href="#letter" class="py-2 hover:text-rose-200">Contact / Love Letter</a>
+    <div id="mobile-nav-menu" class="hidden lg:hidden max-w-7xl mx-auto mt-2 journal-panel rounded-2xl p-4 flex flex-col gap-2.5 text-base font-handwritten text-lg text-center shadow-lg">
+      <a href="#hero" class="py-1.5 hover:text-[#B7605F]">Journal Cover</a>
+      <a href="#story-beginning" class="py-1.5 hover:text-[#B7605F]">Chapter I • 8th Standard Spark</a>
+      <a href="#story-whole-world" class="py-1.5 hover:text-[#B7605F]">Chapter II • Best Buds & Everyday Magic</a>
+      <a href="#gallery" class="py-1.5 hover:text-[#B7605F]">All 47 Memories 📸</a>
+      <a href="#reasons" class="py-1.5 hover:text-[#B7605F]">Why I Adore You ♡</a>
+      <a href="#letter" class="py-1.5 hover:text-[#B7605F]">Birthday Love Letter 💌</a>
     </div>
   </header>
 
   <!-- =========================================================================
-       HERO SECTION: THE CELESTIAL UNIVERSE & MAIN TYPOGRAPHY HEADER
+       HERO SECTION: SCRAPBOOK JOURNAL COVER & HEADLINE
        ========================================================================= -->
   <section id="hero" class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 pt-28 pb-16 z-10">
     <div class="max-w-4xl mx-auto flex flex-col items-center">
       
-      <!-- Top Glowing Badge -->
-      <div class="hero-badge-float inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill mb-8">
-        <i data-lucide="stars" class="w-4 h-4 text-rose-300"></i>
-        <span id="hero-badge-text" class="text-xs font-mono tracking-widest text-rose-200 uppercase">
-          ✨ A Private Digital Sanctuary For Bebo ✨
+      <!-- Top Handwritten Stamp Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#D9C5B2] shadow-sm mb-6">
+        <i data-lucide="heart" class="w-3.5 h-3.5 text-[#B7605F] fill-[#B7605F]"></i>
+        <span id="hero-badge-text" class="text-xs font-handwritten text-base tracking-wide text-[#684045] font-semibold">
+          📖 KUNJU'S BIRTHDAY SCRAPBOOK & DIGITAL JOURNAL 🌸
         </span>
       </div>
 
-      <!-- Main Staggered Headline -->
-      <h1 class="font-serif-editorial text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.08] mb-4">
-        <span id="hero-title-prefix" class="block font-light text-rose-100/90 text-2xl sm:text-4xl md:text-5xl font-serif-editorial italic mb-2">
-          To My Dearest Maria,
+      <!-- Main Headline in Warm Expressive Typography -->
+      <h1 class="text-center mb-3">
+        <span id="hero-title-prefix" class="block font-handwritten text-3xl sm:text-5xl md:text-6xl text-[#899481] italic mb-1">
+          To My Dearest Kunju,
         </span>
-        <span id="hero-title-highlight" class="text-gradient-rose font-serif-display drop-shadow-lg">
-          My Entire Universe (Bebo)
+        <span id="hero-title-highlight" class="font-handwritten text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-[#684045] font-bold tracking-tight block drop-shadow-sm">
+          Happy Birthday, Kunju! 🎂✨
         </span>
       </h1>
 
-      <!-- Main Header Typography Block -->
-      <div class="max-w-3xl mx-auto my-6 p-6 sm:p-8 rounded-3xl bg-black/40 backdrop-blur-2xl border border-rose-200/25 shadow-2xl shadow-rose-950/50">
-        <p class="font-serif-display text-xl sm:text-2xl md:text-3xl text-rose-100 italic leading-relaxed text-gradient-gold">
-          “From the quiet glances to our grandest adventures, every moment is a chapter of us. Welcome to our memory sanctuary.”
+      <!-- Parchment Quotation Block with Stitched Edges -->
+      <div class="max-w-3xl mx-auto my-6 p-6 sm:p-8 rounded-2xl bg-white border-2 border-dashed border-[#B7605F]/40 shadow-md relative">
+        <div class="washi-tape rose"></div>
+        <p class="font-handwritten text-2xl sm:text-3xl md:text-4xl text-[#684045] leading-relaxed">
+          “From the quiet glances in 8th standard to every laugh we share today, you are my favorite person in every universe. Happy Birthday, Kunju.”
         </p>
       </div>
 
       <!-- Sentimental Subtitle -->
-      <p id="hero-subtitle" class="font-sans text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl font-light leading-relaxed mb-10">
-        In a galaxy of billions of souls, my heart orbits only around you. Welcome to our timeless sanctuary written in the stars, my sweet Bebo.
+      <p id="hero-subtitle" class="font-note text-base sm:text-lg md:text-xl text-[#635356] max-w-2xl font-light leading-relaxed mb-8">
+        You think of me as your best bud, but my heart chose you a long time ago. Welcome to a keepsake journal crafted just for you, Kunju.
       </p>
 
       <!-- Action Buttons -->
-      <div class="flex flex-wrap items-center justify-center gap-4 mb-16">
-        <a href="#story-beginning" class="btn-celestial px-7 py-3.5 rounded-full text-sm font-medium tracking-wide text-white flex items-center gap-2.5 group">
-          <span>Read Our Story</span>
-          <i data-lucide="sparkles" class="w-4 h-4 text-rose-300 group-hover:rotate-45 transition-transform"></i>
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-12">
+        <a href="#story-beginning" class="btn-scrapbook px-7 py-3 rounded-full font-handwritten text-xl font-bold tracking-wide text-white flex items-center gap-2 shadow-md">
+          <span>Turn to Chapter I</span>
+          <i data-lucide="book-open" class="w-4 h-4"></i>
         </a>
-        <a href="#gallery" class="glass-panel px-7 py-3.5 rounded-full text-sm font-medium tracking-wide text-rose-200 hover:text-white flex items-center gap-2 transition-all hover:bg-rose-500/10">
-          <i data-lucide="film" class="w-4 h-4 text-rose-400"></i>
-          <span>Explore Memories & Video Reels</span>
+        <a href="#gallery" class="btn-paper px-7 py-3 rounded-full font-handwritten text-xl font-bold text-[#684045] flex items-center gap-2">
+          <i data-lucide="camera" class="w-4 h-4 text-[#B7605F]"></i>
+          <span>Explore All 47 Polaroids 📸</span>
         </a>
       </div>
 
-      <!-- Live Milestone & Love Counter Ticker -->
-      <div class="glass-panel px-6 sm:px-8 py-5 rounded-2xl max-w-xl w-full border border-rose-200/15">
-        <div class="text-[11px] uppercase tracking-widest text-rose-300/80 font-mono mb-3 flex items-center justify-center gap-2">
-          <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-400 fill-rose-400 animate-pulse"></i>
-          <span>Loving You Every Single Second Since March 14, 2023</span>
+      <!-- Live Hand-Stamped Milestone Tracker -->
+      <div class="journal-panel px-6 sm:px-8 py-5 rounded-2xl max-w-xl w-full border border-[#D9C5B2]">
+        <div class="text-xs uppercase tracking-wider text-[#B7605F] font-mono mb-3 flex items-center justify-center gap-2">
+          <i data-lucide="heart" class="w-3.5 h-3.5 text-[#B7605F] fill-[#B7605F] animate-pulse"></i>
+          <span class="font-handwritten text-lg font-bold">Adoring You Every Single Second Since 8th Standard</span>
         </div>
 
         <div class="grid grid-cols-4 gap-2 sm:gap-4 text-center">
-          <div class="bg-black/30 rounded-xl py-2 px-1 border border-white/5">
-            <span id="count-days" class="font-mono text-2xl sm:text-3xl font-bold text-rose-100">00</span>
-            <span class="block text-[10px] text-gray-400 uppercase tracking-wider mt-0.5">Days</span>
+          <div class="bg-white rounded-xl py-2 px-1 border border-[#D9C5B2] shadow-sm">
+            <span id="count-days" class="font-serif text-2xl sm:text-3xl font-bold text-[#684045]">00</span>
+            <span class="block text-[11px] text-[#899481] font-note mt-0.5">Days</span>
           </div>
-          <div class="bg-black/30 rounded-xl py-2 px-1 border border-white/5">
-            <span id="count-hours" class="font-mono text-2xl sm:text-3xl font-bold text-rose-100">00</span>
-            <span class="block text-[10px] text-gray-400 uppercase tracking-wider mt-0.5">Hours</span>
+          <div class="bg-white rounded-xl py-2 px-1 border border-[#D9C5B2] shadow-sm">
+            <span id="count-hours" class="font-serif text-2xl sm:text-3xl font-bold text-[#684045]">00</span>
+            <span class="block text-[11px] text-[#899481] font-note mt-0.5">Hours</span>
           </div>
-          <div class="bg-black/30 rounded-xl py-2 px-1 border border-white/5">
-            <span id="count-minutes" class="font-mono text-2xl sm:text-3xl font-bold text-rose-100">00</span>
-            <span class="block text-[10px] text-gray-400 uppercase tracking-wider mt-0.5">Minutes</span>
+          <div class="bg-white rounded-xl py-2 px-1 border border-[#D9C5B2] shadow-sm">
+            <span id="count-minutes" class="font-serif text-2xl sm:text-3xl font-bold text-[#684045]">00</span>
+            <span class="block text-[11px] text-[#899481] font-note mt-0.5">Minutes</span>
           </div>
-          <div class="bg-black/30 rounded-xl py-2 px-1 border border-white/5">
-            <span id="count-seconds" class="font-mono text-2xl sm:text-3xl font-bold text-gradient-rose">00</span>
-            <span class="block text-[10px] text-gray-400 uppercase tracking-wider mt-0.5">Seconds</span>
+          <div class="bg-white rounded-xl py-2 px-1 border border-[#D9C5B2] shadow-sm">
+            <span id="count-seconds" class="font-serif text-2xl sm:text-3xl font-bold text-[#B7605F]">00</span>
+            <span class="block text-[11px] text-[#899481] font-note mt-0.5">Seconds</span>
           </div>
         </div>
       </div>
@@ -717,82 +650,84 @@
     </div>
 
     <!-- Scroll Down Hint -->
-    <a href="#story-beginning" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-xs font-mono text-rose-300/60 hover:text-rose-200 transition-colors">
-      <span>Begin Narrative Journey</span>
+    <a href="#story-beginning" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 font-handwritten text-lg text-[#899481] hover:text-[#B7605F] transition-colors">
+      <span>Open Diary Pages</span>
       <i data-lucide="chevron-down" class="w-4 h-4 animate-bounce"></i>
     </a>
   </section>
 
   <!-- =========================================================================
-       STORYTELLING CHAPTER 1: "LOVED YOU BEFORE WE EVER BEGAN"
+       CHAPTER 1: "THE DAY TIME STOOD STILL IN 8TH STANDARD 🎒"
        ========================================================================= -->
-  <section id="story-beginning" class="relative py-28 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto z-10">
-    <div class="spotlight-card rounded-3xl p-8 sm:p-12 lg:p-16 border border-rose-200/25 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+  <section id="story-beginning" class="relative py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto z-10">
+    <div class="journal-panel rounded-3xl p-6 sm:p-10 lg:p-14 border border-[#D9C5B2] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white shadow-md">
       
-      <!-- Left Column: Dual Saree Radiance Showcase -->
-      <div class="lg:col-span-5 relative grid grid-cols-2 gap-3.5">
-        <div class="tilt-card rounded-2xl overflow-hidden shadow-2xl border border-rose-200/30 group relative">
+      <!-- Left Column: Authentic Dual Polaroid Showcase (Stage Costume + Uniforms) -->
+      <div class="lg:col-span-5 relative grid grid-cols-2 gap-4">
+        <!-- Polaroid 1: Kunju on Stage (tia_19.jpeg) -->
+        <div class="polaroid-card tilt-p-neg2 relative">
           <div class="washi-tape gold"></div>
-          <div class="relative aspect-[3/4.5] overflow-hidden bg-black/60">
+          <div class="aspect-[3/4] overflow-hidden rounded bg-[#F7EFE5]">
             <img 
-              src="assets/photos/bebo_saree_radiance.jpg" 
-              alt="Maria in green embroidered saree" 
+              src="assets/photos/tia/tia_19.jpeg" 
+              alt="Kunju dancing on stage in 8th standard" 
               loading="lazy"
               decoding="async"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+              class="w-full h-full object-cover"
+              onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='tia/tia_19.jpeg';}"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex flex-col justify-end">
-              <span class="text-[10px] font-mono text-rose-300 uppercase tracking-widest">
-                Green Saree Grace
-              </span>
-            </div>
+          </div>
+          <div class="pt-2 text-center">
+            <span class="font-handwritten text-lg text-[#684045] font-bold block leading-tight">School Day Stage Grace</span>
+            <span class="text-[10px] text-[#899481] font-note">8th Standard • Pala</span>
           </div>
         </div>
 
-        <div class="tilt-card rounded-2xl overflow-hidden shadow-2xl border border-rose-200/30 group relative mt-6">
-          <div class="washi-tape blush"></div>
-          <div class="relative aspect-[3/4.5] overflow-hidden bg-black/60">
+        <!-- Polaroid 2: Kevin and Kunju in Uniforms (tia_47.jpeg) -->
+        <div class="polaroid-card tilt-p-pos2 relative mt-4">
+          <div class="washi-tape sage"></div>
+          <div class="aspect-[3/4] overflow-hidden rounded bg-[#F7EFE5]">
             <img 
-              src="assets/photos/bebo_fairy_lights_saree.jpg" 
-              alt="Maria in festive red saree with fairy lights" 
+              src="assets/photos/tia/tia_47.jpeg" 
+              alt="Kevin and Kunju in school uniforms" 
               loading="lazy"
               decoding="async"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+              class="w-full h-full object-cover"
+              onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='tia/tia_47.jpeg';}"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex flex-col justify-end">
-              <span class="text-[10px] font-mono text-rose-300 uppercase tracking-widest">
-                Fairy Lights Radiance
-              </span>
-            </div>
+          </div>
+          <div class="pt-2 text-center">
+            <span class="font-handwritten text-lg text-[#684045] font-bold block leading-tight">Carmel & Chavara Days</span>
+            <span class="text-[10px] text-[#899481] font-note">Together in Pala 🎒</span>
           </div>
         </div>
       </div>
 
-      <!-- Right Column: Heartfelt Narrative -->
-      <div class="lg:col-span-7 space-y-6 text-left">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-500/10 border border-rose-300/30 text-rose-300 text-xs font-mono uppercase tracking-wider">
+      <!-- Right Column: Heartfelt Ruled Diary Narrative -->
+      <div class="lg:col-span-7 space-y-5 text-left ruled-paper-margin">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FCF8F2] border border-[#D9C5B2] text-[#B7605F] text-xs font-handwritten text-base font-bold">
           <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-          <span>Chapter I • The Unspoken Spark</span>
+          <span>Chapter I • The Pala School Days Spark</span>
         </div>
 
-        <h2 class="font-serif-editorial text-3xl sm:text-5xl font-bold text-white leading-tight">
-          Loved You Before We Ever Began
+        <h2 class="font-handwritten text-4xl sm:text-5xl text-[#684045] font-bold leading-tight">
+          The Day Time Stood Still in 8th Standard 🎒
         </h2>
 
-        <p class="font-serif-editorial text-lg sm:text-xl text-rose-100/90 leading-relaxed italic border-l-2 border-rose-400/40 pl-4">
-          “Before there was an anniversary date, before we counted the days and minutes together, there was already an unspoken gravity. Every time you walked into the room, everything else simply faded into the background.”
+        <p class="font-handwritten text-2xl text-[#B7605F] leading-snug italic border-l-2 border-[#B7605F]/50 pl-3">
+          “Before there was any label, before we counted the years together, there was already an unspoken gravity. The moment you walked into that classroom in Pala, everything else simply faded into the background.”
         </p>
 
-        <p class="text-gray-300 text-sm sm:text-base font-light leading-relaxed">
-          I remember watching you in your Black top, Blue Jeans with your open hair , smiling softly with Your braces as you caught your reflection. It wasn’t just physical beauty—it was an effortless grace, a kindness that radiated from your very essence. Long before we officially became ‘us’, my heart had already made up its mind. I loved you before our story even started.
+        <p class="text-[#2B2225] font-note text-sm sm:text-base leading-relaxed">
+          I still remember the first time I saw you back in 8th standard—your effortless smile, the way you laughed with your friends, and how you lit up every hallway without even trying. Back then, I was just a boy admiring you in silence, secretly cherishing every quick glance and shared hallway conversation. Long before I ever found the courage to embrace it, my heart had already made up its mind. I was drawn to you before our journey even officially began.
         </p>
 
-        <div class="pt-4 flex items-center gap-4 text-xs font-mono text-rose-300/80">
+        <div class="pt-2 flex items-center gap-4 font-note text-xs text-[#899481]">
           <span class="flex items-center gap-1.5">
-            <i data-lucide="clock" class="w-3.5 h-3.5 text-rose-400"></i> February - March 2023
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#B7605F]"></i> Carmel & Chavara • Pala
           </span>
           <span class="flex items-center gap-1.5">
-            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-400"></i> Where Our Story Sparked
+            <i data-lucide="clock" class="w-3.5 h-3.5 text-[#B7605F]"></i> Since 8th Standard Days
           </span>
         </div>
       </div>
@@ -801,63 +736,78 @@
   </section>
 
   <!-- =========================================================================
-       STORYTELLING CHAPTER 2: "MY WHOLE WORLD (EVERYDAY MAGIC WITH BEBO)"
+       CHAPTER 2: "BEST BUDS & MY ENTIRE FUTURE ☕"
        ========================================================================= -->
-  <section id="story-whole-world" class="relative py-28 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto z-10">
-    <div class="spotlight-card rounded-3xl p-8 sm:p-12 lg:p-16 border border-rose-200/25 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+  <section id="story-whole-world" class="relative py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto z-10">
+    <div class="journal-panel rounded-3xl p-6 sm:p-10 lg:p-14 border border-[#D9C5B2] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white shadow-md">
       
       <!-- Left Column: Story Text -->
-      <div class="lg:col-span-7 space-y-6 text-left order-2 lg:order-1">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-500/10 border border-rose-300/30 text-rose-300 text-xs font-mono uppercase tracking-wider">
-          <i data-lucide="heart" class="w-3.5 h-3.5 fill-rose-400 text-rose-400"></i>
-          <span>Chapter II • Everyday Magic</span>
+      <div class="lg:col-span-7 space-y-5 text-left order-2 lg:order-1 ruled-paper-margin">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FCF8F2] border border-[#D9C5B2] text-[#B7605F] text-xs font-handwritten text-base font-bold">
+          <i data-lucide="coffee" class="w-3.5 h-3.5"></i>
+          <span>Chapter II • Best Buds & Everyday Magic</span>
         </div>
 
-        <h2 class="font-serif-editorial text-3xl sm:text-5xl font-bold text-white leading-tight">
-          You Are My Whole World
+        <h2 class="font-handwritten text-4xl sm:text-5xl text-[#684045] font-bold leading-tight">
+          Best Buds, Everyday Magic & You ☕
         </h2>
 
-        <p class="font-serif-editorial text-lg sm:text-xl text-rose-100/90 leading-relaxed italic border-l-2 border-rose-400/40 pl-4">
-          “How one person can turn a simple plate of dosas, a quiet morning with glasses on, or golden café sunlight into the most sacred moment of my week will forever be life’s greatest wonder.”
+        <p class="font-handwritten text-2xl text-[#B7605F] leading-snug italic border-l-2 border-[#B7605F]/50 pl-3">
+          “How one person can turn late night banter outside Blossom, cozy car drives, and simple laughter into the most sacred memories of my life will forever be my greatest wonder.”
         </p>
 
-        <p class="text-gray-300 text-sm sm:text-base font-light leading-relaxed">
-          The world is vast, busy, and constantly rushing, but with you, Bebo, time pauses. Watching you close your eyes in bliss under the warm sun, catching your messy-haired smile in the morning, and teasing you..these everyday moments are the fabric of my happiness. Life without you is completely unimaginable.
+        <p class="text-[#2B2225] font-note text-sm sm:text-base leading-relaxed">
+          The world is vast, busy, and constantly moving, but whenever I'm with you, Kunju, everything feels peaceful and right. You see me as your closest best friend, your buddy for late-night coffee runs outside Blossom and spontaneous adventures. But every smile you share, every candid expression, and every inside joke only reinforces what I've known all along: a future without you is completely unimaginable.
         </p>
 
-        <div class="pt-4 flex flex-wrap items-center gap-2.5">
-          <span class="px-3.5 py-1.5 rounded-full bg-white/5 border border-rose-200/20 text-xs font-mono text-rose-200">
-            ☀️ Sunlit Bliss
+        <div class="pt-3 flex flex-wrap items-center gap-2">
+          <span class="px-3 py-1 rounded-full bg-[#FCF8F2] border border-[#D9C5B2] text-xs font-handwritten text-base text-[#684045]">
+            ☕ Blossom Night Banter
           </span>
-          <span class="px-3.5 py-1.5 rounded-full bg-white/5 border border-rose-200/20 text-xs font-mono text-rose-200">
-            👓 Cozy Glasses
+          <span class="px-3 py-1 rounded-full bg-[#FCF8F2] border border-[#D9C5B2] text-xs font-handwritten text-base text-[#684045]">
+            🚗 Road Trip Companions
           </span>
-          <span class="px-3.5 py-1.5 rounded-full bg-white/5 border border-rose-200/20 text-xs font-mono text-rose-200">
-            ☕ Breakfast Dates
+          <span class="px-3 py-1 rounded-full bg-[#FCF8F2] border border-[#D9C5B2] text-xs font-handwritten text-base text-[#684045]">
+            🍕 Food Dates & Pizza Runs
           </span>
-          <span class="px-3.5 py-1.5 rounded-full bg-white/5 border border-rose-200/20 text-xs font-mono text-rose-200">
-            👆 Forehead Boops
+          <span class="px-3 py-1 rounded-full bg-[#FCF8F2] border border-[#D9C5B2] text-xs font-handwritten text-base text-[#684045]">
+            ✨ Forever Best Friends
           </span>
         </div>
       </div>
 
-      <!-- Right Column: 4-Photo Bento Collage Grid -->
+      <!-- Right Column: 4-Photo Polaroid Bento Collage Grid -->
       <div class="lg:col-span-5 order-1 lg:order-2 grid grid-cols-2 gap-3.5">
-        <div class="tilt-card rounded-xl overflow-hidden aspect-[3/4] border border-rose-200/20 shadow-lg group relative">
-          <img src="assets/photos/bebo_sunlit_bliss.jpg" alt="Maria Sunlit Bliss" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" />
-          <span class="absolute bottom-2 left-2 text-[10px] font-mono bg-black/60 backdrop-blur-md px-2 py-0.5 rounded text-rose-200">Sunlit Bliss</span>
+        <div class="polaroid-card tilt-p-neg1 !p-2 !pb-6">
+          <div class="washi-tape rose !w-16 !h-4 !top-[-6px]"></div>
+          <div class="aspect-[3/4] overflow-hidden rounded bg-[#F7EFE5]">
+            <img src="assets/photos/tia/tia_18.jpeg" alt="Kevin and Kunju smiling at night cafe" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='tia/tia_18.jpeg';}" />
+          </div>
+          <span class="font-handwritten text-sm text-[#684045] font-bold block pt-1 text-center">Night Cafe Banter</span>
         </div>
-        <div class="tilt-card rounded-xl overflow-hidden aspect-[3/4] border border-rose-200/20 shadow-lg group relative">
-          <img src="assets/photos/bebo_glasses_cozy.jpg" alt="Maria Cozy Glasses" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" />
-          <span class="absolute bottom-2 left-2 text-[10px] font-mono bg-black/60 backdrop-blur-md px-2 py-0.5 rounded text-rose-200">Cozy Glasses</span>
+
+        <div class="polaroid-card tilt-p-pos2 !p-2 !pb-6">
+          <div class="washi-tape gold !w-16 !h-4 !top-[-6px]"></div>
+          <div class="aspect-[3/4] overflow-hidden rounded bg-[#F7EFE5]">
+            <img src="assets/photos/tia/tia_20.jpeg" alt="Kunju mirror selfie" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='tia/tia_20.jpeg';}" />
+          </div>
+          <span class="font-handwritten text-sm text-[#684045] font-bold block pt-1 text-center">Mirror Goofiness</span>
         </div>
-        <div class="tilt-card rounded-xl overflow-hidden aspect-[3/4] border border-rose-200/20 shadow-lg group relative">
-          <img src="assets/photos/bebo_forehead_boop.jpg" alt="Maria Forehead Boop" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" />
-          <span class="absolute bottom-2 left-2 text-[10px] font-mono bg-black/60 backdrop-blur-md px-2 py-0.5 rounded text-rose-200">Playful Boop</span>
+
+        <div class="polaroid-card tilt-p-pos1 !p-2 !pb-6">
+          <div class="washi-tape peach !w-16 !h-4 !top-[-6px]"></div>
+          <div class="aspect-[3/4] overflow-hidden rounded bg-[#F7EFE5]">
+            <img src="assets/photos/tia/tia_34.jpeg" alt="Kunju eating pizza by airport window" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='tia/tia_34.jpeg';}" />
+          </div>
+          <span class="font-handwritten text-sm text-[#684045] font-bold block pt-1 text-center">Airport Pizza Date</span>
         </div>
-        <div class="tilt-card rounded-xl overflow-hidden aspect-[3/4] border border-rose-200/20 shadow-lg group relative">
-          <img src="assets/photos/bebo_breakfast_date.jpg" alt="Maria Breakfast Date" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500" />
-          <span class="absolute bottom-2 left-2 text-[10px] font-mono bg-black/60 backdrop-blur-md px-2 py-0.5 rounded text-rose-200">Food Dates</span>
+
+        <div class="polaroid-card tilt-p-neg2 !p-2 !pb-6">
+          <div class="washi-tape sage !w-16 !h-4 !top-[-6px]"></div>
+          <div class="aspect-[3/4] overflow-hidden rounded bg-[#F7EFE5]">
+            <img src="assets/photos/tia/tia_03.jpeg" alt="Kunju passenger car nap" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='tia/tia_03.jpeg';}" />
+          </div>
+          <span class="font-handwritten text-sm text-[#684045] font-bold block pt-1 text-center">Peaceful Car Nap</span>
         </div>
       </div>
 
@@ -865,79 +815,76 @@
   </section>
 
   <!-- =========================================================================
-       SECTION 3: 42-ITEM HYBRID BENTO & MASONRY MEDIA GALLERY
+       47-MEMORY SCRAPBOOK POLAROID GALLERY
        ========================================================================= -->
-  <section id="gallery" class="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10">
-    <div class="text-center max-w-3xl mx-auto mb-12">
-      <span class="text-xs uppercase tracking-widest font-mono text-rose-300/80 mb-2 block">
-        🎬 Curated Moments & Video Reels 🎬
+  <section id="gallery" class="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10">
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <span class="text-xs uppercase tracking-widest font-mono text-[#899481] mb-1 block">
+        📸 Hand-Penned Scrapbook Album 📸
       </span>
-      <h2 class="font-serif-editorial text-3xl sm:text-5xl font-bold text-white mb-4">
-        Our Celestial Constellation
+      <h2 class="font-handwritten text-4xl sm:text-6xl font-bold text-[#684045] mb-2">
+        Our 47-Memory Scrapbook Constellation
       </h2>
-      <p class="text-gray-300 text-sm sm:text-base font-light max-w-2xl mx-auto leading-relaxed">
-        A dynamic tapestry of high-definition video reels, authentic polaroids, and unforgettable candid memories with Maria.
+      <p class="font-note text-sm sm:text-base text-[#635356] max-w-2xl mx-auto leading-relaxed">
+        Every snapshot tells a story—from our 8th standard days in Pala to road trips, candid laughs, and every stolen second with Kunju.
       </p>
 
-      <!-- Category Filter Chips -->
-      <div id="gallery-filter-chips" class="flex flex-wrap items-center justify-center gap-2.5 mt-8">
+      <!-- Category Filter Tabs -->
+      <div id="gallery-filter-chips" class="flex flex-wrap items-center justify-center gap-2.5 mt-6">
         <!-- Injected dynamically via timeline.js -->
       </div>
     </div>
 
-    <!-- Dynamic Column Masonry Gallery Grid -->
-    <div id="media-gallery-grid" class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6 pt-4">
-      <!-- Injected dynamically via timeline.js with break-inside-avoid -->
+    <!-- Masonry Grid for 47 Polaroids -->
+    <div id="media-gallery-grid" class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 pt-4">
+      <!-- Injected dynamically via timeline.js -->
     </div>
 
-    <!-- Gallery Completion Scroll Trigger (fires fireworks & heart bursts) -->
-    <div id="gallery-completion-trigger" class="py-12 text-center text-rose-300/60 font-mono text-xs flex items-center justify-center gap-2">
-      <i data-lucide="sparkles" class="w-4 h-4 text-rose-400"></i>
-      <span>All 42 Memories Explored • To Infinity and Beyond</span>
+    <!-- Gallery Completion Trigger -->
+    <div id="gallery-completion-trigger" class="py-12 text-center text-[#B7605F] font-handwritten text-xl flex items-center justify-center gap-2">
+      <i data-lucide="sparkles" class="w-4 h-4 text-[#B7605F]"></i>
+      <span>All 47 Memories Explored • Kevin & Kunju Forever ♡</span>
     </div>
   </section>
 
-  <!-- Fullscreen Cinema Lightbox Modal -->
-  <div id="cinema-lightbox" class="lightbox-modal cinema-lightbox fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/95 backdrop-blur-2xl" role="dialog" aria-modal="true" aria-label="Cinema Memory Player">
+  <!-- Vintage Album Lightbox Modal -->
+  <div id="cinema-lightbox" class="lightbox-modal cinema-lightbox fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-md" role="dialog" aria-modal="true" aria-label="Scrapbook Album View">
     <div class="lightbox-backdrop absolute inset-0"></div>
 
-    <div class="modal-content relative z-10 max-w-4xl w-full glass-panel rounded-3xl overflow-hidden border border-rose-200/30 shadow-2xl flex flex-col">
+    <div class="modal-content relative z-10 max-w-4xl w-full bg-[#FCF8F2] rounded-3xl overflow-hidden border-2 border-dashed border-[#D9C5B2] shadow-2xl flex flex-col">
       <!-- Top Bar -->
-      <div class="flex items-center justify-between p-4 sm:p-6 border-b border-white/10 bg-black/40">
+      <div class="flex items-center justify-between p-4 sm:p-5 border-b border-[#E8DACB] bg-[#F7EFE5]">
         <div class="flex items-center gap-3">
-          <span id="cinema-counter" class="text-xs font-mono text-rose-200 bg-rose-500/20 px-3 py-1 rounded-full border border-rose-300/30">
-            1 / 42
+          <span id="cinema-counter" class="text-xs font-handwritten text-base text-white bg-[#B7605F] px-3 py-0.5 rounded-full shadow-sm">
+            1 / 47
           </span>
-          <span id="cinema-tag" class="text-[11px] font-mono text-gray-400 uppercase"></span>
+          <span id="cinema-tag" class="text-xs font-note text-[#899481]"></span>
         </div>
 
-        <button id="cinema-close-btn" class="cinema-ctrl-btn touch-target-44" aria-label="Close Cinema View (Esc)" title="Close Cinema View (Esc)">
+        <button id="cinema-close-btn" class="cinema-ctrl-btn touch-target-44" aria-label="Close View (Esc)" title="Close">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
       <!-- Media Display Area -->
-      <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-black flex items-center justify-center overflow-hidden">
-        <!-- Photo Player -->
-        <img id="cinema-image-player" src="" alt="Cinema Memory" class="w-full h-full object-contain" />
-        
-        <!-- HD Video Player -->
-        <video id="cinema-video-player" class="hidden w-full h-full object-contain" controls autoplay playsinline loop></video>
+      <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-[#EDE4D8] flex items-center justify-center overflow-hidden">
+        <img id="cinema-image-player" src="" alt="Album Memory" class="w-full h-full object-contain p-2" />
+        <video id="cinema-video-player" class="hidden w-full h-full object-contain p-2" controls autoplay playsinline loop></video>
       </div>
 
-      <!-- Bottom Caption & Controls -->
-      <div class="p-6 bg-gradient-to-b from-[#181324] to-[#100d1c] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <!-- Bottom Handwritten Caption & Navigation -->
+      <div class="p-5 sm:p-6 bg-[#FCF8F2] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-[#E8DACB]">
         <div class="space-y-1 max-w-xl text-left">
-          <h3 id="cinema-title" class="font-serif-editorial text-2xl text-rose-100 font-bold leading-tight"></h3>
-          <p id="cinema-caption" class="text-xs sm:text-sm text-gray-300 leading-relaxed font-sans italic border-l-2 border-rose-400/40 pl-3"></p>
+          <h3 id="cinema-title" class="font-handwritten text-3xl text-[#684045] font-bold leading-tight"></h3>
+          <p id="cinema-caption" class="font-note text-xs sm:text-sm text-[#635356] leading-relaxed italic border-l-2 border-[#B7605F]/50 pl-3"></p>
         </div>
 
-        <!-- Navigation Buttons -->
+        <!-- Previous / Next Controls -->
         <div class="flex items-center gap-3 self-end sm:self-center">
-          <button id="cinema-prev-btn" class="cinema-ctrl-btn touch-target-44" aria-label="Previous Memory (Left Arrow)" title="Previous Memory (Left Arrow)">
+          <button id="cinema-prev-btn" class="cinema-ctrl-btn touch-target-44" aria-label="Previous Memory" title="Previous">
             <i data-lucide="chevron-left" class="w-5 h-5"></i>
           </button>
-          <button id="cinema-next-btn" class="cinema-ctrl-btn touch-target-44" aria-label="Next Memory (Right Arrow)" title="Next Memory (Right Arrow)">
+          <button id="cinema-next-btn" class="cinema-ctrl-btn touch-target-44" aria-label="Next Memory" title="Next">
             <i data-lucide="chevron-right" class="w-5 h-5"></i>
           </button>
         </div>
@@ -946,18 +893,18 @@
   </div>
 
   <!-- =========================================================================
-       SECTION 4: "REASONS WHY YOU'RE MY UNIVERSE" BENTO GRID
+       REASONS WHY YOU MEAN THE WORLD (STICKY NOTE BENTO GRID)
        ========================================================================= -->
-  <section id="reasons" class="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10">
-    <div class="text-center max-w-3xl mx-auto mb-14">
-      <span class="text-xs uppercase tracking-widest font-mono text-rose-300/80 mb-2 block">
-        💖 Endless Affection 💖
+  <section id="reasons" class="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10">
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <span class="text-xs uppercase tracking-widest font-mono text-[#899481] mb-1 block">
+        💖 Hand-Penned Affection 💖
       </span>
-      <h2 class="font-serif-editorial text-3xl sm:text-5xl font-bold text-white mb-4">
-        Reasons Why You're My Universe
+      <h2 class="font-handwritten text-4xl sm:text-6xl font-bold text-[#684045] mb-2">
+        Reasons Why You Mean the World
       </h2>
-      <p class="text-gray-300 text-sm sm:text-base font-light max-w-xl mx-auto leading-relaxed">
-        Tap, flip, or clear the frosted mist to discover the boundless reasons my heart chose you, Bebo.
+      <p class="font-note text-sm sm:text-base text-[#635356] max-w-xl mx-auto leading-relaxed">
+        Tap to flip the pinned sticky notes and reveal why you mean everything to me, Kunju.
       </p>
     </div>
 
@@ -966,68 +913,67 @@
       <!-- Injected dynamically via bento.js -->
     </div>
 
-    <!-- Endless Sweet Affirmations & Whispers Generator -->
-    <div class="glass-panel rounded-3xl p-6 sm:p-8 max-w-3xl mx-auto text-center relative overflow-hidden border border-rose-200/20">
-      <div class="flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-widest text-rose-300/80 mb-4">
-        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-rose-400"></i>
-        <span>Celestial Whispers & Daily Affirmations for Bebo</span>
+    <!-- Tea-Stained Whispers Quote Card -->
+    <div class="journal-panel rounded-3xl p-6 sm:p-8 max-w-3xl mx-auto text-center relative overflow-hidden bg-white border border-[#D9C5B2] shadow-sm">
+      <div class="washi-tape gold"></div>
+      <div class="flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-widest text-[#899481] mb-3">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#B7605F]"></i>
+        <span class="font-handwritten text-base text-[#684045] font-bold">Sweet Whispers & Birthday Wishes for Kunju</span>
       </div>
 
       <div class="min-h-[70px] flex items-center justify-center px-4">
-        <blockquote id="whisper-quote-text" class="font-serif-editorial text-xl sm:text-2xl text-rose-100 font-medium italic transition-all duration-300 leading-relaxed" aria-live="polite">
-          “You are the poetry I never knew how to write until I met you.”
+        <blockquote id="whisper-quote-text" class="font-handwritten text-2xl sm:text-3xl text-[#684045] font-medium italic transition-all duration-300 leading-relaxed" aria-live="polite">
+          “You started as my favorite classmate, became my closest best friend, and turned into my whole future.”
         </blockquote>
       </div>
 
-      <div class="mt-6 flex items-center justify-center">
+      <div class="mt-4 flex items-center justify-center">
         <button 
           id="whisper-next-btn" 
           aria-label="Generate another love note"
-          class="px-6 py-2.5 rounded-full text-xs font-mono bg-rose-500/20 hover:bg-rose-500/30 text-rose-200 border border-rose-300/30 transition-all hover:scale-105 flex items-center gap-2 shadow-sm touch-target-44">
+          class="btn-paper px-6 py-2 rounded-full font-handwritten text-lg text-[#B7605F] hover:bg-[#B7605F] hover:text-white transition-all flex items-center gap-2 shadow-sm touch-target-44">
           <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
-          <span>Whisper Another Love Note</span>
+          <span>Whisper Another Note</span>
         </button>
       </div>
     </div>
   </section>
 
   <!-- =========================================================================
-       SECTION 5: INTERACTIVE LOVE LETTER & GRAND FINALE
+       INTERACTIVE LOVE LETTER & 3D ARTISAN WAX SEAL
        ========================================================================= -->
-  <section id="letter" class="relative py-28 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto z-10">
-    <div class="text-center max-w-2xl mx-auto mb-14">
-      <span class="text-xs uppercase tracking-widest font-mono text-rose-300/80 mb-2 block">
+  <section id="letter" class="relative py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto z-10">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <span class="text-xs uppercase tracking-widest font-mono text-[#899481] mb-1 block">
         💌 From the Depths of My Soul 💌
       </span>
-      <h2 class="font-serif-editorial text-3xl sm:text-5xl font-bold text-white mb-4">
-        A Letter to My Eternity
+      <h2 class="font-handwritten text-4xl sm:text-6xl font-bold text-[#684045] mb-2">
+        A Birthday Letter to My Dearest Kunju
       </h2>
-      <p class="text-gray-300 text-sm sm:text-base font-light leading-relaxed">
-        Break the wax seal to unveil the handwritten feelings I carry for you every single day.
+      <p class="font-note text-sm sm:text-base text-[#635356] leading-relaxed">
+        Break the burgundy wax seal to unveil the handwritten feelings I have carried for you since 8th standard.
       </p>
     </div>
 
-    <!-- Letter Container / Envelope Stationary -->
-    <div class="parchment-letter rounded-3xl p-6 sm:p-12 relative overflow-hidden min-h-[480px]">
+    <!-- Letter Stationery Envelope -->
+    <div class="parchment-letter rounded-3xl p-6 sm:p-12 relative overflow-hidden min-h-[460px]">
       
-      <!-- Envelope Closed Cover with Wax Seal -->
-      <div id="letter-envelope-cover" class="absolute inset-0 z-20 flex flex-col items-center justify-center bg-gradient-to-b from-[#181324] via-[#110d1c] to-[#0d0a16] p-6 text-center">
-        <div class="mb-6">
-          <span class="text-xs font-mono uppercase tracking-widest text-rose-300/70 block mb-1">
+      <!-- Closed Envelope Cover with 3D Wax Seal -->
+      <div id="letter-envelope-cover" class="absolute inset-0 z-20 flex flex-col items-center justify-center bg-gradient-to-b from-[#F9EAD9] via-[#F3DECB] to-[#ECD5C0] p-6 text-center">
+        <div class="mb-4">
+          <span class="font-mono text-xs uppercase tracking-widest text-[#899481] block mb-1">
             CONFIDENTIAL & TIMELESS
           </span>
-          <h3 id="letter-greeting-text" class="font-serif-editorial text-2xl sm:text-3xl text-rose-100 font-bold">
-            To My Beloved Maria (Bebo),
+          <h3 id="letter-greeting-text" class="font-handwritten text-3xl sm:text-4xl text-[#684045] font-bold">
+            To My Beloved Kunju,
           </h3>
         </div>
 
-        <!-- Aesthetic 3D Wax Seal with Ambient Glow & Gold Filigree -->
+        <!-- 3D Artisan Burgundy Wax Seal -->
         <div class="relative flex items-center justify-center my-6">
-          <!-- Ambient Pulsing Romantic Halo -->
           <div class="seal-halo-glow"></div>
           <div class="seal-stardust-orbit"></div>
 
-          <!-- 3D Artisan Wax Seal -->
           <button 
             id="wax-seal-btn" 
             class="aesthetic-wax-seal group touch-target-44" 
@@ -1035,57 +981,50 @@
             role="button"
             aria-label="Break 3D wax seal and read love letter"
             title="Click to break seal and unveil my heart">
-            <!-- Organic Melted Wax Edges -->
             <div class="wax-scallop-border"></div>
 
-            <!-- Deep Burgundy & Gold Inner Core -->
             <div class="wax-inner-core">
-              <!-- Golden Lettering Monogram Ring -->
               <svg class="wax-text-ring" viewBox="0 0 100 100" aria-hidden="true">
                 <path id="seal-text-path" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="none" />
                 <text class="wax-rim-text">
                   <textPath href="#seal-text-path" startOffset="50%" text-anchor="middle">
-                    FOREVER & ALWAYS • BEBO •
+                    FOREVER & ALWAYS • KUNJU •
                   </textPath>
                 </text>
               </svg>
 
-              <!-- Central 3D Embossed Glowing Heart -->
               <div class="wax-heart-center">
-                <i data-lucide="heart" class="w-8 h-8 text-rose-100 fill-rose-200 group-hover:scale-120 transition-all duration-300 drop-shadow-[0_0_12px_rgba(255,180,190,0.9)] animate-heartbeat-soft"></i>
+                <i data-lucide="heart" class="w-8 h-8 text-[#FFE5E0] fill-[#FFB2A6] group-hover:scale-120 transition-all duration-300 drop-shadow"></i>
               </div>
             </div>
 
-            <!-- Specular Light Sheen -->
             <div class="wax-light-sheen"></div>
           </button>
         </div>
 
-        <span class="text-xs font-mono tracking-widest text-rose-200/90 uppercase flex items-center gap-2 mt-1 animate-pulse">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-rose-300"></i>
-          <span>Click Heart Seal or Press Enter to Open</span>
-          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-rose-300"></i>
+        <span class="font-handwritten text-xl text-[#B7605F] font-bold flex items-center gap-2 mt-2 animate-pulse">
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+          <span>Click Heart Seal to Open Letter</span>
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
         </span>
       </div>
 
-      <!-- Letter Body Content (Typewriter Target) -->
-      <div id="letter-paper-content" class="hidden relative z-10">
+      <!-- Letter Body Content (Typewriter Target on Ruled Stationery) -->
+      <div id="letter-paper-content" class="hidden relative z-10 ruled-paper-margin pt-2">
         <div id="letter-typewriter-body" class="min-h-[280px]"></div>
 
-        <!-- Letter Controls & Climax Button -->
-        <div class="pt-10 mt-8 border-t border-rose-200/15 flex flex-wrap items-center justify-between gap-4">
+        <div class="pt-8 mt-8 border-t border-[#D9C5B2] flex flex-wrap items-center justify-between gap-4">
           <button 
             id="letter-replay-btn" 
-            class="hidden text-xs font-mono text-rose-300/70 hover:text-rose-100 flex items-center gap-1.5 transition-colors touch-target-44">
-            <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Replay Typewriter
+            class="hidden font-handwritten text-base text-[#899481] hover:text-[#B7605F] flex items-center gap-1.5 transition-colors touch-target-44">
+            <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Replay Letter
           </button>
 
-          <!-- Grand Climax Button -->
           <button 
             id="open-my-heart-btn" 
             aria-label="Open my entire heart celebration modal"
-            class="btn-celestial ml-auto px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide text-white flex items-center gap-2.5 shadow-lg touch-target-44">
-            <i data-lucide="heart" class="w-4 h-4 text-rose-300 fill-rose-300"></i>
+            class="btn-scrapbook ml-auto px-8 py-3 rounded-full font-handwritten text-xl font-bold tracking-wide text-white flex items-center gap-2 shadow-md touch-target-44">
+            <i data-lucide="heart" class="w-4 h-4 fill-white"></i>
             <span>Open My Entire Heart ✨</span>
           </button>
         </div>
@@ -1095,90 +1034,93 @@
   </section>
 
   <!-- Grand Finale Celebration Modal -->
-  <div id="finale-modal" class="lightbox-modal fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-2xl" role="dialog" aria-modal="true" aria-label="Grand Finale Declaration">
-    <div class="modal-content relative z-10 max-w-xl w-full glass-panel rounded-3xl p-8 sm:p-10 border border-rose-200/30 text-center shadow-2xl">
-      <div class="w-16 h-16 rounded-full bg-rose-500/20 border border-rose-300/40 flex items-center justify-center mx-auto mb-6 text-rose-200 shadow-lg shadow-rose-500/20">
-        <i data-lucide="sparkles" class="w-8 h-8 text-rose-300 animate-spin" style="animation-duration: 8s;"></i>
+  <div id="finale-modal" class="lightbox-modal fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md" role="dialog" aria-modal="true" aria-label="Grand Finale Declaration">
+    <div class="modal-content relative z-10 max-w-xl w-full bg-[#FCF8F2] rounded-3xl p-8 sm:p-10 border-2 border-dashed border-[#B7605F] text-center shadow-2xl">
+      <div class="w-16 h-16 rounded-full bg-[#B7605F]/15 border border-[#B7605F]/40 flex items-center justify-center mx-auto mb-4 text-[#B7605F] shadow">
+        <i data-lucide="sparkles" class="w-8 h-8"></i>
       </div>
 
-      <span class="text-xs font-mono uppercase tracking-widest text-rose-300/80 mb-2 block">
+      <span class="text-xs font-mono uppercase tracking-widest text-[#899481] mb-2 block">
         ✨ A Timeless Declaration ✨
       </span>
 
-      <h3 class="font-serif-editorial text-3xl sm:text-4xl text-gradient-rose font-bold mb-4">
-        You Are My Forever & Always, Bebo
+      <h3 class="font-handwritten text-4xl sm:text-5xl text-[#684045] font-bold mb-3">
+        Happy Birthday to My Dearest Kunju 🎂✨
       </h3>
 
-      <p class="font-serif-editorial text-xl text-rose-100 italic mb-6 leading-relaxed">
-        “I loved you yesterday, I love you still, I always have, I always will.”
+      <p class="font-handwritten text-2xl text-[#B7605F] italic mb-4 leading-relaxed">
+        “Some people search their whole lives for what I found the day you walked into my world.”
       </p>
 
-      <p class="text-sm text-gray-300 font-sans leading-relaxed mb-8">
-        Thank you for being the sweetest miracle in my journey. Through every turn of the cosmos, my heart remains devoted to you.
+      <p class="text-sm sm:text-base text-[#635356] font-note leading-relaxed mb-6">
+        Thank you for being my favorite memory, my dearest best friend, and my whole heart. Through every tomorrow, I will always be right beside you cheering you on. Happy Birthday, Kunju!
       </p>
 
       <button 
         id="finale-modal-close" 
-        class="px-8 py-3 rounded-full text-xs font-mono bg-rose-500/20 hover:bg-rose-500/30 text-rose-200 border border-rose-300/40 transition-all hover:scale-105 touch-target-44"
+        class="btn-scrapbook px-8 py-2.5 rounded-full font-handwritten text-lg font-bold text-white shadow-md touch-target-44"
         aria-label="Close celebration modal">
         Close & Treasure Forever ♡
       </button>
     </div>
   </div>
 
-  <!-- Secret Vault Modal (Easter Egg) -->
-  <div id="vault-modal" class="lightbox-modal fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-2xl" role="dialog" aria-modal="true" aria-label="Secret Constellation Vault">
-    <div class="modal-content relative z-10 max-w-lg w-full glass-panel rounded-3xl p-8 border border-rose-200/30 shadow-2xl">
-      <div class="flex items-center justify-between mb-6">
-        <div class="flex items-center gap-2 text-rose-300 font-mono text-xs uppercase tracking-wider">
+  <!-- Secret Scrapbook Keepsake Box Modal -->
+  <div id="vault-modal" class="lightbox-modal fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md" role="dialog" aria-modal="true" aria-label="Secret Keepsake Chamber">
+    <div class="modal-content relative z-10 max-w-lg w-full bg-[#FCF8F2] rounded-3xl p-8 border-2 border-[#D9C5B2] shadow-2xl">
+      <div class="flex items-center justify-between mb-5">
+        <div class="flex items-center gap-2 text-[#B7605F] font-handwritten text-xl font-bold">
           <i data-lucide="lock" class="w-4 h-4"></i>
-          <span>Secret Constellation Vault</span>
+          <span>Secret Keepsake Chamber</span>
         </div>
-        <button id="vault-modal-close" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white flex items-center justify-center touch-target-44" aria-label="Close Secret Vault">
+        <button id="vault-modal-close" class="w-8 h-8 rounded-full bg-white hover:bg-[#B7605F] hover:text-white text-[#635356] flex items-center justify-center border border-[#D9C5B2] touch-target-44" aria-label="Close Secret Chamber">
           <i data-lucide="x" class="w-4 h-4"></i>
         </button>
       </div>
 
-      <!-- Vault Passcode Form -->
+      <!-- Vault Key Form -->
       <div id="vault-form-section" class="text-center">
-        <h3 class="font-serif-editorial text-2xl text-rose-100 font-bold mb-2">
-          Unlock Our Hidden Memory
+        <h3 class="font-handwritten text-3xl text-[#684045] font-bold mb-1">
+          Unlock Our Secret Keepsake
         </h3>
-        <p class="text-xs text-gray-400 mb-6 font-sans">
-          Enter our special vault key (e.g. 140323, bebo) to unlock this chamber.
+        <p class="text-xs text-[#899481] mb-5 font-note">
+          Enter our special key (e.g. kunju, kevin, 8th standard, birthday) to open this hidden journal box.
         </p>
 
-        <div class="space-y-4">
+        <div class="space-y-3.5">
           <input 
             type="text" 
             id="vault-passcode-input" 
-            aria-label="Vault passcode key input"
-            placeholder="e.g. 140323, bebo, forever..." 
-            class="w-full px-4 py-3 rounded-xl bg-black/40 border border-rose-200/20 text-center text-rose-100 placeholder-gray-500 focus:outline-none focus:border-rose-400 font-mono text-sm"
+            aria-label="Secret passcode input"
+            placeholder="e.g. kunju, kevin, 8th standard..." 
+            class="w-full px-4 py-2.5 rounded-xl bg-white border border-[#D9C5B2] text-center text-[#2B2225] placeholder-[#9B878A] focus:outline-none focus:border-[#B7605F] font-mono text-sm shadow-inner"
           />
-          <p id="vault-error-msg" class="hidden text-xs text-rose-400 font-sans" aria-live="polite"></p>
+          <p id="vault-error-msg" class="hidden text-xs text-[#B7605F] font-note" aria-live="polite"></p>
           <button 
             id="vault-submit-btn" 
-            aria-label="Submit passcode to unlock vault"
-            class="w-full py-3 rounded-xl btn-celestial text-xs font-mono text-white tracking-wider uppercase touch-target-44">
-            Unlock Vault Key ✨
+            aria-label="Submit passcode to unlock chamber"
+            class="w-full py-2.5 rounded-xl btn-scrapbook font-handwritten text-lg font-bold text-white uppercase touch-target-44 shadow-md">
+            Unlock Keepsake Key ✨
           </button>
         </div>
       </div>
 
       <!-- Vault Unlocked Content -->
       <div id="vault-unlocked-section" class="hidden text-center">
-        <div class="w-12 h-12 rounded-full bg-rose-500/20 border border-rose-300/30 flex items-center justify-center mx-auto mb-3 text-rose-200">
+        <div class="w-12 h-12 rounded-full bg-[#B7605F]/15 border border-[#B7605F]/40 flex items-center justify-center mx-auto mb-2 text-[#B7605F]">
           <i data-lucide="unlock" class="w-6 h-6"></i>
         </div>
-        <h3 class="font-serif-editorial text-2xl text-gradient-gold font-bold mb-2">
-          Vault Chamber Unlocked!
+        <h3 class="font-handwritten text-3xl text-[#684045] font-bold mb-1">
+          Keepsake Chamber Unlocked!
         </h3>
-        <div class="w-full aspect-[3/4] max-h-[420px] rounded-2xl overflow-hidden my-4 border border-rose-200/30 shadow-2xl bg-black/60">
-          <img src="assets/photos/bebo_vault_family_memory.jpg" alt="Secret Family Memory with Bebo" loading="lazy" decoding="async" class="w-full h-full object-cover" />
+        <div class="polaroid-card my-3 !p-2 !pb-6">
+          <div class="aspect-[3/4] max-h-[380px] rounded overflow-hidden bg-[#F7EFE5]">
+            <img src="assets/photos/tia/tia_15.jpeg" alt="Kevin and Kunju tender portrait" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='tia/tia_15.jpeg';}" />
+          </div>
+          <span class="font-handwritten text-base text-[#684045] font-bold block pt-1">Forever & Always Beside You</span>
         </div>
-        <p class="text-sm font-serif-editorial text-rose-100 italic mb-4 leading-relaxed">
-          “You found the most sacred chamber of my heart, Bebo! Seeing your radiant smile, holding hands, and building our world together—my forever begins and ends with you.”
+        <p class="text-sm font-handwritten text-2xl text-[#B7605F] italic mb-3 leading-snug">
+          “You found the most sacred chamber of my heart, Kunju! Standing beside you, laughing through the years, and building our world together—my forever begins and ends with you.”
         </p>
       </div>
     </div>
@@ -1187,40 +1129,40 @@
   <!-- =========================================================================
        FOOTER
        ========================================================================= -->
-  <footer class="relative py-12 px-4 border-t border-rose-200/10 text-center text-xs font-mono text-gray-400 z-10">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2 text-rose-300/80">
-        <i data-lucide="heart" class="w-4 h-4 text-rose-400 fill-rose-400"></i>
-        <span class="font-serif-editorial text-base text-rose-100">Forever & Always, Bebo</span>
+  <footer class="relative py-10 px-4 border-t border-[#D9C5B2] text-center text-xs font-mono text-[#899481] z-10 bg-[#F7EFE5]">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2 text-[#684045]">
+        <i data-lucide="heart" class="w-4 h-4 text-[#B7605F] fill-[#B7605F]"></i>
+        <span class="font-handwritten text-xl font-bold">Forever & Always, Kunju</span>
       </div>
 
-      <p class="text-gray-400">
-        Crafted with infinite love for Maria (Bebo) • Written in the Stars ✨
+      <p class="text-[#635356] font-note text-xs">
+        Crafted with all my heart by Kevin for Kunju's Birthday • Pala Memories ✨
       </p>
 
-      <a href="#hero" class="text-rose-300/70 hover:text-rose-100 flex items-center gap-1 transition-colors touch-target-44 py-2" aria-label="Back to top">
-        <span>Back to top</span>
+      <a href="#hero" class="text-[#B7605F] hover:text-[#684045] flex items-center gap-1 transition-colors touch-target-44 py-1" aria-label="Back to top">
+        <span>Back to cover</span>
         <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
       </a>
     </div>
   </footer>
 
   <!-- =========================================================================
-       CONTENT PROTECTION WARNING MODAL (2.5s Auto-Dismiss Alert)
+       CONTENT PROTECTION MODAL
        ========================================================================= -->
   <div id="protection-alert-modal" class="protection-alert-modal" role="alertdialog" aria-modal="true" aria-live="assertive" aria-label="Content Protection Alert">
-    <div class="protection-alert-card glass-panel" onclick="event.stopPropagation(); closeProtectionAlert();">
-      <div class="w-14 h-14 rounded-full bg-rose-500/20 border border-rose-400/40 flex items-center justify-center mx-auto mb-4 text-rose-300 shadow-lg shadow-rose-500/25">
+    <div class="protection-alert-card" onclick="event.stopPropagation(); closeProtectionAlert();">
+      <div class="w-12 h-12 rounded-full bg-[#B7605F]/15 border border-[#B7605F]/40 flex items-center justify-center mx-auto mb-3 text-[#B7605F]">
         <span class="text-2xl" aria-hidden="true">⚠️</span>
       </div>
-      <h4 class="font-serif-editorial text-2xl text-rose-100 font-bold mb-2 tracking-wide text-gradient-rose">
+      <h4 class="font-handwritten text-3xl text-[#684045] font-bold mb-1">
         ALERT
       </h4>
-      <p class="text-sm font-sans text-gray-200 leading-relaxed font-medium">
+      <p class="text-sm font-note text-[#2B2225] leading-relaxed">
         You are not allowed to copy content or view source
       </p>
-      <div class="mt-4 pt-3 border-t border-rose-200/15 text-[11px] font-mono text-rose-300/70">
-        Tap or click anywhere to dismiss
+      <div class="mt-3 pt-2 border-t border-[#D9C5B2] text-[11px] font-mono text-[#899481]">
+        Tap anywhere to dismiss
       </div>
     </div>
   </div>
