@@ -21,7 +21,7 @@ const SANCTUARY_CONFIG = {
     badge: "📖 KUNJU'S BIRTHDAY SCRAPBOOK & DIGITAL JOURNAL 🌸",
     titlePrefix: "To My Dearest Kunju,",
     titleHighlight: "Happy Birthday, Kunju! 🎂✨",
-    subtitle: "Our 8th grade spark in Pala, Carmel & Chavara school days, late-night cafe banter, and all 47 memories in between. Handcrafted with all my love.",
+    subtitle: "Our 8th grade spark in Pala, Carmel & Chavara school days, late-night cafe banter, and all our memories in between. Handcrafted with all my love.",
     scrollHint: "Open Kunju's Journal 📖",
     milestoneLabel: "Adoring You Every Single Second Since 8th Standard"
   },
