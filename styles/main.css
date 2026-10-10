@@ -89,6 +89,8 @@ html {
   scroll-behavior: smooth;
   color-scheme: light;
   background-color: var(--bg-paper);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -1017,6 +1019,7 @@ body {
   }
   .lightbox-modal {
     padding: 0.75rem !important;
+    overscroll-behavior: contain;
   }
 }
 
@@ -1060,6 +1063,159 @@ body {
     width: 70px;
     height: 18px;
     top: -9px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   📱 Comprehensive All-Mobile-Screens Architecture
+   -------------------------------------------------------------------------- */
+/* Dynamic Viewport Unit & App Height for Lock Screen (Samsung Internet & iOS Safari) */
+#ipad-lock-screen {
+  height: 100vh;
+  height: var(--app-height, 100vh);
+  height: 100dvh;
+  overscroll-behavior-y: contain;
+  overscroll-behavior-x: none;
+}
+
+/* Prevent horizontal overflow on all mobile viewports */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Mobile Clamping for Masonry Cards & Polaroid Frames */
+@media (max-width: 640px) {
+  .media-card.polaroid-card {
+    max-width: 92% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  /* Subdued rotation to guarantee no corner triggers horizontal scroll */
+  .tilt-p-neg1 { transform: rotate(-0.6deg) !important; }
+  .tilt-p-pos1 { transform: rotate(0.6deg) !important; }
+  .tilt-p-neg2 { transform: rotate(-0.8deg) !important; }
+  .tilt-p-pos2 { transform: rotate(0.8deg) !important; }
+  .tilt-p-neg3 { transform: rotate(-0.9deg) !important; }
+
+  /* Bento Card Back internal scroll for long confessions */
+  .bento-card-back {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 1.1rem !important;
+  }
+
+  /* Lightbox Dialog on Mobile */
+  #cinema-lightbox .modal-content {
+    max-height: 94dvh !important;
+    max-height: 94vh !important;
+  }
+
+  #cinema-image-player,
+  #cinema-video-player {
+    max-height: 48dvh !important;
+    max-height: 48vh !important;
+  }
+
+  /* Celebratory Balloon scaling on mobile */
+  .celebratory-balloon {
+    width: calc(var(--b-size, 58px) * 0.82) !important;
+    height: calc(var(--b-size, 58px) * 1.05) !important;
+  }
+  .balloon-string {
+    height: 45px !important;
+  }
+}
+
+/* Ultra-Compact Screens (< 380px: iPhone SE, Galaxy Fold, Small Androids) */
+@media (max-width: 380px) {
+  .media-card.polaroid-card {
+    max-width: 90% !important;
+    padding: 6px 6px 18px 6px !important;
+  }
+  
+  .tilt-p-neg1, .tilt-p-pos1, .tilt-p-neg2, .tilt-p-pos2, .tilt-p-neg3 {
+    transform: rotate(0deg) !important;
+  }
+
+  .journal-key {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .journal-key span.font-serif {
+    font-size: 1.25rem !important;
+  }
+
+  .journal-key span.font-mono {
+    display: none !important;
+  }
+
+  #ipad-key-cancel span {
+    font-size: 0.72rem !important;
+    white-space: nowrap !important;
+  }
+
+  #ipad-passcode-label {
+    font-size: 1.15rem !important;
+  }
+
+  .pin-dot {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  #ipad-pin-dots {
+    gap: 0.5rem !important;
+  }
+}
+
+/* Short Mobile Displays / Landscape Orientation (< 640px height) */
+@media (max-height: 640px) {
+  .cover-photo-window {
+    width: 6.5rem !important;
+    height: 6.5rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  #ipad-wallpaper-view {
+    padding-top: calc(0.35rem + var(--sat)) !important;
+    padding-bottom: calc(0.35rem + var(--sab)) !important;
+  }
+
+  #ipad-passcode-view {
+    padding-top: calc(0.35rem + var(--sat)) !important;
+    padding-bottom: calc(0.35rem + var(--sab)) !important;
+  }
+
+  #ipad-lock-icon {
+    width: 2rem !important;
+    height: 2rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  #ipad-passcode-label {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  .journal-key {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .journal-key span.font-serif {
+    font-size: 1.2rem !important;
+  }
+
+  .journal-key span.font-mono {
+    display: none !important;
+  }
+
+  #cinema-image-player,
+  #cinema-video-player {
+    max-height: 38dvh !important;
   }
 }
 

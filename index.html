@@ -97,19 +97,19 @@
       
       <!-- Top Cover Ribbon Header -->
       <div class="relative w-full max-w-3xl flex items-center justify-between text-[#ECC880] drop-shadow z-20 pt-1">
-        <span class="flex items-center gap-1.5 font-handwritten text-xl tracking-wide">
-          <i data-lucide="sparkles" class="w-4 h-4 text-[#ECC880]"></i>
-          <span class="device-status-label">Kunju's Private Keepsake Journal</span>
+        <span class="flex items-center gap-1.5 font-handwritten text-base xs:text-lg sm:text-xl tracking-wide truncate max-w-[200px] xs:max-w-none">
+          <i data-lucide="sparkles" class="w-4 h-4 text-[#ECC880] flex-shrink-0"></i>
+          <span class="device-status-label truncate">Kunju's Private Keepsake Journal</span>
         </span>
-        <div class="flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-[#ECC880] animate-pulse"></span>
-          <span class="font-mono text-xs tracking-widest uppercase text-[#ECC880]/80">Strictly Private</span>
+        <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+          <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#ECC880] animate-pulse"></span>
+          <span class="font-mono text-[10px] sm:text-xs tracking-widest uppercase text-[#ECC880]/80">Strictly Private</span>
         </div>
       </div>
 
       <!-- Center Journal Vignette: Vellum Window Frame -->
       <div class="relative flex flex-col items-center text-center z-20 my-auto max-w-sm sm:max-w-md w-full px-2">
-        <div class="cover-photo-window relative w-36 h-36 xs:w-44 xs:h-44 sm:w-56 sm:h-56 p-2.5 sm:p-3 rounded-full bg-[#FCF8F2]/10 border-2 border-dashed border-[#ECC880] shadow-2xl flex items-center justify-center mb-3 sm:mb-6">
+        <div class="cover-photo-window relative w-32 h-32 xs:w-44 xs:h-44 sm:w-56 sm:h-56 p-2 sm:p-3 rounded-full bg-[#FCF8F2]/10 border-2 border-dashed border-[#ECC880] shadow-2xl flex items-center justify-center mb-2.5 sm:mb-6">
           <div class="w-full h-full rounded-full overflow-hidden border-2 border-[#ECC880]/60 shadow-inner relative">
             <img 
               src="assets/photos/tia/tia_13.jpeg" 
@@ -120,12 +120,12 @@
             <div class="absolute inset-0 bg-gradient-to-t from-[#4A2026]/60 via-transparent to-transparent"></div>
           </div>
           <!-- Antique Brass Padlock Icon Badge -->
-          <div class="brass-lock-badge absolute -bottom-2 w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center shadow-lg">
-            <i data-lucide="lock" class="w-4 h-4 sm:w-5 sm:h-5 text-[#3D2205]"></i>
+          <div class="brass-lock-badge absolute -bottom-2 w-8 h-8 sm:w-11 sm:h-11 rounded-full flex items-center justify-center shadow-lg">
+            <i data-lucide="lock" class="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#3D2205]"></i>
           </div>
         </div>
 
-        <div class="font-handwritten text-3xl sm:text-5xl text-[#FCF8F2] font-bold drop-shadow-md mb-1 leading-tight">
+        <div class="font-handwritten text-2xl xs:text-3xl sm:text-5xl text-[#FCF8F2] font-bold drop-shadow-md mb-1 leading-tight">
           Kunju's Scrapbook Journal 📖
         </div>
         <div class="font-note text-xs sm:text-base text-[#ECC880] tracking-wide">
@@ -133,7 +133,7 @@
         </div>
 
         <!-- Clock & Date Stamped -->
-        <div class="mt-3 sm:mt-4 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-black/30 border border-[#ECC880]/30 flex items-center gap-2 sm:gap-3 text-xs sm:text-sm">
+        <div class="mt-2.5 sm:mt-4 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-black/30 border border-[#ECC880]/30 flex items-center gap-2 sm:gap-3 text-xs sm:text-sm">
           <span id="ipad-cover-time" class="font-mono text-base sm:text-lg text-[#FCF8F2] font-bold">12:34</span>
           <span class="w-1 h-1 rounded-full bg-[#ECC880]"></span>
           <span id="ipad-cover-date" class="font-handwritten text-sm sm:text-base text-[#ECC880]">Special Birthday Edition</span>
@@ -141,14 +141,14 @@
       </div>
 
       <!-- Bottom Tap to Open Indicator -->
-      <div class="relative flex flex-col items-center gap-2 z-20 mb-2">
+      <div class="relative flex flex-col items-center gap-1.5 sm:gap-2 z-20 mb-2">
         <div class="flex flex-col items-center gap-1 animate-bounce" style="animation-duration: 2.2s;">
-          <i data-lucide="chevron-up" class="w-5 h-5 text-[#ECC880]"></i>
-          <span class="font-handwritten text-lg sm:text-xl text-[#FCF8F2] tracking-wider font-semibold">
+          <i data-lucide="chevron-up" class="w-4 h-4 sm:w-5 sm:h-5 text-[#ECC880]"></i>
+          <span class="font-handwritten text-sm xs:text-base sm:text-xl text-[#FCF8F2] tracking-wider font-semibold text-center px-2">
             Tap or Swipe to Unlock Kunju's Journal 🌸
           </span>
         </div>
-        <div class="w-24 h-1 rounded-full bg-[#ECC880]/60"></div>
+        <div class="w-20 sm:w-24 h-1 rounded-full bg-[#ECC880]/60"></div>
       </div>
     </div>
 
@@ -170,7 +170,7 @@
           <i data-lucide="lock" class="w-5 h-5 text-[#3D2205]"></i>
         </div>
 
-        <div id="ipad-passcode-label" class="font-handwritten text-2xl sm:text-3xl text-[#FCF8F2] font-bold mb-2">
+        <div id="ipad-passcode-label" class="font-handwritten text-xl xs:text-2xl sm:text-3xl text-[#FCF8F2] font-bold mb-2">
           Enter Passcode to Peek Inside 📖
         </div>
 
@@ -184,7 +184,7 @@
           <div class="pin-dot" id="pin-dot-5"></div>
         </div>
 
-        <div id="ipad-error-msg" class="text-xs font-note text-[#FFB2A6] opacity-0 transition-opacity h-5">
+        <div id="ipad-error-msg" class="text-[11px] xs:text-xs font-note text-[#FFB2A6] opacity-0 transition-opacity h-5 text-center px-1">
           Incorrect passcode. Hint: 123987 (6 digits)
         </div>
 
@@ -266,6 +266,14 @@
       var maxAttempts = 5;
       var lockoutUntil = 0;
       var lockoutInterval = null;
+
+      function updateAppHeight() {
+        var vh = window.innerHeight;
+        document.documentElement.style.setProperty('--app-height', vh + 'px');
+      }
+      updateAppHeight();
+      window.addEventListener('resize', updateAppHeight);
+      window.addEventListener('orientationchange', updateAppHeight);
 
       function updateClock() {
         var now = new Date();
@@ -500,7 +508,7 @@
           <i data-lucide="book-open" class="w-4 h-4"></i>
         </div>
         <div class="flex flex-col text-left truncate">
-          <span class="font-handwritten text-xl sm:text-2xl font-bold tracking-wide text-[#684045] leading-none group-hover:text-[#B7605F] transition-colors truncate">
+          <span class="font-handwritten text-lg xs:text-xl sm:text-2xl font-bold tracking-wide text-[#684045] leading-none group-hover:text-[#B7605F] transition-colors truncate">
             <span id="nav-recipient-name">Kunju</span>’s Journal 🌸
           </span>
           <span class="hidden xs:inline text-[9px] sm:text-[10px] text-[#899481] uppercase tracking-widest font-mono">Kevin & Kunju • Pala Days</span>
@@ -592,7 +600,7 @@
         <span id="hero-title-prefix" class="block font-handwritten text-2xl sm:text-5xl md:text-6xl text-[#899481] italic mb-1">
           To My Dearest Kunju,
         </span>
-        <span id="hero-title-highlight" class="font-handwritten text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-[#684045] font-bold tracking-tight block drop-shadow-sm leading-tight">
+        <span id="hero-title-highlight" class="font-handwritten text-3xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-[#684045] font-bold tracking-tight block drop-shadow-sm leading-tight break-words">
           Happy Birthday, Kunju! 🎂✨
         </span>
       </h1>
@@ -612,11 +620,11 @@
 
       <!-- Action Buttons -->
       <div class="flex flex-col xs:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 w-full xs:w-auto px-4">
-        <a href="#story-beginning" class="btn-scrapbook w-full xs:w-auto px-6 sm:px-7 py-3 rounded-full font-handwritten text-lg sm:text-xl font-bold tracking-wide text-white flex items-center justify-center gap-2 shadow-md">
+        <a href="#story-beginning" class="btn-scrapbook w-full xs:w-auto px-5 sm:px-7 py-2.5 sm:py-3 rounded-full font-handwritten text-base sm:text-xl font-bold tracking-wide text-white flex items-center justify-center gap-2 shadow-md">
           <span>Turn to Chapter I</span>
           <i data-lucide="book-open" class="w-4 h-4"></i>
         </a>
-        <a href="#gallery" class="btn-paper w-full xs:w-auto px-6 sm:px-7 py-3 rounded-full font-handwritten text-lg sm:text-xl font-bold text-[#684045] flex items-center justify-center gap-2">
+        <a href="#gallery" class="btn-paper w-full xs:w-auto px-5 sm:px-7 py-2.5 sm:py-3 rounded-full font-handwritten text-base sm:text-xl font-bold text-[#684045] flex items-center justify-center gap-2">
           <i data-lucide="camera" class="w-4 h-4 text-[#B7605F]"></i>
           <span>Explore All Polaroids 📸</span>
         </a>
@@ -631,19 +639,19 @@
 
         <div class="grid grid-cols-4 gap-1.5 sm:gap-4 text-center">
           <div class="bg-white rounded-xl py-2 px-0.5 sm:px-1 border border-[#D9C5B2] shadow-sm">
-            <span id="count-days" class="font-serif text-xl sm:text-3xl font-bold text-[#684045]">00</span>
+            <span id="count-days" class="font-serif text-base xs:text-xl sm:text-3xl font-bold text-[#684045] tracking-tight">00</span>
             <span class="block text-[10px] sm:text-[11px] text-[#899481] font-note mt-0.5">Days</span>
           </div>
           <div class="bg-white rounded-xl py-2 px-0.5 sm:px-1 border border-[#D9C5B2] shadow-sm">
-            <span id="count-hours" class="font-serif text-xl sm:text-3xl font-bold text-[#684045]">00</span>
+            <span id="count-hours" class="font-serif text-base xs:text-xl sm:text-3xl font-bold text-[#684045] tracking-tight">00</span>
             <span class="block text-[10px] sm:text-[11px] text-[#899481] font-note mt-0.5">Hours</span>
           </div>
           <div class="bg-white rounded-xl py-2 px-0.5 sm:px-1 border border-[#D9C5B2] shadow-sm">
-            <span id="count-minutes" class="font-serif text-xl sm:text-3xl font-bold text-[#684045]">00</span>
+            <span id="count-minutes" class="font-serif text-base xs:text-xl sm:text-3xl font-bold text-[#684045] tracking-tight">00</span>
             <span class="block text-[10px] sm:text-[11px] text-[#899481] font-note mt-0.5">Minutes</span>
           </div>
           <div class="bg-white rounded-xl py-2 px-0.5 sm:px-1 border border-[#D9C5B2] shadow-sm">
-            <span id="count-seconds" class="font-serif text-xl sm:text-3xl font-bold text-[#B7605F]">00</span>
+            <span id="count-seconds" class="font-serif text-base xs:text-xl sm:text-3xl font-bold text-[#B7605F] tracking-tight">00</span>
             <span class="block text-[10px] sm:text-[11px] text-[#899481] font-note mt-0.5">Seconds</span>
           </div>
         </div>
@@ -680,7 +688,7 @@
             />
           </div>
           <div class="pt-2 text-center">
-            <span class="font-handwritten text-base sm:text-lg text-[#684045] font-bold block leading-tight">School Day Stage Grace</span>
+            <span class="font-handwritten text-xs xs:text-sm sm:text-lg text-[#684045] font-bold block leading-tight truncate px-1">School Day Stage Grace</span>
             <span class="text-[10px] text-[#899481] font-note">8th Standard • Pala</span>
           </div>
         </div>
@@ -699,7 +707,7 @@
             />
           </div>
           <div class="pt-2 text-center">
-            <span class="font-handwritten text-base sm:text-lg text-[#684045] font-bold block leading-tight">Carmel & Chavara Days</span>
+            <span class="font-handwritten text-xs xs:text-sm sm:text-lg text-[#684045] font-bold block leading-tight truncate px-1">Carmel & Chavara Days</span>
             <span class="text-[10px] text-[#899481] font-note">Together in Pala 🎒</span>
           </div>
         </div>
@@ -785,7 +793,7 @@
           <div class="aspect-[3/4] overflow-hidden rounded bg-[#F7EFE5]">
             <img src="assets/photos/tia/tia_18.jpeg" alt="Kevin and Kunju smiling at night cafe" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='tia/tia_18.jpeg';}" />
           </div>
-          <span class="font-handwritten text-sm text-[#684045] font-bold block pt-1 text-center">Night Cafe Banter</span>
+          <span class="font-handwritten text-xs xs:text-sm text-[#684045] font-bold block pt-1 text-center truncate px-1">Night Cafe Banter</span>
         </div>
 
         <div class="polaroid-card tilt-p-pos2 !p-2 !pb-6">
@@ -793,7 +801,7 @@
           <div class="aspect-[3/4] overflow-hidden rounded bg-[#F7EFE5]">
             <img src="assets/photos/tia/tia_20.jpeg" alt="Kunju mirror selfie" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='tia/tia_20.jpeg';}" />
           </div>
-          <span class="font-handwritten text-sm text-[#684045] font-bold block pt-1 text-center">Mirror Goofiness</span>
+          <span class="font-handwritten text-xs xs:text-sm text-[#684045] font-bold block pt-1 text-center truncate px-1">Mirror Goofiness</span>
         </div>
 
         <div class="polaroid-card tilt-p-pos1 !p-2 !pb-6">
@@ -801,7 +809,7 @@
           <div class="aspect-[3/4] overflow-hidden rounded bg-[#F7EFE5]">
             <img src="assets/photos/tia/tia_34.jpeg" alt="Kunju eating pizza by airport window" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='tia/tia_34.jpeg';}" />
           </div>
-          <span class="font-handwritten text-sm text-[#684045] font-bold block pt-1 text-center">Mid-Bite Pizza Feast</span>
+          <span class="font-handwritten text-xs xs:text-sm text-[#684045] font-bold block pt-1 text-center truncate px-1">Mid-Bite Pizza Feast</span>
         </div>
 
         <div class="polaroid-card tilt-p-neg2 !p-2 !pb-6">
@@ -809,7 +817,7 @@
           <div class="aspect-[3/4] overflow-hidden rounded bg-[#F7EFE5]">
             <img src="assets/photos/tia/tia_03.jpeg" alt="Kunju passenger car nap" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='tia/tia_03.jpeg';}" />
           </div>
-          <span class="font-handwritten text-sm text-[#684045] font-bold block pt-1 text-center">Peaceful Car Nap</span>
+          <span class="font-handwritten text-xs xs:text-sm text-[#684045] font-bold block pt-1 text-center truncate px-1">Peaceful Car Nap</span>
         </div>
       </div>
 
@@ -832,7 +840,7 @@
       </p>
 
       <!-- Category Filter Tabs -->
-      <div id="gallery-filter-chips" class="flex flex-wrap items-center justify-center gap-2.5 mt-6">
+      <div id="gallery-filter-chips" class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mt-4 sm:mt-6 px-1">
         <!-- Injected dynamically via timeline.js -->
       </div>
     </div>
@@ -871,7 +879,7 @@
       <!-- Media Display Area -->
       <div class="relative w-full h-[45vh] sm:h-[55vh] max-h-[580px] bg-[#EDE4D8] flex items-center justify-center overflow-hidden">
         <img id="cinema-image-player" src="" alt="Album Memory" class="w-full h-full object-contain p-1.5 sm:p-2" />
-        <video id="cinema-video-player" class="hidden w-full h-full object-contain p-1.5 sm:p-2" controls autoplay playsinline loop></video>
+        <video id="cinema-video-player" class="hidden w-full h-full object-contain p-1.5 sm:p-2" controls autoplay playsinline webkit-playsinline="true" x5-playsinline="true" loop></video>
       </div>
 
       <!-- Bottom Handwritten Caption & Navigation -->
@@ -966,7 +974,7 @@
           <span class="font-mono text-xs uppercase tracking-widest text-[#899481] block mb-1">
             CONFIDENTIAL & TIMELESS
           </span>
-          <h3 id="letter-greeting-text" class="font-handwritten text-2xl sm:text-4xl text-[#684045] font-bold">
+          <h3 id="letter-greeting-text" class="font-handwritten text-xl xs:text-2xl sm:text-4xl text-[#684045] font-bold">
             To My Dearest Kunju,
           </h3>
         </div>
@@ -1004,7 +1012,7 @@
           </button>
         </div>
 
-        <span class="font-handwritten text-lg sm:text-xl text-[#B7605F] font-bold flex items-center gap-1.5 sm:gap-2 mt-2 animate-pulse">
+        <span class="font-handwritten text-base sm:text-xl text-[#B7605F] font-bold flex items-center justify-center gap-1.5 sm:gap-2 mt-2 animate-pulse text-center px-2">
           <i data-lucide="sparkles" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
           <span>Click Heart Seal to Open Letter</span>
           <i data-lucide="sparkles" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
