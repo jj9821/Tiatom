@@ -103,15 +103,9 @@ class RomanticLoveLetter {
       this.sealBtn.classList.add('is-cracking');
     }
 
-    // 2. Confetti sparkle burst
-    if (typeof confetti === 'function') {
-      confetti({
-        particleCount: 35,
-        spread: 60,
-        origin: { y: 0.65 },
-        colors: ['#B7605F', '#ECC880', '#684045', '#F08A78', '#FFF8DC']
-      });
-    }
+    // 2. Launch spectacular firecrackers blasting & balloons popping across the entire screen!
+    this.launchCrackersAnimation();
+    this.launchBalloonsAnimation();
 
     setTimeout(() => {
       if (this.envelopeCover) {
@@ -314,6 +308,205 @@ class RomanticLoveLetter {
         document.body.style.overflow = 'hidden';
       }
     }, 600);
+  }
+
+  /* --------------------------------------------------------------------------
+     🎆 Firecrackers Blasting Across the Screen
+     -------------------------------------------------------------------------- */
+  launchCrackersAnimation() {
+    // 1. Screen flash effect
+    const flashEl = document.createElement('div');
+    flashEl.className = 'cracker-flash-overlay is-flashing';
+    document.body.appendChild(flashEl);
+    setTimeout(() => {
+      flashEl.classList.remove('is-flashing');
+      setTimeout(() => flashEl.remove(), 400);
+    }, 280);
+
+    if (typeof confetti !== 'function') return;
+
+    const crackerColors = ['#B7605F', '#ECC880', '#F08A78', '#FFB2A6', '#684045', '#E63946', '#FFE5B4', '#FFFDF9'];
+
+    // Stage 1: Big immediate center blast right behind the letter seal
+    confetti({
+      particleCount: 110,
+      spread: 120,
+      origin: { x: 0.5, y: 0.65 },
+      startVelocity: 45,
+      colors: crackerColors,
+      scalar: 1.2
+    });
+
+    // Stage 2: Left corner rocket barrage
+    setTimeout(() => {
+      confetti({
+        particleCount: 75,
+        angle: 60,
+        spread: 80,
+        origin: { x: 0.02, y: 0.95 },
+        startVelocity: 58,
+        colors: crackerColors
+      });
+    }, 200);
+
+    // Stage 3: Right corner rocket barrage
+    setTimeout(() => {
+      confetti({
+        particleCount: 75,
+        angle: 120,
+        spread: 80,
+        origin: { x: 0.98, y: 0.95 },
+        startVelocity: 58,
+        colors: crackerColors
+      });
+    }, 380);
+
+    // Stage 4: Multi-shot sky firecracker bursts across the screen
+    const burstTimers = [600, 950, 1350, 1750, 2200, 2700, 3200];
+    burstTimers.forEach(delay => {
+      setTimeout(() => {
+        const randX = 0.15 + Math.random() * 0.7;
+        const randY = 0.15 + Math.random() * 0.35;
+        confetti({
+          particleCount: 50 + Math.floor(Math.random() * 30),
+          spread: 360,
+          origin: { x: randX, y: randY },
+          startVelocity: 28 + Math.random() * 12,
+          colors: crackerColors,
+          gravity: 0.85,
+          scalar: 1.15,
+          ticks: 160
+        });
+      }, delay);
+    });
+
+    // Stage 5: Falling golden stars shower
+    setTimeout(() => {
+      confetti({
+        particleCount: 60,
+        spread: 140,
+        origin: { x: 0.5, y: 0.15 },
+        colors: ['#ECC880', '#FDE68A', '#FFB2A6', '#FFFDF9'],
+        gravity: 0.55,
+        scalar: 1.3,
+        drift: 0.05
+      });
+    }, 1200);
+  }
+
+  /* --------------------------------------------------------------------------
+     🎈 Celebratory Balloons Floating & Popping Up Across the Entire Screen
+     -------------------------------------------------------------------------- */
+  launchBalloonsAnimation() {
+    // Container overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'celebration-balloons-overlay';
+    document.body.appendChild(overlay);
+
+    const balloonGradients = [
+      'linear-gradient(135deg, #E07A5F 0%, #B7605F 100%)',  // Terracotta
+      'linear-gradient(135deg, #FFB2A6 0%, #F08A78 100%)',  // Warm Peach
+      'linear-gradient(135deg, #FDE68A 0%, #ECC880 100%)',  // Golden Amber
+      'linear-gradient(135deg, #8E545A 0%, #684045 100%)',  // Vintage Maroon
+      'linear-gradient(135deg, #CBD5C0 0%, #899481 100%)',  // Sage Green
+      'linear-gradient(135deg, #FDA4AF 0%, #E11D48 100%)',  // Rose Gold
+      'linear-gradient(135deg, #DDD6FE 0%, #A78BFA 100%)',  // Soft Lavender
+      'linear-gradient(135deg, #FEF3C7 0%, #F59E0B 100%)'   // Honey Champagne
+    ];
+
+    const celebratoryEmojis = ['🎈', '🎂', '❤️', '✨', '🎉', '🌸', '💫', '🍰', '💖', '🥂', '🥳', '🧁'];
+    const totalBalloons = 30;
+
+    for (let i = 0; i < totalBalloons; i++) {
+      const balloon = document.createElement('div');
+      balloon.className = 'celebratory-balloon';
+
+      const gradient = balloonGradients[i % balloonGradients.length];
+      const emoji = celebratoryEmojis[i % celebratoryEmojis.length];
+
+      // Randomized layout & physics across entire screen width
+      const leftPercent = Math.floor(2 + (i * (94 / totalBalloons)) + (Math.random() * 5 - 2.5));
+      const size = 50 + Math.floor(Math.random() * 20); // 50px - 70px
+      const duration = (4.4 + Math.random() * 2.2).toFixed(1); // 4.4s - 6.6s
+      const delay = (0.05 + Math.random() * 2.2).toFixed(2); // Staggered 0 - 2.2s
+      const sway1 = Math.floor(14 + Math.random() * 18);
+      const sway2 = -Math.floor(14 + Math.random() * 18);
+      const rot = Math.floor(4 + Math.random() * 8);
+
+      balloon.style.background = gradient;
+      balloon.style.left = `${Math.min(96, Math.max(2, leftPercent))}%`;
+      balloon.style.setProperty('--b-size', `${size}px`);
+      balloon.style.setProperty('--float-duration', `${duration}s`);
+      balloon.style.setProperty('--float-delay', `${delay}s`);
+      balloon.style.setProperty('--sway-1', `${sway1}px`);
+      balloon.style.setProperty('--sway-2', `${sway2}px`);
+      balloon.style.setProperty('--rot-1', `${rot}deg`);
+      balloon.style.setProperty('--rot-2', `${-rot}deg`);
+
+      balloon.innerHTML = `
+        <div class="balloon-string"></div>
+        <span class="balloon-emoji">${emoji}</span>
+      `;
+
+      // Interactive tap to pop!
+      balloon.addEventListener('pointerdown', (e) => {
+        e.stopPropagation();
+        this.popBalloon(balloon);
+      });
+
+      overlay.appendChild(balloon);
+
+      // Clean up after floating off screen
+      balloon.addEventListener('animationend', () => {
+        balloon.remove();
+      });
+
+      // Auto-pop ~8-10 random balloons midway in the sky for the popping spectacle!
+      if (i % 3 === 0) {
+        const popDelay = parseFloat(delay) * 1000 + 1500 + Math.random() * 1800;
+        setTimeout(() => {
+          if (balloon.parentNode && !balloon.isPopped) {
+            this.popBalloon(balloon);
+          }
+        }, popDelay);
+      }
+    }
+
+    // Clean up container after all balloons finish floating
+    setTimeout(() => {
+      if (overlay.parentNode) {
+        overlay.remove();
+      }
+    }, 9500);
+  }
+
+  popBalloon(balloon) {
+    if (!balloon || balloon.isPopped) return;
+    balloon.isPopped = true;
+    balloon.classList.add('is-popping');
+
+    if (window.audioEngine) {
+      window.audioEngine.playBalloonPop();
+    }
+
+    // Confetti burst from balloon center
+    const rect = balloon.getBoundingClientRect();
+    if (rect.width > 0 && typeof confetti === 'function') {
+      const x = Math.max(0, Math.min(1, (rect.left + rect.width / 2) / window.innerWidth));
+      const y = Math.max(0, Math.min(1, (rect.top + rect.height / 2) / window.innerHeight));
+      confetti({
+        particleCount: 18,
+        spread: 60,
+        origin: { x, y },
+        startVelocity: 16,
+        ticks: 80,
+        colors: ['#B7605F', '#ECC880', '#F08A78', '#FFB2A6', '#FFFDF9']
+      });
+    }
+
+    setTimeout(() => {
+      balloon.remove();
+    }, 220);
   }
 }
 

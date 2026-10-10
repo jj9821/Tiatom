@@ -205,13 +205,59 @@ class RomanticAudioEngine {
   }
 
   playSealBreak() {
-    // Unsealing sound
+    this.playCelebrationSound();
+  }
+
+  playCelebrationSound() {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      if (!this.audioCtx) this.audioCtx = new AudioCtx();
+      if (this.audioCtx.state === 'suspended') this.audioCtx.resume();
+
+      // Cheerful celebratory arpeggio chime (C5, E5, G5, C6)
+      const notes = [523.25, 659.25, 783.99, 1046.50];
+      notes.forEach((freq, idx) => {
+        const osc = this.audioCtx.createOscillator();
+        const gain = this.audioCtx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(freq, this.audioCtx.currentTime + idx * 0.1);
+        gain.gain.setValueAtTime(0.18, this.audioCtx.currentTime + idx * 0.1);
+        gain.gain.exponentialRampToValueAtTime(0.001, this.audioCtx.currentTime + idx * 0.1 + 0.4);
+        osc.connect(gain);
+        gain.connect(this.audioCtx.destination);
+        osc.start(this.audioCtx.currentTime + idx * 0.1);
+        osc.stop(this.audioCtx.currentTime + idx * 0.1 + 0.45);
+      });
+    } catch (e) {}
+  }
+
+  playBalloonPop() {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      if (!this.audioCtx) this.audioCtx = new AudioCtx();
+      if (this.audioCtx.state === 'suspended') this.audioCtx.resume();
+
+      const osc = this.audioCtx.createOscillator();
+      const gain = this.audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(520, this.audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(80, this.audioCtx.currentTime + 0.08);
+      gain.gain.setValueAtTime(0.28, this.audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.005, this.audioCtx.currentTime + 0.08);
+      osc.connect(gain);
+      gain.connect(this.audioCtx.destination);
+      osc.start();
+      osc.stop(this.audioCtx.currentTime + 0.09);
+    } catch (e) {}
   }
 
   playConfettiFanfare() {
     if (!this.isPlaying) {
       this.play();
     }
+    this.playCelebrationSound();
   }
 }
 

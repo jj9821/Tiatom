@@ -1104,3 +1104,150 @@ body {
 .protection-alert-modal.is-active .protection-alert-card {
   transform: scale(1) translateY(0);
 }
+
+/* --------------------------------------------------------------------------
+   🎈 Celebratory Birthday Balloons & Full-Screen Cracker Animation
+   -------------------------------------------------------------------------- */
+.celebration-balloons-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99998;
+  overflow: hidden;
+}
+
+.celebratory-balloon {
+  position: absolute;
+  bottom: -160px;
+  width: var(--b-size, 58px);
+  height: calc(var(--b-size, 58px) * 1.25);
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  pointer-events: auto;
+  cursor: pointer;
+  filter: drop-shadow(0 8px 18px rgba(43, 34, 37, 0.22));
+  animation: floatUpScreen var(--float-duration, 5.2s) cubic-bezier(0.22, 0.61, 0.36, 1) forwards var(--float-delay, 0s);
+  transform-origin: bottom center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+/* 3D Gloss Highlight */
+.celebratory-balloon::before {
+  content: '';
+  position: absolute;
+  top: 12%;
+  left: 18%;
+  width: 25%;
+  height: 35%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 80%);
+  transform: rotate(-30deg);
+  pointer-events: none;
+}
+
+/* Balloon knot */
+.celebratory-balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9px;
+  height: 6px;
+  background: inherit;
+  border-radius: 2px 2px 50% 50%;
+  filter: brightness(0.9);
+}
+
+/* Balloon dangling string */
+.balloon-string {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 1.5px;
+  height: 65px;
+  background: linear-gradient(to bottom, rgba(104, 64, 69, 0.65), rgba(104, 64, 69, 0.15));
+  transform-origin: top center;
+  animation: stringSway 1.8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+/* Decorative emoji inside balloon */
+.balloon-emoji {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  pointer-events: none;
+  transform: translateY(-4px);
+}
+
+/* Pop animation */
+.celebratory-balloon.is-popping {
+  animation: balloonPop 0.22s cubic-bezier(0.1, 0.8, 0.3, 1) forwards !important;
+  pointer-events: none;
+}
+
+@keyframes floatUpScreen {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  6% {
+    opacity: 0.98;
+  }
+  30% {
+    transform: translateY(-38vh) translateX(var(--sway-1, 16px)) rotate(var(--rot-1, 5deg));
+  }
+  65% {
+    transform: translateY(-75vh) translateX(var(--sway-2, -16px)) rotate(var(--rot-2, -5deg));
+  }
+  92% {
+    opacity: 0.98;
+  }
+  100% {
+    transform: translateY(-130vh) translateX(var(--sway-3, 10px)) rotate(var(--rot-3, 3deg));
+    opacity: 0;
+  }
+}
+
+@keyframes stringSway {
+  0% {
+    transform: rotate(-8deg);
+  }
+  100% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes balloonPop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  45% {
+    transform: scale(1.4);
+    filter: brightness(1.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* Firecracker sparkle ring overlay */
+.cracker-flash-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 235, 180, 0.45) 0%, rgba(255, 178, 166, 0.25) 45%, transparent 75%);
+  pointer-events: none;
+  z-index: 99997;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.cracker-flash-overlay.is-flashing {
+  opacity: 1;
+}
