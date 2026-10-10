@@ -69,6 +69,17 @@ class MediaGalleryEngine {
     });
   }
 
+  getTagEmoji(tag) {
+    const map = {
+      'school-days': '🎒',
+      'best-buds': '☕',
+      'adventures': '🚗',
+      'unfiltered': '🍕',
+      'favorites': '👑'
+    };
+    return map[tag] || '📸';
+  }
+
   setFilter(filter) {
     this.currentFilter = filter;
     this.renderFilterChips();
@@ -134,6 +145,8 @@ class MediaGalleryEngine {
       const baseRot = rotations[index % rotations.length];
       const rot = isMobile ? (baseRot * 0.45).toFixed(1) : baseRot;
       const tapeClass = tapeTypes[index % tapeTypes.length];
+      const tagEmoji = this.getTagEmoji(item.tag);
+      const displayEmojis = item.emojis || item.title || '✨';
 
       return `
         <div 
@@ -143,7 +156,7 @@ class MediaGalleryEngine {
           style="transform: rotate(${rot}deg);"
           tabindex="0"
           role="button"
-          aria-label="View memory #${item.id}: ${item.title}. Press Enter to expand.">
+          aria-label="View memory #${item.id}: ${displayEmojis}. Press Enter to expand.">
           
           <!-- Washi Tape Ribbon Strip -->
           <div class="washi-tape ${tapeClass}"></div>
@@ -152,22 +165,20 @@ class MediaGalleryEngine {
           <div class="absolute top-2 left-2 right-2 flex items-center justify-between z-20 pointer-events-auto gap-2">
             <button 
               type="button"
-              class="card-song-btn px-2.5 py-0.5 rounded-full text-[10px] font-handwritten text-sm text-[#4A272C] bg-[#FCF8F2]/90 hover:bg-[#B7605F] hover:text-white flex items-center gap-1 border border-[#D9C5B2] shadow-sm transition-all hover:scale-105 active:scale-95 touch-target-44"
+              class="card-song-btn w-7 h-7 sm:w-8 sm:h-8 rounded-full text-xs sm:text-sm bg-[#FCF8F2]/90 hover:bg-[#B7605F] hover:text-white flex items-center justify-center border border-[#D9C5B2] shadow-sm transition-all hover:scale-110 active:scale-95 touch-target-44"
               data-card-id="${item.id}"
-              aria-label="Play Our Song for ${item.title}"
-              title="Tap for Our Song">
-              <i data-lucide="music" class="w-3 h-3 text-[#B7605F]"></i>
-              <span>Our Song</span>
+              aria-label="Play song"
+              title="Song 🎵">
+              <span>🎵</span>
             </button>
             
             <button 
               type="button"
-              class="card-voice-btn px-2.5 py-0.5 rounded-full text-[10px] font-handwritten text-sm text-[#4A272C] bg-[#FCF8F2]/90 hover:bg-[#899481] hover:text-white flex items-center gap-1 border border-[#D9C5B2] shadow-sm transition-all hover:scale-105 active:scale-95 touch-target-44"
+              class="card-voice-btn w-7 h-7 sm:w-8 sm:h-8 rounded-full text-xs sm:text-sm bg-[#FCF8F2]/90 hover:bg-[#899481] hover:text-white flex items-center justify-center border border-[#D9C5B2] shadow-sm transition-all hover:scale-110 active:scale-95 touch-target-44"
               data-card-id="${item.id}"
-              aria-label="Hear voice note for ${item.title}"
-              title="Click to Hear My Voice">
-              <i data-lucide="mic" class="w-3 h-3 text-[#899481]"></i>
-              <span>Voice Note</span>
+              aria-label="Hear voice note"
+              title="Voice 🎙️">
+              <span>🎙️</span>
             </button>
           </div>
 
@@ -192,7 +203,7 @@ class MediaGalleryEngine {
             ` : `
               <img 
                 src="${item.src}" 
-                alt="${item.title}"
+                alt="${displayEmojis}"
                 loading="lazy"
                 decoding="async"
                 class="media-thumb w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
@@ -209,22 +220,15 @@ class MediaGalleryEngine {
           </div>
 
           <!-- Handwritten Polaroid Bottom Margin -->
-          <div class="pt-3 pb-1 px-1 flex flex-col gap-1 text-left">
-            <div class="flex items-center justify-between text-[11px] font-note text-[#899481]">
-              <span class="flex items-center gap-1">
-                <i data-lucide="${isVideo ? 'video' : 'camera'}" class="w-3 h-3 text-[#B7605F]"></i>
-                ${item.tag.replace('-', ' ')}
-              </span>
+          <div class="pt-2.5 pb-1 px-1 flex flex-col items-center justify-center text-center gap-1">
+            <div class="w-full flex items-center justify-between text-[11px] font-note text-[#899481] px-1">
+              <span class="text-sm" title="${item.tag}">${tagEmoji}</span>
               <span class="font-mono text-[10px] text-[#9B878A]">#${item.id}</span>
             </div>
 
-            <h3 class="font-handwritten text-2xl text-[#684045] font-bold group-hover:text-[#B7605F] transition-colors leading-tight">
-              ${item.title}
-            </h3>
-
-            <p class="font-note text-xs text-[#635356] leading-relaxed pt-0.5 border-t border-[#F2DEC7]">
-              “${item.caption}”
-            </p>
+            <div class="text-2xl sm:text-3xl py-0.5 tracking-wider select-none transform transition-transform group-hover:scale-110">
+              ${displayEmojis}
+            </div>
           </div>
         </div>
       `;
@@ -391,9 +395,9 @@ class MediaGalleryEngine {
       }
     }
 
-    if (titleEl) titleEl.textContent = item.title;
-    if (tagEl) tagEl.textContent = `Journal Chapter: ${item.tag.replace('-', ' ').toUpperCase()}`;
-    if (captionEl) captionEl.textContent = item.caption;
+    if (titleEl) titleEl.textContent = item.emojis || item.title;
+    if (tagEl) tagEl.textContent = `${this.getTagEmoji(item.tag)} ${item.tag.replace('-', ' ').toUpperCase()}`;
+    if (captionEl) captionEl.textContent = item.caption || item.emojis;
     if (counterEl) counterEl.textContent = `${this.currentIndex + 1} / ${this.mediaItems.length}`;
 
     this.lightbox.classList.add('is-open');

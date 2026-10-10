@@ -2,7 +2,7 @@
  * ============================================================================
  * 💖 CONSOLIDATED MEMORY SANCTUARY DATA (Kevin & Kunju - Scrapbook Journal)
  * ============================================================================
- * 46 Authentic Memories, School Days in Pala, and Best Friend Adventures
+ * 46 Authentic Memories - Expressive Emoji Constellation Edition
  * ============================================================================
  */
 
@@ -11,415 +11,461 @@ const MEDIA_ITEMS = [
     "id": 1,
     "type": "image",
     "src": "assets/photos/tia/tia_02.jpeg",
-    "title": "Jhumkas & Stolen Glances 💫",
-    "caption": "The silver jhumkas, the subtle smile, and the warmth you bring into every conversation. You make ordinary moments feel like poetry.",
+    "title": "💫 ✨ 🌸",
+    "caption": "💫 🌸 ✨ 💖",
     "tag": "favorites",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "💫 ✨ 🌸"
   },
   {
     "id": 2,
     "type": "image",
     "src": "assets/photos/tia/tia_03.jpeg",
-    "title": "Peaceful Ride & Rainy Windows 🌧️",
-    "caption": "Curled up asleep on a rainy car ride. Watching you sleep so peacefully made me realize how safe, gentle, and sacred your presence is to me.",
+    "title": "🌧️ 💤 🚗",
+    "caption": "🌧️ 💤 🚗 🤍",
     "tag": "unfiltered",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🌧️ 💤 🚗"
   },
   {
     "id": 3,
     "type": "image",
     "src": "assets/photos/tia/tia_04.jpeg",
-    "title": "Warm Tea & Endless Conversations ☕",
-    "caption": "One of our countless cafe dates where hours flew by like minutes. You never run out of stories, and I never run out of reasons to listen.",
+    "title": "☕ 🧋 💬",
+    "caption": "☕ 💬 🧋 💖",
     "tag": "adventures",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "☕ 🧋 💬"
   },
   {
     "id": 4,
     "type": "image",
     "src": "assets/photos/tia/tia_05.jpeg",
-    "title": "That Thoughtful Look I Love 💭",
-    "caption": "You have this adorable habit of getting deep in thought right before dropping the funniest comment of the day.",
+    "title": "💭 🌷 ✨",
+    "caption": "💭 🌷 ✨ 🥰",
     "tag": "favorites",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "💭 🌷 ✨"
   },
   {
     "id": 5,
     "type": "image",
     "src": "assets/photos/tia/tia_06.jpeg",
-    "title": "Golden Hour Serenity 🌅",
-    "caption": "Bathed in warm amber light, looking effortlessly gorgeous without even trying. The world is noisy, but you are my quiet comfort.",
+    "title": "🌅 🍯 💛",
+    "caption": "🌅 💛 🍯 ✨",
     "tag": "favorites",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🌅 🍯 💛"
   },
   {
     "id": 6,
     "type": "image",
     "src": "assets/photos/tia/tia_07.jpeg",
-    "title": "My Favorite Dinner Company 🍽️",
-    "caption": "Sitting across from you is my definition of a perfect evening. Every meal is ten times sweeter with your laughter across the table.",
+    "title": "🍽️ 🍰 🥂",
+    "caption": "🍽️ 🍰 🥂 😋",
     "tag": "adventures",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🍽️ 🍰 🥂"
   },
   {
     "id": 7,
     "type": "image",
     "src": "assets/photos/tia/tia_08.jpeg",
-    "title": "The Smile That Heals Everything 🧱",
-    "caption": "Leaning against the brick wall with that gentle, genuine smile. There is no bad day that your smile cannot instantly turn around.",
+    "title": "🧱 💖 😊",
+    "caption": "🧱 😊 💖 🌸",
     "tag": "favorites",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🧱 💖 😊"
   },
   {
     "id": 8,
     "type": "image",
     "src": "assets/photos/tia/tia_09.jpeg",
-    "title": "Silk Saree Radiance 🌸",
-    "caption": "You in this magenta silk saree was an absolute breath of fresh air. Pure elegance, unmatched charm, and a timeless beauty.",
+    "title": "🌸 🥻 ✨",
+    "caption": "🌸 🥻 ✨ 💖",
     "tag": "school-days",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🌸 🥻 ✨"
   },
   {
     "id": 9,
     "type": "image",
     "src": "assets/photos/tia/tia_10.jpeg",
-    "title": "Garden of My Thoughts 🌿",
-    "caption": "Sitting in the garden looking like a daydream. Ever since school days, you have been the only girl who lived rent-free in my mind.",
+    "title": "🌿 🍃 🌺",
+    "caption": "🌿 🍃 🌺 💚",
     "tag": "favorites",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🌿 🍃 🌺"
   },
   {
     "id": 10,
     "type": "image",
     "src": "assets/photos/tia/tia_11.jpeg",
-    "title": "The Busy Multitasker 📱",
-    "caption": "Furiously replying to texts while I sneakily captured this candid. Even in your focused moments, you are endlessly adorable.",
+    "title": "📱 💬 🤫",
+    "caption": "📱 💬 🤫 🤭",
     "tag": "unfiltered",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "📱 💬 🤫"
   },
   {
     "id": 11,
     "type": "image",
     "src": "assets/photos/tia/tia_12.jpeg",
-    "title": "Our Monochromatic Comfort 🤍",
-    "caption": "Just the two of us, side by side. Black and white stripped away the noise, leaving just the pure happiness of having you near.",
+    "title": "🤍 ☕ 🫶",
+    "caption": "🤍 ☕ 🫶 ✨",
     "tag": "best-buds",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🤍 ☕ 🫶"
   },
   {
     "id": 12,
     "type": "image",
     "src": "assets/photos/tia/tia_13.jpeg",
-    "title": "The Sunshine Behind Green Leaves 🍃",
-    "caption": "That full-hearted, ear-to-ear smile against the ivy wall. This is my absolute favorite photo of you—it holds the entire sunshine of my life.",
+    "title": "🍃 ☀️ 🌼",
+    "caption": "🍃 ☀️ 🌼 🌿",
     "tag": "favorites",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🍃 ☀️ 🌼"
   },
   {
     "id": 13,
     "type": "image",
     "src": "assets/photos/tia/tia_14.jpeg",
-    "title": "Late Night Banter at Blossom ☕",
-    "caption": "Leaning on the high table, talking until late outside Blossom. The way you listen and tease me is something I wouldn’t trade for the world.",
+    "title": "🌙 ☕ 🌃",
+    "caption": "🌙 ☕ 🌃 💫",
     "tag": "best-buds",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🌙 ☕ 🌃"
   },
   {
     "id": 14,
     "type": "image",
     "src": "assets/photos/tia/tia_15.jpeg",
-    "title": "My Safe Haven & Eternal Promise 🫂",
-    "caption": "Arm around you, standing together against the world. You think of me as your best bud, but my heart has chosen you for eternity.",
+    "title": "🫂 💖 🌸",
+    "caption": "🫂 💖 🌸 🫶",
     "tag": "best-buds",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🫂 💖 🌸"
   },
   {
     "id": 15,
     "type": "image",
     "src": "assets/photos/tia/tia_16.jpeg",
-    "title": "Neon Glow & Your Beautiful Eyes 🔮",
-    "caption": "Sitting under the evening lights with your coffee cup. The world was rushing by, but with you, everything stood wonderfully still.",
+    "title": "🔮 💫 👀",
+    "caption": "🔮 💫 👀 ✨",
     "tag": "adventures",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🔮 💫 👀"
   },
   {
     "id": 16,
     "type": "image",
     "src": "assets/photos/tia/tia_17.jpeg",
-    "title": "Always My Best Listener 🎧",
-    "caption": "No matter how silly my rants are, you always pay attention with that curious look. Being around you feels like being completely home.",
+    "title": "🎧 💬 🤍",
+    "caption": "🎧 💬 🤍 ☕",
     "tag": "adventures",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🎧 💬 🤍"
   },
   {
     "id": 17,
     "type": "image",
     "src": "assets/photos/tia/tia_18.jpeg",
-    "title": "Kevin & Kunju • The Dream Team 🌟",
-    "caption": "Look at us! Two best friends who grew up together, laughed together, and conquered everyday life together. You are my greatest blessing.",
+    "title": "🌟 ☕ 👫",
+    "caption": "🌟 ☕ 👫 💫",
     "tag": "best-buds",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🌟 ☕ 👫"
   },
   {
     "id": 18,
     "type": "image",
     "src": "assets/photos/tia/tia_19.jpeg",
-    "title": "School Day Stage Spark • 8th Standard 💃",
-    "caption": "The school day celebrations where it all began! Watching you dance on stage in 8th standard lit a spark in my heart that never faded.",
+    "title": "💃 🎒 🏫",
+    "caption": "💃 🎒 🏫 ✨",
     "tag": "school-days",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "💃 🎒 🏫"
   },
   {
     "id": 19,
     "type": "image",
     "src": "assets/photos/tia/tia_20.jpeg",
-    "title": "Fitting Room Mirror Shenanigans 🛍️",
-    "caption": "Shopping trips with you are 10% shopping and 90% taking funny mirror selfies and laughing at clothes neither of us will buy.",
+    "title": "🪞 🛍️ 🤳",
+    "caption": "🪞 🛍️ 🤳 💅",
     "tag": "best-buds",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🪞 🛍️ 🤳"
   },
   {
     "id": 20,
     "type": "image",
     "src": "assets/photos/tia/tia_21.jpeg",
-    "title": "Cracking Up Together in the Aisle 😂",
-    "caption": "You couldn’t keep a straight face for more than two seconds. That spontaneous, uninhibited laugh of yours is my favorite soundtrack.",
+    "title": "😂 🛒 🤪",
+    "caption": "😂 🛒 🤪 🤣",
     "tag": "best-buds",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "😂 🛒 🤪"
   },
   {
     "id": 21,
     "type": "image",
     "src": "assets/photos/tia/tia_22.jpeg",
-    "title": "Sunlit Bliss & Pure Peace ☀️",
-    "caption": "Eyes closed, soaking in the sunlight with a peaceful smile. You possess an inner peace that calms every chaotic corner of my soul.",
+    "title": "☀️ 🍃 💛",
+    "caption": "☀️ 🍃 💛 ✨",
     "tag": "favorites",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "☀️ 🍃 💛"
   },
   {
     "id": 22,
     "type": "image",
     "src": "assets/photos/tia/tia_23.jpeg",
-    "title": "Curls, Smiles & Radiant Soul 🖤",
-    "caption": "Dressed in black, curls framing your face, smiling into the distance. How someone can be both my closest friend and my greatest dream is a wonder.",
+    "title": "🖤 🌀 💫",
+    "caption": "🖤 🌀 💫 🫶",
     "tag": "favorites",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🖤 🌀 💫"
   },
   {
     "id": 23,
     "type": "image",
     "src": "assets/photos/tia/tia_24.jpeg",
-    "title": "Thumbs Up Partners in Crime 👍",
-    "caption": "Our classic thumbs-up pose! From silly inside jokes to life’s biggest moments, we will always be an unbeatable duo.",
+    "title": "👍 👯‍♀️ ✌️",
+    "caption": "👍 👯‍♀️ ✌️ 💖",
     "tag": "best-buds",
-    "aspectRatio": "landscape"
+    "aspectRatio": "landscape",
+    "emojis": "👍 👯‍♀️ ✌️"
   },
   {
     "id": 24,
     "type": "image",
     "src": "assets/photos/tia/tia_25.jpeg",
-    "title": "Timeless Black & White Chemistry 🎬",
-    "caption": "The same partners in crime, timelessly captured. Some friendships are special, but what I feel for you transcends every word I know.",
+    "title": "🎬 🎞️ 🖤",
+    "caption": "🎬 🎞️ 🖤 🤍",
     "tag": "best-buds",
-    "aspectRatio": "landscape"
+    "aspectRatio": "landscape",
+    "emojis": "🎬 🎞️ 🖤"
   },
   {
     "id": 25,
     "type": "image",
     "src": "assets/photos/tia/tia_26.jpeg",
-    "title": "The Warmest Laugh in the Room 🕯️",
-    "caption": "You glanced over mid-conversation and smiled this way. I stopped hiding from myself long ago—you are my present and my future, Kunju.",
+    "title": "🕯️ 🧡 😊",
+    "caption": "🕯️ 🧡 😊 🪔",
     "tag": "favorites",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🕯️ 🧡 😊"
   },
   {
     "id": 26,
     "type": "image",
     "src": "assets/photos/tia/tia_27.jpeg",
-    "title": "Eyes Speaking Volumes 😷",
-    "caption": "Mask on, yet your expressive eyes gave everything away. You never needed words to tell me how you felt; I could always read your eyes.",
+    "title": "😷 👀 ✨",
+    "caption": "😷 👀 ✨ 💖",
     "tag": "unfiltered",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "😷 👀 ✨"
   },
   {
     "id": 27,
     "type": "image",
     "src": "assets/photos/tia/tia_28.jpeg",
-    "title": "Vintage Kodak Nostalgia 🎞️",
-    "caption": "Framed like an old Polaroid. Looking at this feels like looking at a friendship that was destined to turn into an eternal love story.",
+    "title": "🎞️ 🌻 😜",
+    "caption": "🎞️ 🌻 😜 📸",
     "tag": "best-buds",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🎞️ 🌻 😜"
   },
   {
     "id": 28,
     "type": "image",
     "src": "assets/photos/tia/tia_29.jpeg",
-    "title": "Sus Little Among Us Impostors 🚀",
-    "caption": "Only you would agree to take a picture with Among Us astronauts floating on our heads without questioning it! Our goofiness matches 100%.",
+    "title": "🚀 👾 🎮",
+    "caption": "🚀 👾 🎮 🤫",
     "tag": "unfiltered",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🚀 👾 🎮"
   },
   {
     "id": 29,
     "type": "image",
     "src": "assets/photos/tia/tia_30.jpeg",
-    "title": "Floating Hearts & Sweet Shenanigans 🖤",
-    "caption": "Black hearts filter selfie on the mountain slope. We’ve climbed hills, weathered storms, and made memories that will outlast time.",
+    "title": "🖤 ⛰️ 🫶",
+    "caption": "🖤 ⛰️ 🫶 🌲",
     "tag": "unfiltered",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🖤 ⛰️ 🫶"
   },
   {
     "id": 30,
     "type": "image",
     "src": "assets/photos/tia/tia_31.jpeg",
-    "title": "Fresh Air & Sunshine Together 🌿",
-    "caption": "Standing together under open skies. When I stand beside you like this, everything in life just makes total, effortless sense.",
+    "title": "🌿 ☀️ 👫",
+    "caption": "🌿 ☀️ 👫 💚",
     "tag": "best-buds",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🌿 ☀️ 👫"
   },
   {
     "id": 31,
     "type": "image",
     "src": "assets/photos/tia/tia_32.jpeg",
-    "title": "Peace Signs & Outdoor Adventures ✌️",
-    "caption": "Posing on the nature trail. We started as two school kids in 8th grade, and today you are the most precious part of every adventure I take.",
+    "title": "✌️ 🌲 🎒",
+    "caption": "✌️ 🌲 🎒 🏞️",
     "tag": "best-buds",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "✌️ 🌲 🎒"
   },
   {
     "id": 32,
     "type": "image",
     "src": "assets/photos/tia/tia_33.jpeg",
-    "title": "The Umbrella & Warm Smiles ☂️",
-    "caption": "Holding the floral umbrella on a breezy afternoon. No matter the weather, having you near is all the sunshine I will ever need.",
+    "title": "☂️ 🌧️ 🌸",
+    "caption": "☂️ 🌧️ 🌸 🤍",
     "tag": "best-buds",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "☂️ 🌧️ 🌸"
   },
   {
     "id": 33,
     "type": "image",
     "src": "assets/photos/tia/tia_34.jpeg",
-    "title": "Pizza Dates & Food Comas 🍕",
-    "caption": "Caught mid-bite munching on pizza at the airport window! The most authentic, adorable, hilarious memory that proves how much fun we have.",
+    "title": "🍕 😋 🥤",
+    "caption": "🍕 😋 🥤 ✨",
     "tag": "unfiltered",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🍕 😋 🥤"
   },
   {
     "id": 34,
     "type": "image",
     "src": "assets/photos/tia/tia_35.jpeg",
-    "title": "Midnight Google Meet Calls 📱",
-    "caption": "Screen calls that lasted for hours when we couldn't meet in person. Just seeing your face on my phone made any exhausting day bearable.",
+    "title": "📱 🌙 💻",
+    "caption": "📱 🌙 💻 🫶",
     "tag": "best-buds",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "📱 🌙 💻"
   },
   {
     "id": 35,
     "type": "image",
     "src": "assets/photos/tia/tia_36.jpeg",
-    "title": "Peace Signs & Paper Rings ✌️✨",
-    "caption": "Double peace signs, goofy bee filters, and Taylor Swift playing in the background. Your bubbly joy is my favorite thing in the universe.",
+    "title": "✌️ 🐝 ✨",
+    "caption": "✌️ 🐝 ✨ 💖",
     "tag": "unfiltered",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "✌️ 🐝 ✨"
   },
   {
     "id": 36,
     "type": "image",
     "src": "assets/photos/tia/tia_37.jpeg",
-    "title": "Palm Tree Shadows & Quiet Smiles 🌴",
-    "caption": "Standing beside each other under the tropical sun. You thought we were just two buddies posing, while my heart was racing right beside you.",
+    "title": "🌴 🌤️ 🥥",
+    "caption": "🌴 🌤️ 🥥 💚",
     "tag": "favorites",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🌴 🌤️ 🥥"
   },
   {
     "id": 37,
     "type": "image",
     "src": "assets/photos/tia/tia_38.jpeg",
-    "title": "School Gates & Hallway Days 🎒",
-    "caption": "Uniforms, backpacks, school lanyards, and endless memories. Those school days were the best days of my life because you were in them.",
+    "title": "🎒 🏫 👭",
+    "caption": "🎒 🏫 👭 📚",
     "tag": "school-days",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🎒 🏫 👭"
   },
   {
     "id": 38,
     "type": "image",
     "src": "assets/photos/tia/tia_39.jpeg",
-    "title": "Chalkboard Cafe & Po'Boys Grill 🍔",
-    "caption": "Resting your chin on your hand at Po'Boys Grill in Pala. You looked so effortlessly beautiful sitting across the table from me.",
+    "title": "🍔 🍟 🥤",
+    "caption": "🍔 🍟 🥤 😋",
     "tag": "adventures",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🍔 🍟 🥤"
   },
   {
     "id": 39,
     "type": "image",
     "src": "assets/photos/tia/tia_40.jpeg",
-    "title": "Butterflies & Gentle Eyes 🦋",
-    "caption": "Glowing butterflies around your hair. You've always had this magical warmth that makes everyone around you feel cherished and happy.",
+    "title": "🦋 💖 ✨",
+    "caption": "🦋 💖 ✨ 🌸",
     "tag": "favorites",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🦋 💖 ✨"
   },
   {
     "id": 40,
     "type": "image",
     "src": "assets/photos/tia/tia_41.jpeg",
-    "title": "Winter Scarf & Morning Sunshine 🧣☀️",
-    "caption": "Sunlight filtering through the leaves onto your face. Wrapped in your cozy scarf, your smile was all the warmth I needed.",
+    "title": "🧣 ☀️ 🍂",
+    "caption": "🧣 ☀️ 🍂 💛",
     "tag": "favorites",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🧣 ☀️ 🍂"
   },
   {
     "id": 41,
     "type": "image",
     "src": "assets/photos/tia/tia_42.jpeg",
-    "title": "Black Gown Elegance & Grace 🖤👑",
-    "caption": "Looking like pure royalty in that black gown with pearls on the veranda steps. Breathlessly stunning in every single way.",
+    "title": "🖤 👑 👗",
+    "caption": "🖤 👑 👗 ✨",
     "tag": "favorites",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🖤 👑 👗"
   },
   {
     "id": 42,
     "type": "image",
     "src": "assets/photos/tia/tia_43.jpeg",
-    "title": "Carmel Days & Unbreakable Bonds 🏫",
-    "caption": "Another golden snapshot from our school days. Looking back now, every step beside you was leading to the confession in my heart today.",
+    "title": "🏫 🎒 📖",
+    "caption": "🏫 🎒 📖 💫",
     "tag": "school-days",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🏫 🎒 📖"
   },
   {
     "id": 43,
     "type": "image",
     "src": "assets/photos/tia/tia_44.jpeg",
-    "title": "Beside You Is Where I Belong 🌿",
-    "caption": "Close-up selfie under the coconut grove. The comfort of standing right by your side is something I never want to let go of.",
+    "title": "🌿 🌴 💚",
+    "caption": "🌿 🌴 💚 🫶",
     "tag": "best-buds",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🌿 🌴 💚"
   },
   {
     "id": 44,
     "type": "image",
     "src": "assets/photos/tia/tia_45.jpeg",
-    "title": "Goofy Horns & Partner In Crime 😈",
-    "caption": "Devil horns filter outside school! You will always be my favorite partner in crime, the one who brings out my biggest smiles.",
+    "title": "😈 🤪 🤘",
+    "caption": "😈 🤪 🤘 😂",
     "tag": "unfiltered",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "😈 🤪 🤘"
   },
   {
     "id": 45,
     "type": "image",
     "src": "assets/photos/tia/tia_46.jpeg",
-    "title": "Bicycle Rides & Roadside Chips 🚲🍟",
-    "caption": "Leaning on your Hero cycle basket loaded with Lay's and peanuts on an afternoon ride. You in your oversized tee, happy and completely yourself.",
+    "title": "🚲 🍟 🧺",
+    "caption": "🚲 🍟 🧺 😋",
     "tag": "unfiltered",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🚲 🍟 🧺"
   },
   {
     "id": 46,
     "type": "image",
     "src": "assets/photos/tia/tia_47.jpeg",
-    "title": "The School Hallway Keepsake 📸",
-    "caption": "The ultimate school keepsake. Two kids from Carmel and Chavara in Pala, best friends through thick and thin, and the girl who has held my heart since 8th standard.",
+    "title": "🏫 🎒 👫",
+    "caption": "🏫 🎒 👫 💖",
     "tag": "school-days",
-    "aspectRatio": "portrait"
+    "aspectRatio": "portrait",
+    "emojis": "🏫 🎒 👫"
   }
 ];
 
