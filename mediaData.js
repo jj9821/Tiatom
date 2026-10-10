@@ -466,6 +466,90 @@ const MEDIA_ITEMS = [
     "tag": "school-days",
     "aspectRatio": "portrait",
     "emojis": "🏫 🎒 👫"
+  },
+  {
+    "id": 47,
+    "type": "video",
+    "src": "assets/videos/tia_vid_01.mp4",
+    "poster": "assets/posters/tia_vid_01.jpg",
+    "title": "🍽️ 😊 🤍",
+    "caption": "Food date fun & sauce plate smiles 🍽️ 😊 🤍",
+    "tag": "unfiltered",
+    "aspectRatio": "portrait",
+    "emojis": "🍽️ 😊 🤍",
+    "description": "Drawing smiles on plates during our food dates—you turn the simplest meal into pure joy."
+  },
+  {
+    "id": 48,
+    "type": "video",
+    "src": "assets/videos/tia_vid_02.mp4",
+    "poster": "assets/posters/tia_vid_02.jpg",
+    "title": "🍎 💎 ✨",
+    "caption": "Apple picking & certified wifey material 🍎 💎 ✨",
+    "tag": "favorites",
+    "aspectRatio": "portrait",
+    "emojis": "🍎 💎 ✨",
+    "description": "Watching you pick apples at the grocery market—candid, cute, and certified 100% wifey material."
+  },
+  {
+    "id": 49,
+    "type": "video",
+    "src": "assets/videos/tia_vid_03.mp4",
+    "poster": "assets/posters/tia_vid_03.jpg",
+    "title": "👊 👫 💫",
+    "caption": "Partners in crime fist bump 👊 👫 💫",
+    "tag": "best-buds",
+    "aspectRatio": "portrait",
+    "emojis": "👊 👫 💫",
+    "description": "That instinctive fist bump whenever we're together. The best partners in crime anyone could ask for."
+  },
+  {
+    "id": 50,
+    "type": "video",
+    "src": "assets/videos/tia_vid_04.mp4",
+    "poster": "assets/posters/tia_vid_04.jpg",
+    "title": "🏛️ 🌿 🚶‍♀️",
+    "caption": "Strolling through vintage lanes together 🏛️ 🌿 🚶‍♀️",
+    "tag": "adventures",
+    "aspectRatio": "portrait",
+    "emojis": "🏛️ 🌿 🚶‍♀️",
+    "description": "Walking behind you down cobblestone heritage streets, just taking in how effortlessly beautiful you are."
+  },
+  {
+    "id": 51,
+    "type": "video",
+    "src": "assets/videos/tia_vid_05.mp4",
+    "poster": "assets/posters/tia_vid_05.jpg",
+    "title": "💃 ☕ 🎶",
+    "caption": "Spontaneous midnight cafe dance moves 💃 ☕ 🎶",
+    "tag": "unfiltered",
+    "aspectRatio": "portrait",
+    "emojis": "💃 ☕ 🎶",
+    "description": "Spontaneous little dance moves while waiting at the counter. Your infectious energy always lights up the room."
+  },
+  {
+    "id": 52,
+    "type": "video",
+    "src": "assets/videos/tia_vid_06.mp4",
+    "poster": "assets/posters/tia_vid_06.jpg",
+    "title": "🍹 🍋 🧊",
+    "caption": "Refreshing cafe coolers & heartfelt conversations 🍹 🍋 🧊",
+    "tag": "adventures",
+    "aspectRatio": "portrait",
+    "emojis": "🍹 🍋 🧊",
+    "description": "Chilled summer cooler drinks, cozy table chats, and counting every precious second spent with you."
+  },
+  {
+    "id": 53,
+    "type": "video",
+    "src": "assets/videos/tia_vid_07.mp4",
+    "poster": "assets/posters/tia_vid_07.jpg",
+    "title": "🏍️ 🍦 💛",
+    "caption": "Royal Enfield bike ride ice cream stop 🏍️ 🍦 💛",
+    "tag": "adventures",
+    "aspectRatio": "portrait",
+    "emojis": "🏍️ 🍦 💛",
+    "description": "Stopping the motorcycle for an ice cream treat. Wind in our hair, smiles on our faces, and endless memories."
   }
 ];
 

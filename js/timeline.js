@@ -41,6 +41,7 @@ class MediaGalleryEngine {
 
     const filters = [
       { id: 'all', label: `All ${this.mediaItems.length} Memories ✨`, count: this.mediaItems.length },
+      { id: 'reels', label: 'Reels & Videos 🎥', count: this.mediaItems.filter(m => m.type === 'video' || m.tag === 'reels').length },
       { id: 'school-days', label: '8th Grade Spark 🎒', count: this.mediaItems.filter(m => m.tag === 'school-days').length },
       { id: 'best-buds', label: 'Best Buds & Banter ☕', count: this.mediaItems.filter(m => m.tag === 'best-buds').length },
       { id: 'adventures', label: 'Adventures & Drives 🚗', count: this.mediaItems.filter(m => m.tag === 'adventures').length },
@@ -75,7 +76,8 @@ class MediaGalleryEngine {
       'best-buds': '☕',
       'adventures': '🚗',
       'unfiltered': '🍕',
-      'favorites': '👑'
+      'favorites': '👑',
+      'reels': '🎥'
     };
     return map[tag] || '📸';
   }
@@ -92,6 +94,7 @@ class MediaGalleryEngine {
 
   getFilteredItems() {
     if (this.currentFilter === 'all') return this.mediaItems;
+    if (this.currentFilter === 'reels') return this.mediaItems.filter(m => m.type === 'video' || m.tag === 'reels');
     return this.mediaItems.filter(m => m.tag === this.currentFilter);
   }
 
@@ -194,11 +197,12 @@ class MediaGalleryEngine {
                 playsinline
                 webkit-playsinline="true"
                 x5-playsinline="true"
-                preload="none">
+                preload="metadata"
+                onerror="if(!this.dataset.retry){this.dataset.retry='1';if(this.src.includes('assets/videos/')){this.src=this.src.replace('assets/videos/','tiavid/');}else{this.src='tiavid/'+this.getAttribute('src').split('/').pop();}}">
               </video>
-              <div class="absolute bottom-2 right-2 px-2 py-0.5 rounded-full bg-black/60 text-white font-mono text-[9px] flex items-center gap-1">
+              <div class="absolute bottom-2 right-2 px-2.5 py-0.5 rounded-full bg-black/60 text-white font-mono text-[9px] flex items-center gap-1.5 shadow-sm">
                 <span class="w-1.5 h-1.5 rounded-full bg-[#E63946] animate-pulse"></span>
-                <span>REEL</span>
+                <span>REEL 🎥</span>
               </div>
             ` : `
               <img 
@@ -375,12 +379,31 @@ class MediaGalleryEngine {
         vidEl.src = item.src;
         vidEl.poster = item.poster || '';
         vidEl.currentTime = 0;
+        vidEl.onerror = function() {
+          if (!this.dataset.retry) {
+            this.dataset.retry = '1';
+            if (this.src.includes('assets/videos/')) this.src = this.src.replace('assets/videos/', 'tiavid/');
+            else this.src = 'tiavid/' + this.getAttribute('src').split('/').pop();
+          }
+        };
+        // Softly pause background audio while watching video reel
+        if (window.audioEngine && window.audioEngine.isPlaying && window.audioEngine.audioEl && !window.audioEngine.audioEl.paused) {
+          this.wasAudioPlaying = true;
+          window.audioEngine.audioEl.pause();
+        }
         vidEl.play().catch(() => {});
       }
     } else {
       if (vidEl) {
         vidEl.pause();
         vidEl.classList.add('hidden');
+        vidEl.src = '';
+      }
+      if (this.wasAudioPlaying) {
+        this.wasAudioPlaying = false;
+        if (window.audioEngine && window.audioEngine.audioEl) {
+          window.audioEngine.audioEl.play().catch(() => {});
+        }
       }
       if (imgEl) {
         imgEl.classList.remove('hidden');
@@ -414,6 +437,12 @@ class MediaGalleryEngine {
     if (vidEl) {
       vidEl.pause();
       vidEl.src = '';
+    }
+    if (this.wasAudioPlaying) {
+      this.wasAudioPlaying = false;
+      if (window.audioEngine && window.audioEngine.audioEl) {
+        window.audioEngine.audioEl.play().catch(() => {});
+      }
     }
     this.lightbox.classList.remove('is-open');
     document.body.style.overflow = '';

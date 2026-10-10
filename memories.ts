@@ -475,6 +475,83 @@ export const MEDIA_ITEMS: MediaItem[] = [
     "tag": "school-days",
     "aspectRatio": "portrait",
     "emojis": "🏫 🎒 👫"
+  },
+  {
+    "id": 47,
+    "type": "video",
+    "src": "assets/videos/tia_vid_01.mp4",
+    "poster": "assets/posters/tia_vid_01.jpg",
+    "title": "🍽️ 😊 🤍",
+    "caption": "Food date fun & sauce plate smiles 🍽️ 😊 🤍",
+    "tag": "unfiltered",
+    "aspectRatio": "portrait",
+    "emojis": "🍽️ 😊 🤍"
+  },
+  {
+    "id": 48,
+    "type": "video",
+    "src": "assets/videos/tia_vid_02.mp4",
+    "poster": "assets/posters/tia_vid_02.jpg",
+    "title": "🍎 💎 ✨",
+    "caption": "Apple picking & certified wifey material 🍎 💎 ✨",
+    "tag": "favorites",
+    "aspectRatio": "portrait",
+    "emojis": "🍎 💎 ✨"
+  },
+  {
+    "id": 49,
+    "type": "video",
+    "src": "assets/videos/tia_vid_03.mp4",
+    "poster": "assets/posters/tia_vid_03.jpg",
+    "title": "👊 👫 💫",
+    "caption": "Partners in crime fist bump 👊 👫 💫",
+    "tag": "best-buds",
+    "aspectRatio": "portrait",
+    "emojis": "👊 👫 💫"
+  },
+  {
+    "id": 50,
+    "type": "video",
+    "src": "assets/videos/tia_vid_04.mp4",
+    "poster": "assets/posters/tia_vid_04.jpg",
+    "title": "🏛️ 🌿 🚶‍♀️",
+    "caption": "Strolling through vintage lanes together 🏛️ 🌿 🚶‍♀️",
+    "tag": "adventures",
+    "aspectRatio": "portrait",
+    "emojis": "🏛️ 🌿 🚶‍♀️"
+  },
+  {
+    "id": 51,
+    "type": "video",
+    "src": "assets/videos/tia_vid_05.mp4",
+    "poster": "assets/posters/tia_vid_05.jpg",
+    "title": "💃 ☕ 🎶",
+    "caption": "Spontaneous midnight cafe dance moves 💃 ☕ 🎶",
+    "tag": "unfiltered",
+    "aspectRatio": "portrait",
+    "emojis": "💃 ☕ 🎶"
+  },
+  {
+    "id": 52,
+    "type": "video",
+    "src": "assets/videos/tia_vid_06.mp4",
+    "poster": "assets/posters/tia_vid_06.jpg",
+    "title": "🍹 🍋 🧊",
+    "caption": "Refreshing cafe coolers & heartfelt conversations 🍹 🍋 🧊",
+    "tag": "adventures",
+    "aspectRatio": "portrait",
+    "emojis": "🍹 🍋 🧊"
+  },
+  {
+    "id": 53,
+    "type": "video",
+    "src": "assets/videos/tia_vid_07.mp4",
+    "poster": "assets/posters/tia_vid_07.jpg",
+    "title": "🏍️ 🍦 💛",
+    "caption": "Royal Enfield bike ride ice cream stop 🏍️ 🍦 💛",
+    "tag": "adventures",
+    "aspectRatio": "portrait",
+    "emojis": "🏍️ 🍦 💛"
   }
 ];
 
