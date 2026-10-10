@@ -202,38 +202,38 @@ const SANCTUARY_CONFIG = {
   whispers: [
     "Happy Birthday to the girl who has held my heart since 8th standard.",
     "Every memory with you is a treasure I would protect with my whole life.",
-    "You started as my favorite classmate in Pala, became my closest best friend, and turned into my whole future.",
+    "You started as my favorite classmate in Pala and became the dearest best friend in my life.",
     "Your smile in the morning could light up an entire galaxy.",
-    "I cannot picture any version of my tomorrow without you by my side, Kunju.",
+    "I will always be right in your corner cheering you on, through whatever life brings, Kunju.",
     "You make ordinary days feel like once-in-a-lifetime celebrations.",
-    "Loving you is the easiest, most natural truth of my life.",
+    "I'm so lucky to have you in my world, today and every day.",
     "Happy Birthday, Kunju — you will forever be my favorite person in the cosmos."
   ],
 
-  // Interactive Love Letter
+  // Interactive Birthday Letter
   letter: {
     dateHeading: "On Your Special Birthday",
     greeting: "To My Dearest Kunju,",
     paragraphs: [
-      "Happy Birthday, Kunju! As another year begins for you, I found myself thinking about all the paths our lives have crossed—and how lucky I am that out of every person in this world, I got to grow up with you by my side.",
-      "You know me better than anyone. You treat me as your closest best friend, your trusted bud, the one who shares your banter, coffee runs, and endless laughs. But what you might not know is that my heart made up its mind a very long time ago—all the way back in 8th standard in Pala, the very first moment I saw you in that school hall.",
-      "Back then, it was a quiet, unspoken fascination that I kept tucked away. Over the years, as we laughed through school hallways, shared car rides, and sat across each other at cafes talking about everything and nothing, that feeling didn't fade—it grew roots.",
-      "For a long time, I tried to convince myself that being just your best friend was enough, scared that speaking my truth might complicate the bond we built. But recently, I finally stopped hiding from myself. I embraced what my soul has known for years: you are not just my best friend, Kunju—you are the only person I can ever envision in my future.",
-      "I cannot picture any version of my tomorrow that doesn't have your smile in it. Whatever comes next, I promise to always cheer you on, protect your peace, and stand by you. Happy Birthday, my favorite person in the whole universe."
+      "Happy Birthday, Kunju! Today is all about you, and more than anything in this world, I want you to feel deeply celebrated, cherished, and happy. As another year begins for you, I found myself pausing to think about how incredible you are, and how much brighter this world is simply because you are in it. I hope today brings you the biggest smiles, all your favorite treats, and a year ahead filled with peace, laughter, and everything your beautiful heart deserves.",
+      "There are so many things about you that make you completely one of a kind. Your smile has this rare warmth that can turn anyone's worst day around in an instant. I adore how effortlessly genuine you are—the way your eyes light up when you're excited about the smallest things, your goofy sense of humor that always catches me off guard, and that deep kindness you carry so naturally. Whether you're dressed up in a saree looking breathtakingly graceful or just casually laughing in an oversized tee, you carry a beauty and gentle soul that I have admired ever since our 8th standard days in Pala.",
+      "I also have to admit, I really miss you. I miss the easy laughter we share, the endless conversations where hours disappear like seconds, and just sitting across from you sharing chai or coffee. Life gets busy and days move quickly, but there's rarely a day that goes by where a random inside joke or memory doesn't remind me of you. Even when we're apart, you have a permanent place in my thoughts.",
+      "It's true that I love you, and in my heart, you will always feel like my person—someone irreplaceable who holds a very special place in my soul. But above all, I want you to know that I wholeheartedly respect your choice for us to remain friends. Having you in my life, sharing your world, and being someone you can trust and laugh with means more to me than anything. I never want to put pressure on your shoulders or change the pure comfort and bond we share.",
+      "So today, my only wish is for your happiness. You deserve all the good things life has to offer, and I will always be right here in your corner—cheering you on as your biggest supporter, your safe haven, and your best friend through every chapter ahead. Have the most wonderful birthday, Kunju. You will always mean the world to me."
     ],
-    signOff: "Always by your side,",
+    signOff: "With all my love & warmest birthday wishes,",
     signatureName: "Kevin ❤️",
     waxSealText: "FOREVER & ALWAYS • KUNJU •",
     typingSpeed: 20
   },
 
-  // Grand Finale Modal & Declaration
+  // Grand Finale Modal & Birthday Celebration
   finale: {
-    buttonLabel: "Open My Entire Heart ✨",
+    buttonLabel: "A Birthday Wish for You ✨",
     modalTitle: "Happy Birthday to My Dearest Kunju 🎂✨",
-    modalSubtitle: "From 8th standard school days in Pala to our whole future ahead.",
-    quote: "“Some people search their whole lives for what I found the day you walked into my world.”",
-    closingNote: "Thank you for being my favorite memory, my dearest best friend, and my whole heart. Happy Birthday, Kunju!",
+    modalSubtitle: "Wishing you a year filled with endless laughter, gentle peace, and joy.",
+    quote: "“The greatest gift in life is having someone who makes ordinary days feel extraordinary simply by existing.”",
+    closingNote: "Thank you for being such an extraordinary friend, my favorite person, and a light in my life. I will always be right in your corner cheering you on. Happy Birthday, Kunju!",
     confettiColors: ['#B7605F', '#F08A78', '#ECC880', '#899481', '#FCF8F2', '#FFB2A6']
   },
 

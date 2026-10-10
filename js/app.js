@@ -192,7 +192,7 @@ function populateConfigText(config) {
   // Letter greeting
   const letterGreeting = document.getElementById('letter-greeting-text');
   if (letterGreeting && config.recipientName) {
-    letterGreeting.textContent = `To My Beloved ${config.recipientName},`;
+    letterGreeting.textContent = `To My Dearest ${config.recipientName},`;
   }
 }
 
