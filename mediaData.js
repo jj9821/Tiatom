@@ -2,7 +2,7 @@
  * ============================================================================
  * 💖 CONSOLIDATED MEMORY SANCTUARY DATA (Kevin & Kunju - Scrapbook Journal)
  * ============================================================================
- * 46 Authentic Memories - Expressive Emoji Constellation Edition
+ * 61 Authentic Memories (52 Photos + 9 Video Reels) - Expressive Emoji Constellation Edition
  * ============================================================================
  */
 
@@ -550,6 +550,96 @@ const MEDIA_ITEMS = [
     "aspectRatio": "portrait",
     "emojis": "🏍️ 🍦 💛",
     "description": "Stopping the motorcycle for an ice cream treat. Wind in our hair, smiles on our faces, and endless memories."
+  },
+  {
+    "id": 54,
+    "type": "image",
+    "src": "assets/photos/tia/tia_48.jpeg",
+    "title": "🚗 👫 💖",
+    "caption": "🚗 👫 💖 ✨",
+    "tag": "adventures",
+    "aspectRatio": "portrait",
+    "emojis": "🚗 👫 💖",
+    "description": "Cruising together with the windows down, your sweet smile right beside me making every road trip unforgettable."
+  },
+  {
+    "id": 55,
+    "type": "image",
+    "src": "assets/photos/tia/tia_49.jpeg",
+    "title": "✨ 🖤 👫",
+    "caption": "✨ 🖤 👫 💫",
+    "tag": "favorites",
+    "aspectRatio": "portrait",
+    "emojis": "✨ 🖤 👫",
+    "description": "Side by side with you. The way we fit together effortlessly will always be the greatest feeling in the world."
+  },
+  {
+    "id": 56,
+    "type": "image",
+    "src": "assets/photos/tia/tia_50.jpeg",
+    "title": "🌸 ✨ 🥰",
+    "caption": "🌸 ✨ 🥰 💖",
+    "tag": "favorites",
+    "aspectRatio": "portrait",
+    "emojis": "🌸 ✨ 🥰",
+    "description": "Your effortless, glowing smile that lights up entire rooms. Truly the prettiest sight my eyes have ever seen."
+  },
+  {
+    "id": 57,
+    "type": "image",
+    "src": "assets/photos/tia/tia_51.jpeg",
+    "title": "🛍️ 📱 💫",
+    "caption": "🛍️ 📱 💫 🤍",
+    "tag": "best-buds",
+    "aspectRatio": "portrait",
+    "emojis": "🛍️ 📱 💫",
+    "description": "Mirror selfies while roaming stores together—every errand feels like a special date with you."
+  },
+  {
+    "id": 58,
+    "type": "image",
+    "src": "assets/photos/tia/tia_52.jpeg",
+    "title": "🤍 🕊️ 📸",
+    "caption": "🤍 🕊️ 📸 ✨",
+    "tag": "best-buds",
+    "aspectRatio": "portrait",
+    "emojis": "🤍 🕊️ 📸",
+    "description": "Accidentally matching neutral tones, standing together as you give that cute, thoughtful look."
+  },
+  {
+    "id": 59,
+    "type": "image",
+    "src": "assets/photos/tia/tia_53.jpeg",
+    "title": "🥰 ☕ 💛",
+    "caption": "🥰 ☕ 💛 🌸",
+    "tag": "favorites",
+    "aspectRatio": "portrait",
+    "emojis": "🥰 ☕ 💛",
+    "description": "Sitting close, leaning our heads together with the warmest smiles. In moments like this, nothing else matters."
+  },
+  {
+    "id": 60,
+    "type": "video",
+    "src": "assets/videos/tia_vid_08.mp4",
+    "poster": "assets/posters/tia_vid_08.jpg",
+    "title": "🏺 🛍️ ✨",
+    "caption": "🏺 🛍️ ✨ 💫",
+    "tag": "adventures",
+    "aspectRatio": "portrait",
+    "emojis": "🏺 🛍️ ✨",
+    "description": "Watching you curiously browse through vintage handicrafts and trinkets with that gentle fascination in your eyes."
+  },
+  {
+    "id": 61,
+    "type": "video",
+    "src": "assets/videos/tia_vid_09.mp4",
+    "poster": "assets/posters/tia_vid_09.jpg",
+    "title": "🌅 🌊 🕊️",
+    "caption": "🌅 🌊 🕊️ 💛",
+    "tag": "favorites",
+    "aspectRatio": "portrait",
+    "emojis": "🌅 🌊 🕊️",
+    "description": "Standing on the shoreline rocks as the golden sun dips into the sea. Pure poetry, watching the girl who holds my heart."
   }
 ];
 
